@@ -39,4 +39,12 @@ class Calculator {
     public static int subtract(int a, int b) {
         return a - b;
     }
+
+    public static float divide(float a, float b) {
+        return a / b;
+    }
+
+    public static int multiplica(int a, int b) {
+        return a * b;
+    }
 }
