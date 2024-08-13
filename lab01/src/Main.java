@@ -1,4 +1,4 @@
-package lab02;
+package lab01.src;
 
 public class Main {
     
