@@ -27,8 +27,12 @@ class Calculator {
         else if (op.equals("sub")) {
             System.out.println(subtract(a, b));
         }
-
-        // adicionar divisão e multiplicação
+        else if (op.equals("divide")) {
+            System.out.println(divide(a, b));
+        }
+        else if (op.equals("multiplica")) {
+            System.out.println(multiplica(a, b));
+        }
     }
 
 
