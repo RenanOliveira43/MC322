@@ -1,16 +1,19 @@
 package lab01.src;
 import java.util.Scanner;
 
-public class Passenger extends Person{ 
-    Scanner input = new Scanner((System.in));
+public class Passenger extends Person { 
     private String name;
     private String destination;
     private boolean tip;
-
-    public void setName() {
-        this.name = input.nextLine();    
+    private double payment;
+    
+    Scanner input = new Scanner(System.in);
+    
+    @Override
+    public void performRole() {
+        startPassenger();
     }
-
+    
     public String getName() {
         return name;
     }
@@ -27,17 +30,31 @@ public class Passenger extends Person{
         return tip;
     }
 
-    public void defineDestination() {
+    public double getPayment() {
+        return payment;
+    }
+
+    private void startPassenger() {
+        System.out.println("Digite o nome do passageiro:");
+        this.name = input.nextLine();
+        System.out.println("Digite o destino:");
         this.destination = input.nextLine();
+        System.out.println("Dar gorjeta? (true/false):");
+        this.tip = input.nextBoolean();
+
         System.out.printf("%s define o destino (%s)\n", name, destination);
     }
 
-    @Override
-    public void performRole() {
-        defineDestination();
-        
+    public void payCabbie(double tripCost) {
+        if (tip) {
+            tripCost += (tripCost / 10);
+            this.payment = tripCost;
+            
+            System.out.printf("%s paga R$%.2f para o taxista (com gorjeta)\n", name, payment);
+        }
+        else {
+            this.payment = tripCost;
+            System.out.printf("%s paga R$%.2f para o taxista (sem gorjeta)\n", name, payment);
+        }
     }
-
-
-
 }
