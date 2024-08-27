@@ -37,8 +37,10 @@ public class Passenger extends Person {
     private void startPassenger() {
         System.out.println("Digite o nome do passageiro:");
         this.name = input.nextLine();
+        
         System.out.println("Digite o destino:");
         this.destination = input.nextLine();
+        
         System.out.println("Dar gorjeta? (true/false):");
         this.tip = input.nextBoolean();
 
