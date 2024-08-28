@@ -25,8 +25,7 @@ public class Main {
                 System.out.printf("%s informa ao taxista que seu destino é: %s\n", pessoa.getName(), taxi.getDestination());
                 cabbie.performRole();
 
-                double tripCost = cabbie.getTripCost();
-                pessoa.payCabbie(tripCost);
+                pessoa.payCabbie(cabbie.getTripCost());
                 cabbie.setMoney(pessoa.getPayment());
 
                 System.out.printf("%s sai do táxi\n", pessoa.getName());

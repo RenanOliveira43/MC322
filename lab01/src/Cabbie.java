@@ -16,6 +16,10 @@ public class Cabbie extends Person {
         this.money = money;
     }
     
+    public void setTripCost(double tripCost) {
+        this.tripCost = tripCost;
+    }
+
     public double getMoney() {
         return money;
     }
@@ -25,6 +29,7 @@ public class Cabbie extends Person {
     }
     
     private void calculateTripCost() {
-        this.tripCost = (Math.random() * ((100 - 15) + 1)) + 15;
+        double tripCost = (Math.random() * ((100 - 15) + 1)) + 15;
+        setTripCost(tripCost);
     }
 }
