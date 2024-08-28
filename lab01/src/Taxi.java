@@ -4,6 +4,7 @@ package lab01.src;
 
 public class Taxi {
     private String destination;
+    private double tripCost;
     private boolean isHailed;
     private boolean isPassangerOn;
 
@@ -19,6 +20,10 @@ public class Taxi {
         this.isPassangerOn = passangerOn;
     }
 
+    public void setTripCost(double tripCost) {
+        this.tripCost = tripCost;
+    }
+
     public String getDestination() {
         return destination;
     }
@@ -29,5 +34,15 @@ public class Taxi {
     
     public boolean getPassengerOn() {
         return isPassangerOn;
+    }
+
+    public double getTripCost(){
+        calculateTripCost();
+        return tripCost;
+    }
+
+    private void calculateTripCost() {
+        double tripCost = (Math.random() * ((100 - 15) + 1)) + 15;
+        setTripCost(tripCost);
     }
 }
