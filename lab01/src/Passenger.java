@@ -51,7 +51,7 @@ public class Passenger extends Person {
 
     public void payCabbie(double tripCost) {
         if (tip) {
-            tripCost += (tripCost / 10);
+            tripCost += (tripCost * 0.1); // 10% de gorjeta
             this.payment = tripCost;
             
             System.out.printf("%s paga R$%.2f para o taxista (com gorjeta)\n", name, payment);
