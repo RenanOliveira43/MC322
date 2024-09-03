@@ -19,18 +19,17 @@ public class Passenger extends Person {
     public void register(Scanner input) {
         PassengerInfoGenerator randomPassenger = new PassengerInfoGenerator();
     
-        System.out.println("Digite seu nome: ");
+        //System.out.println("Digite seu nome: ");
         //setName(input.nextLine());
         setName(randomPassenger.getName());
 
-        System.out.println("Digite seu email: ");
+        //System.out.println("Digite seu email: ");
         //setEmail(input.nextLine());
         setEmail(randomPassenger.getEmail());
 
-        System.out.println("Digite seu telefone: ");
+        //System.out.println("Digite seu telefone: ");
         //setPhone(input.nextLine());
         setPhone(randomPassenger.getPhone());
-
         setUserId(randomPassenger.getPassengerId());
 
         System.out.printf("Cadastro realizado com sucesso, %s! Seu ID de usuário é: %d\n", getName(), getUserId());
@@ -45,11 +44,11 @@ public class Passenger extends Person {
                 break;
             case "1": // telefone
                 setEmail(newValue);
-                System.out.printf("Campo 'email' atualizado com sucesso para passageiro %d.\n", getUserId());
+                System.out.printf("Campo 'telefone' atualizado com sucesso para passageiro %d.\n", getUserId());
                 break;
             case "2": // email
                 setPhone(newValue);
-                System.out.printf("Campo 'telefone' atualizado com sucesso para passageiro %d.\n", getUserId());
+                System.out.printf("Campo 'email' atualizado com sucesso para passageiro %d.\n", getUserId());
                 break;
             default:
                 System.out.println("Campo não encontrado.");

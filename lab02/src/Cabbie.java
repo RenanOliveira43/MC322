@@ -47,19 +47,19 @@ public class Cabbie extends Person{
     public void register(Scanner input) {
         CabbieInfoGenerator randomCabbie = new CabbieInfoGenerator();
         
-        System.out.println("Digite seu nome: ");
+        //System.out.println("Digite seu nome: ");
         //setName(input.nextLine());
         setName(randomCabbie.getName());
 
-        System.out.println("Digite seu email: ");
+        //System.out.println("Digite seu email: ");
         //setEmail(input.nextLine());
         setEmail(randomCabbie.getEmail());
 
-        System.out.println("Digite seu telefone: ");
+        //System.out.println("Digite seu telefone: ");
         //setPhone(input.nextLine());
         setPhone(randomCabbie.getPhone());
 
-        System.out.println("Digite o numero da sua CNH: ");
+        //System.out.println("Digite o numero da sua CNH: ");
         //setLicenseNumber(input.nextLine());
         setLicenseNumber(randomCabbie.getLicenseNumber());
 

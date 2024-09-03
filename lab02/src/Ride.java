@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Ride {
@@ -10,7 +11,6 @@ public class Ride {
     private String status;  // status da corrida: "Solicitada", "Em andamento", "Finalizada"
     private float fare;
 
-    // Getters e Setters
     public int getRideId() {
         return rideId;
     }
@@ -75,8 +75,9 @@ public class Ride {
         this.fare = fare;
     }
 
-    public void requestRide(Scanner input, int rideId, int userId, int cabbieId, int vehicleId) {
-        this.rideId = rideId;
+    public void requestRide(Scanner input, int userId, int cabbieId, int vehicleId) {
+        Random ran = new Random();
+        this.rideId = ran.nextInt(100);
         this.userId = userId;
         this.cabbieId = cabbieId;
         this.vehicleId = vehicleId;
@@ -106,6 +107,7 @@ public class Ride {
 
     public void completeRide() {
         this.status = "Finalizada";
+        System.out.println("Corrida finaliza");
     }
 
     @Override
