@@ -47,44 +47,50 @@ public class Cabbie extends Person{
     public void register(Scanner input) {
         CabbieInfoGenerator randomCabbie = new CabbieInfoGenerator();
         
-        System.out.printf("Digite seu nome: ");
-        setName(input.nextLine());
+        System.out.println("Digite seu nome: ");
+        //setName(input.nextLine());
+        setName(randomCabbie.getName());
 
-        System.out.printf("Digite seu email: ");
-        setEmail(input.nextLine());
+        System.out.println("Digite seu email: ");
+        //setEmail(input.nextLine());
+        setEmail(randomCabbie.getEmail());
 
-        System.out.printf("Digite seu telefone: ");
-        setPhone(input.nextLine());
+        System.out.println("Digite seu telefone: ");
+        //setPhone(input.nextLine());
+        setPhone(randomCabbie.getPhone());
 
-        System.out.printf("Digite o numero da sua CNH: ");
-        setLicenseNumber(input.nextLine());
+        System.out.println("Digite o numero da sua CNH: ");
+        //setLicenseNumber(input.nextLine());
+        setLicenseNumber(randomCabbie.getLicenseNumber());
 
         setRating(randomCabbie.getRate());
         setCabbieId(randomCabbie.getCabbieId());
 
-        System.out.println("Cadastro realizado com sucesso! Seu ID de taxista é: " + getCabbieId());
+        System.out.printf("Cadastro realizado com sucesso, %s! Seu ID de taxista é: %d\n", getName(), getCabbieId());
     }
 
     @Override
     public void update(String field, String newValue) {
         switch (field.toLowerCase()) {
-            case "name":
+            case "0": // name
                 setName(newValue);
+                System.out.printf("Campo 'nome' atualizado com sucesso para motorista %d.\n", getCabbieId());
                 break;
-            case "email":
+            case "1": // email
                 setEmail(newValue);
+                System.out.printf("Campo 'email' atualizado com sucesso para motorista %d.\n", getCabbieId());
                 break;
-            case "phone":
+            case "2": // telefone
                 setPhone(newValue);
+                System.out.printf("Campo 'telefone' atualizado com sucesso para motorista %d.\n", getCabbieId());
                 break;
-            case "license number":
+            case "3": // license number
                 setLicenseNumber(newValue);
+                System.out.printf("Campo 'license number' atualizado com sucesso para motorista %d.\n", getCabbieId());
                 break;
-            case "rating":
+            case "4": // rating
                 setRating(Float.parseFloat(newValue));
-                break;
-            case "cabbie id":
-                setCabbieId(Integer.parseInt(newValue));
+                System.out.printf("Campo 'rating' atualizado com sucesso para motorista %d.\n", getCabbieId());
                 break;
             default:
                 System.out.println("Campo não encontrado");

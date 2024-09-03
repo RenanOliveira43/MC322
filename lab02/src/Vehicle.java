@@ -5,7 +5,7 @@ public class Vehicle {
     private int vehicleId;
     private String registrationNumber;
     private String model;
-    private String year;
+    private int year;
     private int cabbieId; // será passado pela classe Cabbie
 
     // Getters e Setters
@@ -33,11 +33,11 @@ public class Vehicle {
         this.model = model;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
@@ -53,18 +53,21 @@ public class Vehicle {
     public void registerVehicle(Scanner input) {
         VehicleInfoGenerator randomVehicle = new VehicleInfoGenerator();
 
-        System.out.printf("Digite o número de registro do veículo: ");
-        setRegistrationNumber(input.nextLine());
+        System.out.println("Digite o número de registro do veículo: ");
+        //setRegistrationNumber(input.nextLine());
+        setRegistrationNumber(randomVehicle.getRegistrationNumber());
 
-        System.out.printf("Digite o modelo do veículo: ");
-        setModel(input.nextLine());
+        System.out.println("Digite o modelo do veículo: ");
+        //setModel(input.nextLine());
+        setModel(randomVehicle.getModel());
 
-        System.out.printf("Digite o ano do veículo: ");
-        setYear(input.nextLine());
+        System.out.println("Digite o ano do veículo: ");
+        //setYear(input.nextLine());
+        setYear(randomVehicle.getYear());
 
         setVehicleId(randomVehicle.getVehicleId());
 
-        System.out.println("Veículo registrado com sucesso! ID do veículo: " + getVehicleId());
+        System.out.printf("Veículo (%s %s) registrado com sucesso! ID do veículo: %d\n", getModel(), getRegistrationNumber(), getVehicleId());
     }
 
     // Método para atualizar as informações do veículo
@@ -77,7 +80,7 @@ public class Vehicle {
                 setModel(newValue);
                 break;
             case "year":
-                setYear(newValue);
+                setYear(Integer.parseInt(newValue));
                 break;
             case "cabbie id":
                 setCabbieId(Integer.parseInt(newValue));

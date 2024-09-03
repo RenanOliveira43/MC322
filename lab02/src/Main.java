@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        //Aqui você deve realizar a simulação do funcionamento do sistema.
         Scanner input = new Scanner(System.in);
         ArrayList<Cabbie> cabbies = new ArrayList<Cabbie>();
         ArrayList<Passenger> passengers = new ArrayList<Passenger>();
@@ -16,7 +15,7 @@ public class Main {
             
             if(cmd.toLowerCase().equals("nao")) {
                 System.out.println("Faça seu cadastro para começar a usar o Fast Travel!");
-                System.out.println("Digite 0 para motorista ou 1 para passageiro");
+                System.out.println("Digite 0 para motorista ou 1 para passageiro.");
                 cmd = input.nextLine();
 
                 if (cmd.equals("0")) {
@@ -41,11 +40,11 @@ public class Main {
                 }
             }
             else {
-                System.out.println("Digite 0 para motorista ou 1 para passageiro");
+                System.out.println("Digite 0 para motorista ou 1 para passageiro.");
                 cmd = input.nextLine();
                 
                 if (cmd.equals("0") && !cabbies.isEmpty()) {
-                    System.out.println("Digite seu Cabbie ID");
+                    System.out.println("Digite seu Cabbie ID:");
                     int id = input.nextInt();
                     input.nextLine();
 
@@ -53,26 +52,41 @@ public class Main {
                         if (cabb.getCabbieId() == id){
                             System.out.println("Alterar alguma informação? (sim/nao)");
                             cmd = input.nextLine();
-                            // desenvolver o resto 
+                            
+                            if (cmd.equals("sim")) {
+                                System.out.println("0-Nome, 1-telefone, 2-email, 3-license number, 4-rating");
+                                cmd = input.nextLine();
+                                String update = input.nextLine();
+                                cabb.update(cmd, update);
+                            }
                             break;
                         }
                         else {
-                            System.out.println("Cabbie Id não encontrado");
+                            System.out.println("Cabbie Id não encontrado.");
                         }
                     }
-
-
                 } 
                 else if (cmd.equals("1") && !passengers.isEmpty()) {
-                    System.out.println("Digite seu user ID");
+                    System.out.println("Digite seu user ID:");
                     int id = input.nextInt();
                     input.nextLine();
 
                     for (Passenger pass : passengers) {
                         if (pass.getUserId() == id) {
-                            System.out.println("Solicitar corrida? (sim/nao)");
+                            System.out.println("Digite 0 para solicitar uma corrida ou 1 para alterar informações.");
+                            cmd = input.nextLine();
 
-                            
+                            if (cmd.equals("0") && !cabbies.isEmpty()) {
+                                Ride ride = new Ride();
+                                Vehicle cabVehicle = cabbies.get(0).getVehicle();
+                                ride.requestRide(input, id, pass.getUserId(), cabbies.get(0).getCabbieId(), cabVehicle.getVehicleId());
+                            }
+                            else {
+                                System.out.println("0-Nome, 1-telefone, 2-email");
+                                cmd = input.nextLine();
+                                String update = input.nextLine();
+                                pass.update(cmd, update);
+                            }
                         }
                     }
                 } 
@@ -81,23 +95,5 @@ public class Main {
                 }
             }
         }
-    
-        
-        
-        // Cabbie cab = new Cabbie();
-        // cab.register(input);
-        // veh.setCabbieId(cab.getCabbieId());
-        // cab.setVehicle(veh);
-        
-        // cabbies.add(cab);
-
-        // Passenger passenger = new Passenger();
-        // passenger.register(input);
-        // passengers.add(passenger);
-
-        // System.out.println(cabbies.get(0));
-        // System.out.println(passengers.get(0));
-        
-        //input.close();
     }
 }

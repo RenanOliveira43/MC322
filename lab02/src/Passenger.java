@@ -19,34 +19,37 @@ public class Passenger extends Person {
     public void register(Scanner input) {
         PassengerInfoGenerator randomPassenger = new PassengerInfoGenerator();
     
-        System.out.printf("Digite seu nome: ");
-        setName(input.nextLine());
+        System.out.println("Digite seu nome: ");
+        //setName(input.nextLine());
+        setName(randomPassenger.getName());
 
-        System.out.printf("Digite seu email: ");
-        setEmail(input.nextLine());
+        System.out.println("Digite seu email: ");
+        //setEmail(input.nextLine());
+        setEmail(randomPassenger.getEmail());
 
-        System.out.printf("Digite seu telefone: ");
-        setPhone(input.nextLine());
+        System.out.println("Digite seu telefone: ");
+        //setPhone(input.nextLine());
+        setPhone(randomPassenger.getPhone());
 
         setUserId(randomPassenger.getPassengerId());
 
-        System.out.println("Cadastro realizado com sucesso! Seu ID de usuário é: " + getUserId());
+        System.out.printf("Cadastro realizado com sucesso, %s! Seu ID de usuário é: %d\n", getName(), getUserId());
     }
 
     @Override
     public void update(String field, String newValue) {
         switch (field.toLowerCase()) {
-            case "name":
+            case "0": // name
                 setName(newValue);
+                System.out.printf("Campo 'nome' atualizado com sucesso para passageiro %d.\n", getUserId());
                 break;
-            case "email":
+            case "1": // telefone
                 setEmail(newValue);
+                System.out.printf("Campo 'email' atualizado com sucesso para passageiro %d.\n", getUserId());
                 break;
-            case "phone":
+            case "2": // email
                 setPhone(newValue);
-                break;
-            case "user id":
-                setUserId(Integer.parseInt(newValue));
+                System.out.printf("Campo 'telefone' atualizado com sucesso para passageiro %d.\n", getUserId());
                 break;
             default:
                 System.out.println("Campo não encontrado.");
