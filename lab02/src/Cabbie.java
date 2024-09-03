@@ -5,8 +5,8 @@ public class Cabbie extends Person{
     private int cabbieId;
     private float rating;
     private String licenseNumber;
+    private Vehicle vehicle;
 
-    
     public int getCabbieId() {
         return cabbieId;
     }
@@ -17,6 +17,10 @@ public class Cabbie extends Person{
 
     public String getLicenseNumber() {
         return licenseNumber;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
     public void setCabbieId(int cabbieId) {
@@ -31,8 +35,12 @@ public class Cabbie extends Person{
         this.licenseNumber = licenseNumber;
     }
 
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
     public Cabbie() {
-    
+
     }
 
     @Override
@@ -92,7 +100,7 @@ public class Cabbie extends Person{
                 ", License Number='" + getLicenseNumber() + '\'' +
                 ", Cabbie ID=" + getCabbieId() +
                 ", Rating=" + getRating() +
+                ", Vehicle=" + getVehicle() +
                 '}';
     }
-    
 }

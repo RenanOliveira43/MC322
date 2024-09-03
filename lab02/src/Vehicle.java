@@ -6,7 +6,7 @@ public class Vehicle {
     private String registrationNumber;
     private String model;
     private String year;
-    private String cabbieId;
+    private int cabbieId; // será passado pela classe Cabbie
 
     // Getters e Setters
     public int getVehicleId() {
@@ -41,20 +41,18 @@ public class Vehicle {
         this.year = year;
     }
 
-    public String getCabbieId() {
+    public int getCabbieId() {
         return cabbieId;
     }
 
-    public void setCabbieId(String cabbieId) {
+    public void setCabbieId(int cabbieId) {
         this.cabbieId = cabbieId;
     }
 
     // Método para registrar um veículo
-    public void registerVehicle() {
+    public void registerVehicle(Scanner input) {
         VehicleInfoGenerator randomVehicle = new VehicleInfoGenerator();
-        Scanner input = new Scanner(System.in);
 
-        // Entrada manual para registro do veículo
         System.out.printf("Digite o número de registro do veículo: ");
         setRegistrationNumber(input.nextLine());
 
@@ -64,15 +62,9 @@ public class Vehicle {
         System.out.printf("Digite o ano do veículo: ");
         setYear(input.nextLine());
 
-        System.out.printf("Digite o ID do motorista (Cabbie ID): ");
-        setCabbieId(input.nextLine());
-
-        // Gerar um ID aleatório para o veículo
         setVehicleId(randomVehicle.getVehicleId());
 
         System.out.println("Veículo registrado com sucesso! ID do veículo: " + getVehicleId());
-
-        input.close();
     }
 
     // Método para atualizar as informações do veículo
@@ -88,7 +80,7 @@ public class Vehicle {
                 setYear(newValue);
                 break;
             case "cabbie id":
-                setCabbieId(newValue);
+                setCabbieId(Integer.parseInt(newValue));
                 break;
             default:
                 System.out.println("Campo não encontrado.");
