@@ -49,7 +49,8 @@ public class Vehicle {
     public void setCabbieId(int cabbieId) {
         this.cabbieId = cabbieId;
     }
-
+    
+    // registra um novo veiculo com infos aleatorias, porem as infos podem ser inseridas via user input
     public void registerVehicle(Scanner input) {
         VehicleInfoGenerator randomVehicle = new VehicleInfoGenerator();
 

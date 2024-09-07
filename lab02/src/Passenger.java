@@ -18,6 +18,7 @@ public class Passenger extends Person {
     }
 
     @Override
+    // registra um novo passageiro com infos aleatorias, porem as infos podem ser inseridas via user input
     public void register(Scanner input) {
         PassengerInfoGenerator randomPassenger = new PassengerInfoGenerator();
     
@@ -34,7 +35,7 @@ public class Passenger extends Person {
         setPhone(randomPassenger.getPhone());
         setUserId(randomPassenger.getPassengerId());
 
-        System.out.printf("Cadastro realizado com sucesso, %s! Seu ID de usuário é: %d\n", getName(), getUserId());
+        System.out.printf("Cadastro realizado com sucesso, %s! Seu Id de usuário é: %d\n", getName(), getUserId());
     }
 
     @Override

@@ -14,6 +14,7 @@ public class Main {
         System.out.println("Seja bem vindo ao sistema de Taxi, Fast Travel!");
 
         while (true) {
+            // inicializa o sistema 
             System.out.println("Já possui cadastro no Fast Travel? (sim/nao ou 'sair' para encerrar)");
             String cmd = input.nextLine();
             
@@ -21,7 +22,7 @@ public class Main {
                 System.out.println("Encerrando o sistema... Obrigado por usar o Fast Travel!");
                 break;
             }
-
+            // possibilita um novo cadastro de usuario (motorista ou passageiro)
             if(cmd.equals("nao")) {
                 System.out.println("Faça seu cadastro para começar a usar o Fast Travel!");
                 System.out.println("Digite 0 para motorista ou 1 para passageiro (ou 'sair' para encerrar).");
@@ -55,7 +56,7 @@ public class Main {
                     System.out.println("Opção inválida.");
                 }
             }
-            // existe passageiro ou motoristas
+            // caso existe passageiros ou motoristas
             else if (cmd.equals("sim") && (!passengers.isEmpty() || !cabbies.isEmpty())) {
                 System.out.println("Digite 0 para motorista ou 1 para passageiro (ou 'sair' para encerrar).");
                 cmd = input.nextLine();
@@ -87,6 +88,7 @@ public class Main {
                                 System.out.println("0-Nome, 1-telefone, 2-email, 3-license number, 4-rating, 5-veiculo");
                                 String updateField = input.nextLine();
                                 
+                                // modifica veiculo
                                 if (updateField.equals("5")) {
                                     Vehicle cabVehicle = cabb.getVehicle();
                                     
@@ -97,6 +99,7 @@ public class Main {
                                     cabVehicle.updateVehicle(updateField, updateValue);
                                 }
                                 else {
+                                    // modifica motorista
                                     String updateValue = input.nextLine(); 
                                     cabb.update(updateField, updateValue);
                                 }
@@ -115,7 +118,7 @@ public class Main {
                     int id = input.nextInt();
                     input.nextLine();
                     
-                    // encontra um passageiro por id no ArrayList
+                    // encontra um passageiro por id no ArrayList passengers
                     for (Passenger pass : passengers) { 
                         if (pass.getUserId() == id) {
                             System.out.println("Digite 0 para solicitar uma corrida ou 1 para alterar informações (ou 'sair' para encerrar).");

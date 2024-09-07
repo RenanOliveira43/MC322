@@ -46,6 +46,7 @@ public class Cabbie extends Person{
     }
 
     @Override
+    // registra um novo cabbie com infos aleatorias, porem as infos podem ser inseridas via user input
     public void register(Scanner input) {
         CabbieInfoGenerator randomCabbie = new CabbieInfoGenerator();
         
