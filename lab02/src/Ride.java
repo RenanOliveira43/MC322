@@ -77,12 +77,15 @@ public class Ride {
         this.fare = fare;
     }
 
-    public void requestRide(Scanner input, int userId, int cabbieId, int vehicleId) {
+    public Ride(int userId, int cabbieId, int vehicleId) {
         Random ran = new Random();
         this.rideId = ran.nextInt(100);
         this.userId = userId;
         this.cabbieId = cabbieId;
-        this.vehicleId = vehicleId;
+        this.vehicleId = vehicleId;  
+    }
+
+    public void requestRide(Scanner input) {
         calculateFare();
         
         System.out.println("Digite o ponto de partida:");
@@ -99,7 +102,7 @@ public class Ride {
     }
 
     public void calculateFare() {
-        float fare = (float)(Math.random() * ((100 - 15) + 1)) + 15;
+        float fare = (float)(Math.random() * ((100 - 20) + 1)) + 20;
         setFare(fare);
     }
 
@@ -110,6 +113,7 @@ public class Ride {
     public void completeRide() {
         this.status = "Finalizada";
         System.out.println("Corrida finaliza");
+
     }
 
     @Override

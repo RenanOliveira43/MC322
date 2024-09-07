@@ -1,6 +1,7 @@
 // Renan Neves de Oliveira 257364
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -16,7 +17,6 @@ public class Main {
             System.out.println("Já possui cadastro no Fast Travel? (sim/nao ou 'sair' para encerrar)");
             String cmd = input.nextLine();
             
-            // checa se o usuário deseja sair
             if(cmd.equals("sair")) {
                 System.out.println("Encerrando o sistema... Obrigado por usar o Fast Travel!");
                 break;
@@ -52,10 +52,11 @@ public class Main {
                     passengers.add(pass);
                 } 
                 else {
-                    System.out.println("Opção inválida. Por favor, digite 0 para motorista ou 1 para passageiro.");
+                    System.out.println("Opção inválida.");
                 }
             }
-            else if (cmd.equals("sim")) {
+            // existe passageiro ou motoristas
+            else if (cmd.equals("sim") && (!passengers.isEmpty() || !cabbies.isEmpty())) {
                 System.out.println("Digite 0 para motorista ou 1 para passageiro (ou 'sair' para encerrar).");
                 cmd = input.nextLine();
                 
@@ -63,7 +64,8 @@ public class Main {
                     System.out.println("Encerrando o sistema... Obrigado por usar o Fast Travel!");
                     break;
                 }
-
+                
+                // interação com motorista
                 if (cmd.equals("0") && !cabbies.isEmpty()) { 
                     System.out.println("Digite seu Cabbie ID:");
                     int id = input.nextInt();
@@ -106,8 +108,10 @@ public class Main {
                         }
                     }
                 } 
+                
+                // interação com passageiro
                 else if (cmd.equals("1") && !passengers.isEmpty()) {
-                    System.out.println("Digite seu user ID:");
+                    System.out.println("Digite seu user Id:");
                     int id = input.nextInt();
                     input.nextLine();
                     
@@ -124,18 +128,22 @@ public class Main {
 
                             // solicita uma corrida
                             if (cmd.equals("0") && !cabbies.isEmpty()) { 
-                                Vehicle cabVehicle = cabbies.get(0).getVehicle();
-                                Ride ride = new Ride();
-                                Payment payment = new Payment();
-
-                                rides.add(ride);
-                                rides.get(0).requestRide(input, pass.getUserId(), cabbies.get(0).getCabbieId(), cabVehicle.getVehicleId());
+                                Random ran = new Random();
+                                int randomCabbieIdx = ran.nextInt(cabbies.size()); // seleciona algum dos motoristas do ArrayList cabbies
                                 
-                                payment.processPayment(input, rides.get(0).getRideId(), rides.get(0).getFare());
-                                rides.get(0).completeRide();
+                                Vehicle cabVehicle = cabbies.get(randomCabbieIdx).getVehicle(); // pega o carro associado ao motorista para passar para Ride
+                                Ride newRide = new Ride(pass.getUserId(), cabbies.get(randomCabbieIdx).getCabbieId(), cabVehicle.getVehicleId());
+                                rides.add(newRide);
+                                newRide.requestRide(input);
+                                
+                                // processa o pagamento e finaliza a corrida
+                                Payment payment = new Payment();
+                                payment.processPayment(input, newRide.getRideId(), newRide.getFare());
+                                newRide.completeRide();
                             }
                             else {
-                                System.out.println("0-Nome, 1-telefone, 2-email"); // altera uma informação de um passageiro existente 
+                                // altera uma informação de um passageiro existente 
+                                System.out.println("0-Nome, 1-telefone, 2-email"); 
                                 String updateField = input.nextLine();
                                 String updateValue = input.nextLine();
                                 
@@ -145,7 +153,7 @@ public class Main {
                     }
                 } 
                 else {
-                    System.out.println("Opção inválida ou lista vazia. Por favor, digite 0 para motorista ou 1 para passageiro.");
+                    System.out.println("Opção inválida ou lista vazia.");
                 }
             }
         }

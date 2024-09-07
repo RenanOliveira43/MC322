@@ -50,7 +50,6 @@ public class Vehicle {
         this.cabbieId = cabbieId;
     }
 
-    // Método para registrar um veículo
     public void registerVehicle(Scanner input) {
         VehicleInfoGenerator randomVehicle = new VehicleInfoGenerator();
 
@@ -70,9 +69,8 @@ public class Vehicle {
         System.out.printf("Veículo (%s %s) registrado com sucesso! ID do veículo: %d\n", getModel(), getRegistrationNumber(), getVehicleId());
     }
 
-    // Método para atualizar as informações do veículo
     public void updateVehicle(String field, String newValue) {
-        switch (field.toLowerCase()) {
+        switch (field) {
             case "0": // registration number
                 setRegistrationNumber(newValue);
                 System.out.printf("Campo 'registration number' atualizado com sucesso para veiculo %d.\n", getVehicleId());
@@ -94,7 +92,6 @@ public class Vehicle {
         }
     }
 
-    // Método toString para exibir as informações do veículo
     @Override
     public String toString() {
         return "Vehicle {" +

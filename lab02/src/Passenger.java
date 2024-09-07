@@ -39,7 +39,7 @@ public class Passenger extends Person {
 
     @Override
     public void update(String field, String newValue) {
-        switch (field.toLowerCase()) {
+        switch (field) {
             case "0": // name
                 setName(newValue);
                 System.out.printf("Campo 'nome' atualizado com sucesso para passageiro %d.\n", getUserId());
