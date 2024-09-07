@@ -122,7 +122,7 @@ public class Main {
                     for (Passenger pass : passengers) { 
                         if (pass.getUserId() == id) {
                             System.out.println("Digite 0 para solicitar uma corrida ou 1 para alterar informações (ou 'sair' para encerrar).");
-                            cmd = input.nextLine().trim().toLowerCase();
+                            cmd = input.nextLine();
 
                             if(cmd.equals("sair")) {
                                 System.out.println("Encerrando o sistema... Obrigado por usar o Fast Travel!");
