@@ -67,7 +67,7 @@ public class Vehicle {
         setYear(randomVehicle.getYear());
         setVehicleId(randomVehicle.getVehicleId());
 
-        System.out.printf("Veículo (%s %s) registrado com sucesso! ID do veículo: %d\n", getModel(), getRegistrationNumber(), getVehicleId());
+        System.out.printf("Veículo (%s %s) registrado com sucesso! Id do veículo: %d\n", getModel(), getRegistrationNumber(), getVehicleId());
     }
 
     public void updateVehicle(String field, String newValue) {
