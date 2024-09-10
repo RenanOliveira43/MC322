@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "lab02/src",
+        "Tarefa3/app/src/main/java",
+        "lab03/app/src"
+    ]
+}
