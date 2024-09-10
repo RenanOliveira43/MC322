@@ -70,12 +70,12 @@ public class Main {
                 // interação com motorista
                 if (cmd.equals("0") && !cabbies.isEmpty()) { 
                     System.out.println("Digite seu Cabbie ID:");
-                    int id = input.nextInt();
+                    String id = input.nextLine();
                     input.nextLine();
 
                     // encontra o motorista por id no ArrayList
                     for (Cabbie cabb : cabbies) { 
-                        if (cabb.getCabbieId() == id) {
+                        if (cabb.getCabbieId().equals(id)) {
                             System.out.println("Alterar alguma informação? (sim/nao ou 'sair' para encerrar)");
                             cmd = input.nextLine().trim().toLowerCase();
                             
@@ -141,7 +141,7 @@ public class Main {
                                 newRide.requestRide(input);
                                 
                                 // processa o pagamento e finaliza a corrida
-                                Payment payment = new Payment();
+                                RidePayment payment = new RidePayment();
                                 payment.processPayment(input, newRide.getRideId(), newRide.getFare());
                                 newRide.completeRide();
                             }

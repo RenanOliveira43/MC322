@@ -1,64 +1,68 @@
 // Renan Neves de Oliveira 257364
 
 package cabbieManager;
+import java.time.LocalDateTime;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Ride {
-    private int rideId;
-    private int userId;
-    private int cabbieId;
-    private int vehicleId;
-    private String pickupLocation;
-    private String dropLocation;
+    private String rideId;
+    private String userId;
+    private String cabbieId;
+    private String vehicleId;
+    private Location pickupLocation;
+    private Location dropLocation;
     private String status;  // status da corrida: "Solicitada", "Em andamento", "Finalizada"
     private float fare;
+    private float distance;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
 
-    public int getRideId() {
+    public String getRideId() {
         return rideId;
     }
 
-    public void setRideId(int rideId) {
+    public void setRideId(String rideId) {
         this.rideId = rideId;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
-    public int getCabbieId() {
+    public String getCabbieId() {
         return cabbieId;
     }
 
-    public void setCabbieId(int cabbieId) {
+    public void setCabbieId(String cabbieId) {
         this.cabbieId = cabbieId;
     }
 
-    public int getVehicleId() {
+    public String getVehicleId() {
         return vehicleId;
     }
 
-    public void setVehicleId(int vehicleId) {
+    public void setVehicleId(String vehicleId) {
         this.vehicleId = vehicleId;
     }
 
-    public String getPickupLocation() {
+    public Location getPickupLocation() {
         return pickupLocation;
     }
 
-    public void setPickupLocation(String pickupLocation) {
+    public void setPickupLocation(Location pickupLocation) {
         this.pickupLocation = pickupLocation;
     }
 
-    public String getDropLocation() {
+    public Location getDropLocation() {
         return dropLocation;
     }
 
-    public void setDropLocation(String dropLocation) {
+    public void setDropLocation(Location dropLocation) {
         this.dropLocation = dropLocation;
     }
 
@@ -78,7 +82,7 @@ public class Ride {
         this.fare = fare;
     }
 
-    public Ride(int userId, int cabbieId, int vehicleId) {
+    public Ride(String userId, String cabbieId, String vehicleId) {
         Random ran = new Random();
         this.rideId = ran.nextInt(100);
         this.userId = userId;
@@ -90,6 +94,8 @@ public class Ride {
         calculateFare();
         
         System.out.println("Digite o ponto de partida:");
+        
+        
         this.pickupLocation = input.nextLine();
         
         System.out.println("Digite o destino:");

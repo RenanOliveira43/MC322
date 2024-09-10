@@ -5,13 +5,13 @@ import utils.PassengerInfoGenerator;
 import java.util.Scanner;
 
 public class Passenger extends Person {
-    private int userId;
+    private String userId;
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

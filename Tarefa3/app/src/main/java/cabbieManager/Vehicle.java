@@ -4,17 +4,17 @@ import utils.VehicleInfoGenerator;
 import java.util.Scanner;
 
 public class Vehicle {
-    private int vehicleId;
+    private String vehicleId;
     private String registrationNumber;
     private String model;
     private int year;
-    private int cabbieId; // será passado pela classe Cabbie
+    private String cabbieId; // será passado pela classe Cabbie
 
-    public int getVehicleId() {
+    public String getVehicleId() {
         return vehicleId;
     }
 
-    public void setVehicleId(int vehicleId) {
+    public void setVehicleId(String vehicleId) {
         this.vehicleId = vehicleId;
     }
 
@@ -42,11 +42,11 @@ public class Vehicle {
         this.year = year;
     }
 
-    public int getCabbieId() {
+    public String getCabbieId() {
         return cabbieId;
     }
 
-    public void setCabbieId(int cabbieId) {
+    public void setCabbieId(String cabbieId) {
         this.cabbieId = cabbieId;
     }
     
@@ -85,7 +85,7 @@ public class Vehicle {
                 System.out.printf("Campo 'year' atualizado com sucesso para veiculo %d.\n", getVehicleId());
                 break;
             case "3": // cabbie id
-                setCabbieId(Integer.parseInt(newValue));
+                setCabbieId(newValue);
                 System.out.printf("Campo 'cabbie id' atualizado com sucesso para veiculo %d.\n", getVehicleId());
                 break;
             default:

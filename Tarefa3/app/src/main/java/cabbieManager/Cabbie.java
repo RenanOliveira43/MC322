@@ -5,12 +5,12 @@ import utils.CabbieInfoGenerator;
 import java.util.Scanner;
 
 public class Cabbie extends Person{
-    private int cabbieId;
+    private String cabbieId;
     private float rating;
     private String licenseNumber;
     private Vehicle vehicle;
 
-    public int getCabbieId() {
+    public String getCabbieId() {
         return cabbieId;
     }
 
@@ -26,7 +26,7 @@ public class Cabbie extends Person{
         return vehicle;
     }
 
-    public void setCabbieId(int cabbieId) {
+    public void setCabbieId(String cabbieId) {
         this.cabbieId = cabbieId;
     }
 
