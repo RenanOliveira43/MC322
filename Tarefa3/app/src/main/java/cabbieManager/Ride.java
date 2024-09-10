@@ -12,9 +12,8 @@ public class Ride {
     private String vehicleId;
     private Location pickupLocation;
     private Location dropLocation;
-    private String status;  // status da corrida: "Solicitada", "Em andamento", "Finalizada"
-    private float fare;
     private float distance;
+    private String status;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
 
@@ -74,14 +73,6 @@ public class Ride {
         this.status = status;
     }
 
-    public float getFare() {
-        return fare;
-    }
-
-    public void setFare(float fare) {
-        this.fare = fare;
-    }
-
     public Ride(String userId, String cabbieId, String vehicleId) {
         Random ran = new Random();
         this.rideId = ran.nextInt(100);
@@ -91,8 +82,6 @@ public class Ride {
     }
 
     public void requestRide(Scanner input) {
-        calculateFare();
-        
         System.out.println("Digite o ponto de partida:");
         
         
@@ -103,14 +92,8 @@ public class Ride {
         
         System.out.printf("Corrida solicitada por passageiro %d de %s para %s.\n", getUserId(), getPickupLocation(), getDropLocation());
         System.out.printf("Corrida atendida por motorista %d.\n", getCabbieId());
-        System.out.printf("Valor da corrida definido: R$%.2f.\n", getFare());
         
         this.status = "Solicitada";  // status inicial da corrida
-    }
-
-    public void calculateFare() {
-        float fare = (float)(Math.random() * ((100 - 20) + 1)) + 20;
-        setFare(fare);
     }
 
     public void updateRideStatus(String newStatus) {
@@ -123,6 +106,24 @@ public class Ride {
 
     }
 
+    public float calculateDistance() {
+        float px = this.pickupLocation.getX();
+        float py = this.pickupLocation.getY();
+        float qx = this.dropLocation.getX();
+        float qy = this.dropLocation.getY();
+    
+        // calcula a diferença entre as coordenadas
+        float deltaX = qx - px;
+        float deltaY = qy - py;
+    
+        // calcula a distância euclidiana
+        float distance = (float) Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+        this.distance = distance;
+
+        return distance;
+    }
+    
+
     @Override
     public String toString() {
         return "Ride {" +
@@ -133,7 +134,6 @@ public class Ride {
                 ", Pickup Location='" + pickupLocation + '\'' +
                 ", Drop Location='" + dropLocation + '\'' +
                 ", Status='" + status + '\'' +
-                ", Fare=" + fare +
                 '}';
     }
 }
