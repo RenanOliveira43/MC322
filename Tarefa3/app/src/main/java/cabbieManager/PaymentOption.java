@@ -7,16 +7,16 @@ public enum PaymentOption {
     PIX(0.01f, "Pix"),
     VOUCHER(0.03f, "Voucher");
 
-    private final float rideValue;
-    private final String method;
+    private final float paymentFee;
+    private final String paymentMethod;
     
-    private PaymentOption(Float rideValue, String method){
-        this.rideValue = rideValue;
-        this.method = method;
+    private PaymentOption(float paymentFee, String method){
+        this.paymentFee = paymentFee;
+        this.paymentMethod = method;
     }
 
     public float calculatePaymentFee(float rideValue) {
-        return rideValue * this.rideValue;
+        return rideValue * this.paymentFee;
     }
 
     public float getRideValue() {
