@@ -96,7 +96,7 @@ public class RidePayment implements Payment{
 
         // calculo do valor total da corrida
         float totalValue = initialFee + (feePerKm * rideDistance);
-        totalValue = totalValue * paymentMethod.calculatePaymentFee(totalValue);
+        totalValue = totalValue + paymentMethod.calculatePaymentFee(totalValue);
         this.amount = totalValue;
         
         return totalValue;
