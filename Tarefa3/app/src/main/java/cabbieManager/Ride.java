@@ -108,7 +108,8 @@ public class Ride {
         this.status = "Solicitada";
         
 
-        // adicionar forma de entar com startTime
+        // adicionar forma de entar com startTime. esse é um stub
+        this.startTime = LocalDateTime.of(2022, 1, 1, 10, 0);
 
 
         System.out.println("Digite o ponto de partida:");

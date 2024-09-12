@@ -140,7 +140,7 @@ public class Main {
                                 newRide.updateRideStatus("Em progresso");
                                 
                                 // processa o pagamento e finaliza a corrida
-                                RidePayment payment = new RidePayment(input, pass.getUserId(), newRide.getStartTime(), newRide.getDistance());
+                                RidePayment payment = new RidePayment(pass.getUserId(), newRide.getStartTime(), newRide.getDistance());
                                 payment.processPayment();
                                 newRide.completeRide();
                             }

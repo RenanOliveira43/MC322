@@ -1,8 +1,8 @@
 package cabbieManager;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.Scanner;
+import java.time.LocalTime;
 import java.util.UUID;
 
 public class RidePayment implements Payment{
@@ -45,13 +45,10 @@ public class RidePayment implements Payment{
         this.paymentMethod = PaymentOption.valueOf(paymentOption.toUpperCase().replace(" ", "_"));
     }
 
-    public RidePayment(Scanner input, String rideId, LocalDateTime startTime, float rideDistance) {
+    public RidePayment(String rideId, LocalDateTime startTime, float rideDistance) {
         this.paymentId = UUID.randomUUID().toString();
         this.rideStartTime = startTime;
         this.rideDistance = rideDistance;
-        
-        System.out.println("Digite a forma de pagamento:");
-        this.paymentMethod = PaymentOption.valueOf(input.nextLine().toUpperCase().replace(" ", "_"));
     }
 
     public float calculateValue() {
@@ -115,7 +112,24 @@ public class RidePayment implements Payment{
     }
 
     public void processPayment() {
-        System.out.printf("Forma de pagamento selecionada: %s.\n", paymentMethod.getMethod());
-        System.out.printf("Valor da corrida definido: %f.\n", calculateValue());
+        Scanner input = new Scanner(System.in);
+        boolean validInput = false;
+
+        while (!validInput) {
+            try {
+                System.out.println("Digite a forma de pagamento:");
+                String userInput = input.nextLine().toUpperCase().replace(" ", "_");
+                
+                this.paymentMethod = PaymentOption.valueOf(userInput);
+                validInput = true;
+
+                System.out.printf("Forma de pagamento selecionada: %s.\n", paymentMethod.getMethod());
+            } 
+            catch (IllegalArgumentException e) {
+                System.out.println("Forma de pagamento inválida. Por favor, insira uma forma válida.");
+            }
+        }
+
+        System.out.printf("Valor da corrida definido: %.2f.\n", calculateValue());
     }
 }
