@@ -70,7 +70,7 @@ public class Cabbie extends Person{
         setRating(randomCabbie.getRate());
         setCabbieId(randomCabbie.getCabbieId());
 
-        System.out.printf("Cadastro realizado com sucesso, %s! Seu ID de taxista é: %d\n", getName(), getCabbieId());
+        System.out.printf("Cadastro realizado com sucesso, %s! Seu ID de taxista é: %s\n", getName(), getCabbieId());
     }
 
     @Override
@@ -78,23 +78,23 @@ public class Cabbie extends Person{
         switch (field) {
             case "0": // name
                 setName(newValue);
-                System.out.printf("Campo 'nome' atualizado com sucesso para motorista %d.\n", getCabbieId());
+                System.out.printf("Campo 'nome' atualizado com sucesso para motorista %s.\n", getCabbieId());
                 break;
             case "1": // email
                 setEmail(newValue);
-                System.out.printf("Campo 'email' atualizado com sucesso para motorista %d.\n", getCabbieId());
+                System.out.printf("Campo 'email' atualizado com sucesso para motorista %s.\n", getCabbieId());
                 break;
             case "2": // telefone
                 setPhone(newValue);
-                System.out.printf("Campo 'telefone' atualizado com sucesso para motorista %d.\n", getCabbieId());
+                System.out.printf("Campo 'telefone' atualizado com sucesso para motorista %s.\n", getCabbieId());
                 break;
             case "3": // license number
                 setLicenseNumber(newValue);
-                System.out.printf("Campo 'license number' atualizado com sucesso para motorista %d.\n", getCabbieId());
+                System.out.printf("Campo 'license number' atualizado com sucesso para motorista %s.\n", getCabbieId());
                 break;
             case "4": // rating
                 setRating(Float.parseFloat(newValue));
-                System.out.printf("Campo 'rating' atualizado com sucesso para motorista %d.\n", getCabbieId());
+                System.out.printf("Campo 'rating' atualizado com sucesso para motorista %s.\n", getCabbieId());
                 break;
             default:
                 System.out.println("Campo não encontrado");

@@ -1,7 +1,7 @@
 package cabbieManager;
 
 public enum PaymentOption {
-    CREDIT_CARD(0.06f, "CREDIT CARD"),
+    CREDIT_CARD(0.06f, "Credit Card"),
     DEBIT_CARD(0.04f, "Debit Card"),
     CASH(0.00f, "Cash"),
     PIX(0.01f, "Pix"),

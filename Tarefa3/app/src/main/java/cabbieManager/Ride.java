@@ -2,8 +2,8 @@
 
 package cabbieManager;
 import java.time.LocalDateTime;
-import java.util.Random;
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Ride {
     private String rideId;
@@ -73,37 +73,71 @@ public class Ride {
         this.status = status;
     }
 
-    public Ride(String userId, String cabbieId, String vehicleId) {
-        Random ran = new Random();
-        this.rideId = ran.nextInt(100);
-        this.userId = userId;
-        this.cabbieId = cabbieId;
-        this.vehicleId = vehicleId;  
+    public float getDistance() {
+        return distance;
     }
 
-    public void requestRide(Scanner input) {
+    public void setDistance(float distance) {
+        this.distance = distance;
+    }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+    }
+
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+    }
+
+    public Ride(String userId) {
+        this.rideId = UUID.randomUUID().toString();
+        this.userId = userId;
+    }
+
+    public void requestRide(Scanner input, String cabbieId, String vehicleId) {
+        this.cabbieId = cabbieId;
+        this.vehicleId = vehicleId;
+        this.status = "Solicitada";
+        
+
+        // adicionar forma de entar com startTime
+
+
         System.out.println("Digite o ponto de partida:");
-        
-        
-        this.pickupLocation = input.nextLine();
+        String pickUp = input.nextLine().toUpperCase().replace(" ", "_");
+        this.pickupLocation = Location.valueOf(pickUp);
+
         
         System.out.println("Digite o destino:");
-        this.dropLocation = input.nextLine();
+        String drop = input.nextLine().toUpperCase().replace(" ", "_");
+        this.dropLocation = Location.valueOf(drop);
+
+        System.out.printf("Corrida solicitada por passageiro %s de %s para %s.\n", userId, pickupLocation.getName(), dropLocation.getName());
+        System.out.printf("Status da corrida: %s.\n", status);
         
-        System.out.printf("Corrida solicitada por passageiro %s de %s para %s.\n", getUserId(), getPickupLocation(), getDropLocation());
-        System.out.printf("Corrida atendida por motorista %s.\n", getCabbieId());
-        
-        this.status = "Solicitada";  // status inicial da corrida
+        this.distance = calculateDistance();
+        System.out.printf("Distancia calculada: %.2f.\n", distance);
+        System.out.printf("Corrida atendida por motorista %s.\n", cabbieId);
     }
 
     public void updateRideStatus(String newStatus) {
         this.status = newStatus;
+        System.out.printf("Status da corrida: %s.\n", status);
     }
 
     public void completeRide() {
         this.status = "Finalizada";
-        System.out.println("Corrida finaliza");
+        System.out.printf("Status da corrida: %s.\n", status);
 
+        // adicionar forma de entar com endTime
     }
 
     public float calculateDistance() {
@@ -119,8 +153,8 @@ public class Ride {
         // calcula a distância euclidiana
         float distance = (float) Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
         this.distance = distance;
-
-        return distance;
+        
+        return this.distance;
     }
     
 

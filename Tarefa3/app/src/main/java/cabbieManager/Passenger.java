@@ -36,7 +36,7 @@ public class Passenger extends Person {
         setPhone(randomPassenger.getPhone());
         setUserId(randomPassenger.getPassengerId());
 
-        System.out.printf("Cadastro realizado com sucesso, %s! Seu Id de usuário é: %d\n", getName(), getUserId());
+        System.out.printf("Cadastro realizado com sucesso, %s! Seu Id de usuário é: %s\n", getName(), getUserId());
     }
 
     @Override
@@ -44,15 +44,15 @@ public class Passenger extends Person {
         switch (field) {
             case "0": // name
                 setName(newValue);
-                System.out.printf("Campo 'nome' atualizado com sucesso para passageiro %d.\n", getUserId());
+                System.out.printf("Campo 'nome' atualizado com sucesso para passageiro %s.\s", getUserId());
                 break;
             case "1": // telefone
                 setEmail(newValue);
-                System.out.printf("Campo 'telefone' atualizado com sucesso para passageiro %d.\n", getUserId());
+                System.out.printf("Campo 'telefone' atualizado com sucesso para passageiro %s.\n", getUserId());
                 break;
             case "2": // email
                 setPhone(newValue);
-                System.out.printf("Campo 'email' atualizado com sucesso para passageiro %d.\n", getUserId());
+                System.out.printf("Campo 'email' atualizado com sucesso para passageiro %s.\n", getUserId());
                 break;
             default:
                 System.out.println("Campo não encontrado.");

@@ -2,6 +2,8 @@ package cabbieManager;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Scanner;
+import java.util.UUID;
 
 public class RidePayment implements Payment{
     
@@ -37,9 +39,19 @@ public class RidePayment implements Payment{
     }
 
     public RidePayment(String rideId, LocalDateTime startTime, float rideDistance, String paymentOption) {
+        this.paymentId = UUID.randomUUID().toString();
         this.rideStartTime = startTime;
         this.rideDistance = rideDistance;
-        this.paymentMethod = PaymentOption.valueOf(paymentOption.toUpperCase());
+        this.paymentMethod = PaymentOption.valueOf(paymentOption.toUpperCase().replace(" ", "_"));
+    }
+
+    public RidePayment(Scanner input, String rideId, LocalDateTime startTime, float rideDistance) {
+        this.paymentId = UUID.randomUUID().toString();
+        this.rideStartTime = startTime;
+        this.rideDistance = rideDistance;
+        
+        System.out.println("Digite a forma de pagamento:");
+        this.paymentMethod = PaymentOption.valueOf(input.nextLine().toUpperCase().replace(" ", "_"));
     }
 
     public float calculateValue() {
@@ -99,10 +111,11 @@ public class RidePayment implements Payment{
         totalValue = totalValue + paymentMethod.calculatePaymentFee(totalValue);
         this.amount = totalValue;
         
-        return totalValue;
+        return amount;
     }
 
     public void processPayment() {
-        // IMPLEMENTAR METODO PROCESS PAYMENT
+        System.out.printf("Forma de pagamento selecionada: %s.\n", paymentMethod.getMethod());
+        System.out.printf("Valor da corrida definido: %f.\n", calculateValue());
     }
 }

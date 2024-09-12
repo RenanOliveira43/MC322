@@ -71,7 +71,6 @@ public class Main {
                 if (cmd.equals("0") && !cabbies.isEmpty()) { 
                     System.out.println("Digite seu Cabbie ID:");
                     String id = input.nextLine();
-                    input.nextLine();
 
                     // encontra o motorista por id no ArrayList
                     for (Cabbie cabb : cabbies) { 
@@ -116,12 +115,11 @@ public class Main {
                 // interação com passageiro
                 else if (cmd.equals("1") && !passengers.isEmpty()) {
                     System.out.println("Digite seu user Id:");
-                    int id = input.nextInt();
-                    input.nextLine();
-                    
+                    String id = input.nextLine();
+
                     // encontra um passageiro por id no ArrayList passengers
                     for (Passenger pass : passengers) { 
-                        if (pass.getUserId() == id) {
+                        if (pass.getUserId().equals(id)) {
                             System.out.println("Digite 0 para solicitar uma corrida ou 1 para alterar informações (ou 'sair' para encerrar).");
                             cmd = input.nextLine();
 
@@ -136,13 +134,14 @@ public class Main {
                                 int randomCabbieIdx = ran.nextInt(cabbies.size()); // seleciona algum dos motoristas do ArrayList cabbies
                                 
                                 Vehicle cabVehicle = cabbies.get(randomCabbieIdx).getVehicle(); // pega o carro associado ao motorista para passar para Ride
-                                Ride newRide = new Ride(pass.getUserId(), cabbies.get(randomCabbieIdx).getCabbieId(), cabVehicle.getVehicleId());
+                                Ride newRide = new Ride(pass.getUserId());
                                 rides.add(newRide);
-                                newRide.requestRide(input);
+                                newRide.requestRide(input, cabbies.get(randomCabbieIdx).getCabbieId(), cabVehicle.getVehicleId());
+                                newRide.updateRideStatus("Em progresso");
                                 
                                 // processa o pagamento e finaliza a corrida
-                                RidePayment payment = new RidePayment();
-                                payment.processPayment(input, newRide.getRideId(), newRide.getFare());
+                                RidePayment payment = new RidePayment(input, pass.getUserId(), newRide.getStartTime(), newRide.getDistance());
+                                payment.processPayment();
                                 newRide.completeRide();
                             }
                             else {

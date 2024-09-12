@@ -8,7 +8,7 @@ public enum Location {
     PARQUE (0, 4, "Parque"),
     HOSPITAL (15, 11, "Hospital"),
     BIBLIOTECA (3, 19, "Biblioteca"),
-    ESTADIO (22, 25, "Estádio");
+    ESTADIO (22, 25, "Estadio");
 
     private final int x;
     private final int y;

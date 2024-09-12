@@ -60,19 +60,19 @@ public class CabbieManagerTest {
 
     @Test
     public void testDiurnalRideWithinRange() {
-        RidePayment ridePayment = new RidePayment("rideId", LocalDateTime.of(2022, 1, 1, 10, 0), 5.0f, "Dinheiro");
+        RidePayment ridePayment = new RidePayment("rideId", LocalDateTime.of(2022, 1, 1, 10, 0), 5.0f, "Cash");
         Assertions.assertEquals(15.00f, ridePayment.calculateValue(), 0);
     }
 
     @Test
     public void testDiurnalRideWithinRange2() {
-        RidePayment ridePayment = new RidePayment("rideId", LocalDateTime.of(2022, 1, 1, 10, 0), 18.0f, "Cartão de Débito");
+        RidePayment ridePayment = new RidePayment("rideId", LocalDateTime.of(2022, 1, 1, 10, 0), 18.0f, "Debit Card");
         Assertions.assertEquals(78f, ridePayment.calculateValue(), 0);
     }
 
     @Test
     public void testNocturnalRideWithinRange() {
-        RidePayment ridePayment = new RidePayment("rideId", LocalDateTime.of(2022, 1, 1, 20, 0), 5.0f, "Dinheiro");
+        RidePayment ridePayment = new RidePayment("rideId", LocalDateTime.of(2022, 1, 1, 20, 0), 5.0f, "Cash");
         Assertions.assertEquals(18.50f, ridePayment.calculateValue(), 0);
     }
 
@@ -81,12 +81,4 @@ public class CabbieManagerTest {
         RidePayment ridePayment = new RidePayment("rideId", LocalDateTime.of(2022, 1, 1, 20, 0), 22.0f, "Voucher");
         Assertions.assertEquals(94.25f, ridePayment.calculateValue(), 0);
     }
-
-
-
-
-
-
-
-
 }
