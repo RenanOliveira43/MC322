@@ -42,7 +42,7 @@ public class RidePayment implements Payment{
         this.paymentMethod = PaymentOption.valueOf(paymentOption.toUpperCase());
     }
 
-    public float calculateValue(float rideDistance) {
+    public float calculateValue() {
         float initialFee = 0.0f;
         float feePerKm = 0.0f; 
         LocalTime startNight = LocalTime.of(18, 0); // 18:00 horas

@@ -90,8 +90,8 @@ public class Ride {
         System.out.println("Digite o destino:");
         this.dropLocation = input.nextLine();
         
-        System.out.printf("Corrida solicitada por passageiro %d de %s para %s.\n", getUserId(), getPickupLocation(), getDropLocation());
-        System.out.printf("Corrida atendida por motorista %d.\n", getCabbieId());
+        System.out.printf("Corrida solicitada por passageiro %s de %s para %s.\n", getUserId(), getPickupLocation(), getDropLocation());
+        System.out.printf("Corrida atendida por motorista %s.\n", getCabbieId());
         
         this.status = "Solicitada";  // status inicial da corrida
     }

@@ -19,7 +19,7 @@ public enum PaymentOption {
         return rideValue * this.paymentFee;
     }
 
-    public float getRideValue() {
+    public float getPaymentFee() {
         return paymentFee;
     }
 
