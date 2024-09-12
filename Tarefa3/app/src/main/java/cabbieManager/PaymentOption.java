@@ -20,10 +20,10 @@ public enum PaymentOption {
     }
 
     public float getRideValue() {
-        return rideValue;
+        return paymentFee;
     }
 
     public String getMethod() {
-        return method;
+        return paymentMethod;
     }
 }
