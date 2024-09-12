@@ -152,7 +152,7 @@ public class Ride {
     
         // calcula a distância euclidiana
         float distance = (float) Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
-        this.distance = distance;
+        this.distance = Math.round(distance * 100) / 100.0f;
         
         return this.distance;
     }
