@@ -53,24 +53,24 @@ public class Cabbie extends Person{
         
         //System.out.println("Digite seu nome: ");
         //setName(input.nextLine());
-        setName(randomCabbie.getName());
+        this.name = randomCabbie.getName();
 
         //System.out.println("Digite seu email: ");
         //setEmail(input.nextLine());
-        setEmail(randomCabbie.getEmail());
+        this.email = randomCabbie.getEmail();
 
         //System.out.println("Digite seu telefone: ");
         //setPhone(input.nextLine());
-        setPhone(randomCabbie.getPhone());
+        this.phone = randomCabbie.getPhone();
 
         //System.out.println("Digite o numero da sua CNH: ");
         //setLicenseNumber(input.nextLine());
-        setLicenseNumber(randomCabbie.getLicenseNumber());
+        this.licenseNumber = randomCabbie.getLicenseNumber();
 
-        setRating(randomCabbie.getRate());
-        setCabbieId(randomCabbie.getCabbieId());
+        this.rating = randomCabbie.getRate();
+        this.cabbieId = randomCabbie.getCabbieId();
 
-        System.out.printf("Cadastro realizado com sucesso, %s! Seu ID de taxista é: %s\n", getName(), getCabbieId());
+        System.out.printf("Cadastro realizado com sucesso, %s! Seu Id de taxista é: %s\n", name, cabbieId);
     }
 
     @Override
@@ -78,23 +78,23 @@ public class Cabbie extends Person{
         switch (field) {
             case "0": // name
                 setName(newValue);
-                System.out.printf("Campo 'nome' atualizado com sucesso para motorista %s.\n", getCabbieId());
+                System.out.printf("Campo 'nome' atualizado com sucesso para motorista %s.\n", cabbieId);
                 break;
             case "1": // email
                 setEmail(newValue);
-                System.out.printf("Campo 'email' atualizado com sucesso para motorista %s.\n", getCabbieId());
+                System.out.printf("Campo 'email' atualizado com sucesso para motorista %s.\n", cabbieId);
                 break;
             case "2": // telefone
                 setPhone(newValue);
-                System.out.printf("Campo 'telefone' atualizado com sucesso para motorista %s.\n", getCabbieId());
+                System.out.printf("Campo 'telefone' atualizado com sucesso para motorista %s.\n", cabbieId);
                 break;
             case "3": // license number
                 setLicenseNumber(newValue);
-                System.out.printf("Campo 'license number' atualizado com sucesso para motorista %s.\n", getCabbieId());
+                System.out.printf("Campo 'license number' atualizado com sucesso para motorista %s.\n", cabbieId);
                 break;
             case "4": // rating
                 setRating(Float.parseFloat(newValue));
-                System.out.printf("Campo 'rating' atualizado com sucesso para motorista %s.\n", getCabbieId());
+                System.out.printf("Campo 'rating' atualizado com sucesso para motorista %s.\n", cabbieId);
                 break;
             default:
                 System.out.println("Campo não encontrado");

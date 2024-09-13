@@ -1,6 +1,7 @@
 // Renan Neves de Oliveira 257364
 
 package cabbieManager;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 import java.util.UUID;
@@ -107,16 +108,13 @@ public class Ride {
         this.vehicleId = vehicleId;
         this.status = "Solicitada";
         
-
-        // adicionar forma de entar com startTime. esse é um stub
-        this.startTime = LocalDateTime.of(2022, 1, 1, 10, 0);
-
+        // pega a data e o horario que a corrida é solicitada
+        this.startTime = LocalDateTime.now(); 
 
         System.out.println("Digite o ponto de partida:");
         String pickUp = input.nextLine().toUpperCase().replace(" ", "_");
         this.pickupLocation = Location.valueOf(pickUp);
 
-        
         System.out.println("Digite o destino:");
         String drop = input.nextLine().toUpperCase().replace(" ", "_");
         this.dropLocation = Location.valueOf(drop);
@@ -135,10 +133,14 @@ public class Ride {
     }
 
     public void completeRide() {
-        this.status = "Finalizada";
-        System.out.printf("Status da corrida: %s.\n", status);
+        float speed = 60.0f; // considera que a velocidade durante a corrida foi de 60 km/h
+        float rideTimeHours = distance / speed; // calcula o tempo da corrida em horas 
+        long rideTimeMinutes = (long)(rideTimeHours * 60); // converte de horas para minutos 
 
-        // adicionar forma de entar com endTime
+        this.endTime = startTime.plus(Duration.ofMinutes(rideTimeMinutes)); // soma o tempo em startRide e atribui o valor a endTime
+        this.status = "Finalizada";
+        
+        System.out.printf("Status da corrida: %s.\n", status);
     }
 
     public float calculateDistance() {
@@ -158,7 +160,6 @@ public class Ride {
         return this.distance;
     }
     
-
     @Override
     public String toString() {
         return "Ride {" +

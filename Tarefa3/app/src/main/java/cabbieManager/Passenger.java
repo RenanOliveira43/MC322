@@ -25,18 +25,18 @@ public class Passenger extends Person {
     
         //System.out.println("Digite seu nome: ");
         //setName(input.nextLine());
-        setName(randomPassenger.getName());
+        this.name = randomPassenger.getName();
 
         //System.out.println("Digite seu email: ");
         //setEmail(input.nextLine());
-        setEmail(randomPassenger.getEmail());
+        this.email = randomPassenger.getEmail();
 
         //System.out.println("Digite seu telefone: ");
         //setPhone(input.nextLine());
-        setPhone(randomPassenger.getPhone());
-        setUserId(randomPassenger.getPassengerId());
+        this.phone = randomPassenger.getPhone();
+        this.userId = randomPassenger.getPassengerId();
 
-        System.out.printf("Cadastro realizado com sucesso, %s! Seu Id de usuário é: %s\n", getName(), getUserId());
+        System.out.printf("Cadastro realizado com sucesso, %s! Seu Id de usuário é: %s\n", name, userId);
     }
 
     @Override
@@ -44,15 +44,15 @@ public class Passenger extends Person {
         switch (field) {
             case "0": // name
                 setName(newValue);
-                System.out.printf("Campo 'nome' atualizado com sucesso para passageiro %s.\s", getUserId());
+                System.out.printf("Campo 'nome' atualizado com sucesso para passageiro %s.\n", userId);
                 break;
             case "1": // telefone
                 setEmail(newValue);
-                System.out.printf("Campo 'telefone' atualizado com sucesso para passageiro %s.\n", getUserId());
+                System.out.printf("Campo 'telefone' atualizado com sucesso para passageiro %s.\n", userId);
                 break;
             case "2": // email
                 setPhone(newValue);
-                System.out.printf("Campo 'email' atualizado com sucesso para passageiro %s.\n", getUserId());
+                System.out.printf("Campo 'email' atualizado com sucesso para passageiro %s.\n", userId);
                 break;
             default:
                 System.out.println("Campo não encontrado.");

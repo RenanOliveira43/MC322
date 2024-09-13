@@ -56,37 +56,37 @@ public class Vehicle {
 
         //System.out.println("Digite o número de registro do veículo: ");
         //setRegistrationNumber(input.nextLine());
-        setRegistrationNumber(randomVehicle.getRegistrationNumber());
+        this.registrationNumber = randomVehicle.getRegistrationNumber();
 
         //System.out.println("Digite o modelo do veículo: ");
         //setModel(input.nextLine());
-        setModel(randomVehicle.getModel());
+        this.model = randomVehicle.getModel();
 
         //System.out.println("Digite o ano do veículo: ");
         //setYear(input.nextLine());
-        setYear(randomVehicle.getYear());
-        setVehicleId(randomVehicle.getVehicleId());
+        this.year = randomVehicle.getYear();
+        this.vehicleId = randomVehicle.getVehicleId();
 
-        System.out.printf("Veículo (%s %s) registrado com sucesso! Id do veículo: %s\n", getModel(), getRegistrationNumber(), getVehicleId());
+        System.out.printf("Veículo (%s %s) registrado com sucesso! Id do veículo: %s\n", model, registrationNumber, vehicleId);
     }
 
     public void updateVehicle(String field, String newValue) {
         switch (field) {
             case "0": // registration number
                 setRegistrationNumber(newValue);
-                System.out.printf("Campo 'registration number' atualizado com sucesso para veiculo %s.\n", getVehicleId());
+                System.out.printf("Campo 'registration number' atualizado com sucesso para veiculo %s.\n", vehicleId);
                 break;
             case "1": // model
                 setModel(newValue);
-                System.out.printf("Campo 'model' atualizado com sucesso para veiculo %s.\n", getVehicleId());
+                System.out.printf("Campo 'model' atualizado com sucesso para veiculo %s.\n", vehicleId);
                 break;
             case "2": // year
                 setYear(Integer.parseInt(newValue));
-                System.out.printf("Campo 'year' atualizado com sucesso para veiculo %s.\n", getVehicleId());
+                System.out.printf("Campo 'year' atualizado com sucesso para veiculo %s.\n", vehicleId);
                 break;
             case "3": // cabbie id
                 setCabbieId(newValue);
-                System.out.printf("Campo 'cabbie id' atualizado com sucesso para veiculo %s.\n", getVehicleId());
+                System.out.printf("Campo 'cabbie id' atualizado com sucesso para veiculo %s.\n", vehicleId);
                 break;
             default:
                 System.out.println("Campo não encontrado.");
