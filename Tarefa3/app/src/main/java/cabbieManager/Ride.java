@@ -108,16 +108,10 @@ public class Ride {
         this.vehicleId = vehicleId;
         this.status = "Solicitada";
         
-        // pega a data e o horario que a corrida é solicitada
-        this.startTime = LocalDateTime.now(); 
-
-        System.out.println("Digite o ponto de partida:");
-        String pickUp = input.nextLine().toUpperCase().replace(" ", "_");
-        this.pickupLocation = Location.valueOf(pickUp);
-
-        System.out.println("Digite o destino:");
-        String drop = input.nextLine().toUpperCase().replace(" ", "_");
-        this.dropLocation = Location.valueOf(drop);
+        this.startTime = LocalDateTime.now(); // pega a data e o horario que a corrida é solicitada
+        
+        this.pickupLocation = validateLocation(input, "Digite o ponto de partida:");
+        this.dropLocation = validateLocation(input, "Digite o destino:");
 
         System.out.printf("Corrida solicitada por passageiro %s de %s para %s.\n", userId, pickupLocation.getName(), dropLocation.getName());
         System.out.printf("Status da corrida: %s.\n", status);
@@ -133,7 +127,7 @@ public class Ride {
     }
 
     public void completeRide() {
-        float speed = 60.0f; // considera que a velocidade durante a corrida foi de 60 km/h
+        float speed = 60.0f; // considera que a velocidade media da corrida foi de 60 km/h
         float rideTimeHours = distance / speed; // calcula o tempo da corrida em horas 
         long rideTimeMinutes = (long)(rideTimeHours * 60); // converte de horas para minutos 
 
@@ -160,6 +154,20 @@ public class Ride {
         return this.distance;
     }
     
+    // metodo auxiliar para requestRide
+    private Location validateLocation(Scanner input, String mensagem) { 
+        while (true) {
+            try {
+                System.out.println(mensagem);
+                String local = input.nextLine().toUpperCase().replace(" ", "_");
+                return Location.valueOf(local); // retorna a localização se for válida
+            } 
+            catch (IllegalArgumentException e) {
+                System.out.println("Local inválido! Tente novamente.");
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return "Ride {" +

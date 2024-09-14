@@ -16,7 +16,7 @@ public enum PaymentOption {
     }
 
     public float calculatePaymentFee(float rideValue) {
-        return rideValue * this.paymentFee;
+        return rideValue * paymentFee;
     }
 
     public float getPaymentFee() {

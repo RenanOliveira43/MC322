@@ -4,7 +4,6 @@
 package cabbieManager;
 
 import org.junit.jupiter.api.Test;
-import cabbieManager.Location;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDateTime;

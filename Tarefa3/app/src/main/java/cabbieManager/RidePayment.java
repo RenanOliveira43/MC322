@@ -5,8 +5,7 @@ import java.util.Scanner;
 import java.time.LocalTime;
 import java.util.UUID;
 
-public class RidePayment implements Payment{
-    
+public class RidePayment implements Payment {
     private String paymentId;
     private String rideId;
     private LocalDateTime rideStartTime;
@@ -93,7 +92,7 @@ public class RidePayment implements Payment{
                 initialFee = 3.00f;
                 feePerKm = 4.00f;
             }
-        } else { // Para distâncias maiores que 20 km
+        } else { // para distâncias maiores que 20 km
             if (isNightRide) {
                 initialFee = 3.50f;
                 feePerKm = 4.00f;
@@ -106,30 +105,27 @@ public class RidePayment implements Payment{
         // calculo do valor total da corrida
         float totalValue = initialFee + (feePerKm * rideDistance);
         totalValue = totalValue + paymentMethod.calculatePaymentFee(totalValue);
-        this.amount = Math.round(totalValue * 100) / 100.0f;
+        totalValue = Math.round(totalValue * 100) / 100.0f;
         
-        return amount;
+        return totalValue;
     }
 
-    public void processPayment() {
-        Scanner input = new Scanner(System.in);
-        boolean validInput = false;
-
-        while (!validInput) {
+    public void processPayment(Scanner input) {
+        while (true) {
             try {
                 System.out.println("Digite a forma de pagamento:");
                 String userInput = input.nextLine().toUpperCase().replace(" ", "_");
                 
                 this.paymentMethod = PaymentOption.valueOf(userInput);
-                validInput = true;
-
                 System.out.printf("Forma de pagamento selecionada: %s.\n", paymentMethod.getMethod());
+                break;
             } 
             catch (IllegalArgumentException e) {
                 System.out.println("Forma de pagamento inválida. Por favor, insira uma forma válida.");
             }
         }
-
-        System.out.printf("Valor da corrida definido: %.2f.\n", calculateValue());
+        
+        this.amount = calculateValue();
+        System.out.printf("Valor da corrida definido: %.2f\n", amount);
     }
 }

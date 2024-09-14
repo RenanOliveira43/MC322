@@ -141,7 +141,7 @@ public class Main {
                                 
                                 // processa o pagamento e finaliza a corrida
                                 RidePayment payment = new RidePayment(pass.getUserId(), newRide.getStartTime(), newRide.getDistance());
-                                payment.processPayment();
+                                payment.processPayment(input);
                                 newRide.completeRide();
                             }
                             else {
