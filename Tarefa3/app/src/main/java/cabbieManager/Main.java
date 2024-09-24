@@ -135,9 +135,9 @@ public class Main {
                                 
                                 Vehicle cabVehicle = cabbies.get(randomCabbieIdx).getVehicle(); // pega o carro associado ao motorista para passar para Ride
                                 Ride newRide = new Ride(pass.getUserId());
-                                rides.add(newRide);
                                 newRide.requestRide(input, cabbies.get(randomCabbieIdx).getCabbieId(), cabVehicle.getVehicleId());
                                 newRide.updateRideStatus("Em progresso");
+                                rides.add(newRide);
                                 
                                 // processa o pagamento e finaliza a corrida
                                 RidePayment payment = new RidePayment(pass.getUserId(), newRide.getStartTime(), newRide.getDistance());
