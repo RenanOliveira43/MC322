@@ -124,6 +124,7 @@ public class Ride {
     }
 
     public void completeRide() {
+        this.status = "FINALIZADA";
         System.out.println("Corrida finalizada");
 
     }

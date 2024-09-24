@@ -9,6 +9,13 @@
             "name": "Main",
             "request": "launch",
             "mainClass": "cabbieManager.Main",
+            "projectName": "Tarefa04-app"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "cabbieManager.Main",
             "projectName": "app"
         }
     ]
