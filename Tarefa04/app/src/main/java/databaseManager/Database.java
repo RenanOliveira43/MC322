@@ -3,6 +3,10 @@ package databaseManager;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import cabbieManager.Cabbie;
 import cabbieManager.Passenger;
@@ -10,14 +14,15 @@ import cabbieManager.Ride;
 import cabbieManager.RidePayment;
 import cabbieManager.Vehicle;
 
-public class Database{
+@XmlRootElement
+public class Database {
     private List<Passenger> passengers = new ArrayList<>();
     private List<Cabbie> cabbies = new ArrayList<>();
     private List<Vehicle> vehicles = new ArrayList<>();
     private List<Ride> rides = new ArrayList<>();
     private List<RidePayment> paymentMethods = new ArrayList<>();
 
-    private final File file = new File("app/data/database.xml");
+    private final File file = new File("Tarefa04\\app\\data\\database.xml");
 
 
     public Database(){
@@ -29,22 +34,27 @@ public class Database{
         }
     }
     
+    @XmlElement
     public List<Passenger> getPassengers() {
         return this.passengers;
     }
 
+    @XmlElement
     public List<Cabbie> getCabbies() {
         return this.cabbies;
     }
-
+    
+    @XmlElement
     public List<Vehicle> getVehicles() {
         return this.vehicles;
     }
 
+    @XmlElement
     public List<Ride> getRides() {
         return this.rides;
     }
 
+    @XmlElement
     public List<RidePayment> getPaymentMethods() {
         return paymentMethods;
     }
@@ -102,10 +112,32 @@ public class Database{
     }
 
     private void save() {
-    
+        try {
+            JAXBContext context = JAXBContext.newInstance(Database.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            marshaller.marshal(this, file); // Marshals the entire `Database` object to XML
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+    
 
     private void load() {
-
+        try {
+            JAXBContext context = JAXBContext.newInstance(Database.class);
+            File xmlFile = new File("Tarefa04\\app\\data\\database.xml");
+            if (xmlFile.exists()) {
+                Database loadedDatabase = (Database) context.createUnmarshaller().unmarshal(xmlFile);
+                this.passengers = loadedDatabase.getPassengers();
+                this.cabbies = loadedDatabase.getCabbies();
+                this.vehicles = loadedDatabase.getVehicles();
+                this.rides = loadedDatabase.getRides();
+                this.paymentMethods = loadedDatabase.getPaymentMethods();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+    
 }

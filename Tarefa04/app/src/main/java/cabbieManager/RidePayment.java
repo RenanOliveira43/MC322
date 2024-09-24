@@ -2,12 +2,14 @@ package cabbieManager;
 import java.util.UUID;
 
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import utils.LocalDateTimeAdapter;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+@XmlRootElement
 public class RidePayment implements Payment{
     
     private String paymentId;
@@ -93,7 +95,8 @@ public class RidePayment implements Payment{
     public void processPayment() {
         System.out.println("Valor da corrida definido: " + this.amount);
     }
-
+    
+    @XmlElement
     public String getPaymentId() {
         return paymentId;
     }
@@ -102,6 +105,7 @@ public class RidePayment implements Payment{
         this.paymentId = paymentId;
     }
 
+    @XmlElement
     public String getRideId() {
         return rideId;
     }
@@ -111,6 +115,7 @@ public class RidePayment implements Payment{
     }
 
     @XmlJavaTypeAdapter(value = LocalDateTimeAdapter.class)
+    @XmlElement
     public LocalDateTime getRideStartTime() {
         return rideStartTime;
     }
@@ -119,6 +124,7 @@ public class RidePayment implements Payment{
         this.rideStartTime = rideStartTime;
     }
 
+    @XmlElement
     public float getRideDistance() {
         return rideDistance;
     }
@@ -127,6 +133,7 @@ public class RidePayment implements Payment{
         this.rideDistance = rideDistance;
     }
 
+    @XmlElement
     public float getAmount() {
         return amount;
     }
@@ -134,7 +141,8 @@ public class RidePayment implements Payment{
     public void setAmount(float amount) {
         this.amount = amount;
     }
-
+    
+    @XmlElement
     public PaymentOption getPaymentMethod() {
         return paymentMethod;
     }

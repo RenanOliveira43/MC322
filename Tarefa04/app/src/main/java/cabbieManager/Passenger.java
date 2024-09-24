@@ -1,9 +1,11 @@
 package cabbieManager;
 
 import com.google.common.base.Objects;
-
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import utils.PassengerInfoGenerator;
 
+@XmlRootElement
 public class Passenger extends Person{
     private String passengerId;
     private String email;
@@ -76,7 +78,8 @@ public class Passenger extends Person{
         return;
     
     }
-
+    
+    @XmlElement
     public String getEmail() {
         return email;
     }
@@ -84,7 +87,8 @@ public class Passenger extends Person{
     public void setEmail(String email) {
         this.email = email;
     }
-
+    
+    @XmlElement
     public String getName() {
         return name;
     }
@@ -93,6 +97,7 @@ public class Passenger extends Person{
         this.name = name;
     }
     
+    @XmlElement
     public String getPhone() {
         return phone;
     }
@@ -106,7 +111,8 @@ public class Passenger extends Person{
      * 
      * @return the ID of the passenger (a UUID)
      */
-    public String getPassengerId() {
+    @XmlElement
+     public String getPassengerId() {
         return this.passengerId;
     }
     public void setPassengerId(String passengerId){

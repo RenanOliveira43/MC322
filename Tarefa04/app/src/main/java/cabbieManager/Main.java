@@ -31,7 +31,7 @@ public class Main {
         p.update("name", "Estevão");
         v.updateVehicle("registrationNumber", "ABD123");
 
-        // Save Instancesinto the XML database
+        // Save Instances into the XML database
         db.update(cab);
         db.update(p);
         db.update(v);
@@ -98,7 +98,11 @@ public class Main {
 
         System.out.println("Printando dados:");
         System.out.println(db.getPassengers());
-
+        System.out.println(db.getCabbies());
+        System.out.println(db.getVehicles());
+        System.out.println(db.getRides());
+        System.out.println(db.getPaymentMethods());
+        
         System.out.println("-----------------------------------\n");
         System.out.println("Realizando nova corrida:");
         // Create Ride

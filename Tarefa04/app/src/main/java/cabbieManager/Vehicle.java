@@ -1,8 +1,10 @@
 package cabbieManager;
 import com.google.common.base.Objects;
-
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import utils.VehicleInfoGenerator;
 
+@XmlRootElement
 public class Vehicle {
     private String vehicleId;
     private String registrationNumber;
@@ -84,14 +86,16 @@ public class Vehicle {
      * 
      * @return the ID of the vehicle (a UUID)
      */
-    public String getVehicleId() {
+    @XmlElement
+     public String getVehicleId() {
         return this.vehicleId;
     }
 
     public void setVehicleId(String vehicleId) {
         this.vehicleId = vehicleId;
     }
-
+    
+    @XmlElement
     public String getRegistrationNumber() {
         return registrationNumber;
     }
@@ -99,6 +103,8 @@ public class Vehicle {
     public void setRegistrationNumber(String registrationNumber) {
         this.registrationNumber = registrationNumber;
     }
+
+    @XmlElement
     public String getModel() {
         return model;
     }
@@ -106,6 +112,8 @@ public class Vehicle {
     public void setModel(String model) {
         this.model = model;
     }
+
+    @XmlElement
     public int getYear() {
         return year;
     }
@@ -113,6 +121,8 @@ public class Vehicle {
     public void setYear(int year) {
         this.year = year;
     }
+
+    @XmlElement
     public String getCabbieId() {
         return cabbieId;
     }
