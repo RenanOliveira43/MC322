@@ -1,9 +1,12 @@
 package cabbieManager;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import com.google.common.base.Objects;
 
 import utils.CabbieInfoGenerator;
 
+@XmlRootElement
 public class Cabbie extends Person{
     private String cabbieId;
     private float rate;
@@ -100,7 +103,8 @@ public class Cabbie extends Person{
      * 
      * @return the ID of the cabbie (a UUID)
      */
-    public String getCabbieId() {
+    @XmlElement
+     public String getCabbieId() {
         return this.cabbieId;
     }
     
@@ -108,6 +112,7 @@ public class Cabbie extends Person{
         this.cabbieId = cabbieId;
     }
 
+    @XmlElement
     public String getName() {
         return this.name;
     }
@@ -116,6 +121,7 @@ public class Cabbie extends Person{
         this.name = name;
     }
 
+    @XmlElement
     public boolean getIsBusy(){
         return this.isBusy;
     }
@@ -123,19 +129,20 @@ public class Cabbie extends Person{
     public void setIsBusy(boolean value){
         this.isBusy = value;
     }
+
+    @XmlElement
     public float getRate() {
         return rate;
     }
-
 
     public void setRate(float rate) {
         this.rate = rate;
     }
 
+    @XmlElement
     public String getLicenseNumber() {
         return licenseNumber;
     }
-
 
     public void setLicenseNumber(String licenseNumber) {
         this.licenseNumber = licenseNumber;
