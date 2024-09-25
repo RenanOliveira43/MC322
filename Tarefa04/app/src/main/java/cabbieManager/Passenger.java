@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import utils.PassengerInfoGenerator;
 
-@XmlRootElement
+@XmlRootElement(name="passenger")
 public class Passenger extends Person{
     private String passengerId;
     private String email;
@@ -79,7 +79,7 @@ public class Passenger extends Person{
     
     }
     
-    @XmlElement
+    @XmlElement(name="email")
     public String getEmail() {
         return email;
     }
@@ -88,7 +88,7 @@ public class Passenger extends Person{
         this.email = email;
     }
     
-    @XmlElement
+    @XmlElement(name="name")
     public String getName() {
         return name;
     }
@@ -97,7 +97,7 @@ public class Passenger extends Person{
         this.name = name;
     }
     
-    @XmlElement
+    @XmlElement(name="phone")
     public String getPhone() {
         return phone;
     }
@@ -111,10 +111,11 @@ public class Passenger extends Person{
      * 
      * @return the ID of the passenger (a UUID)
      */
-    @XmlElement
-     public String getPassengerId() {
+    @XmlElement(name="passengerId")
+    public String getPassengerId() {
         return this.passengerId;
     }
+    
     public void setPassengerId(String passengerId){
         this.passengerId = passengerId;
     }

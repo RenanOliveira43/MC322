@@ -9,7 +9,7 @@ import utils.LocalDateTimeAdapter;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-@XmlRootElement
+@XmlRootElement(name="ridePayment")
 public class RidePayment implements Payment{
     
     private String paymentId;
@@ -32,7 +32,6 @@ public class RidePayment implements Payment{
         this.paymentMethod = this.selectPaymentMethod(paymentMethod);
         System.out.println("Forma de pagamento selecionada: " + paymentMethod);
         this.amount = this.calculateValue();
-
     }
 
 
@@ -96,7 +95,7 @@ public class RidePayment implements Payment{
         System.out.println("Valor da corrida definido: " + this.amount);
     }
     
-    @XmlElement
+    @XmlElement(name="paymentId")
     public String getPaymentId() {
         return paymentId;
     }
@@ -105,7 +104,7 @@ public class RidePayment implements Payment{
         this.paymentId = paymentId;
     }
 
-    @XmlElement
+    @XmlElement(name="rideid")
     public String getRideId() {
         return rideId;
     }
@@ -115,7 +114,7 @@ public class RidePayment implements Payment{
     }
 
     @XmlJavaTypeAdapter(value = LocalDateTimeAdapter.class)
-    @XmlElement
+    @XmlElement(name="startTime")
     public LocalDateTime getRideStartTime() {
         return rideStartTime;
     }
@@ -124,7 +123,7 @@ public class RidePayment implements Payment{
         this.rideStartTime = rideStartTime;
     }
 
-    @XmlElement
+    @XmlElement(name="distance")
     public float getRideDistance() {
         return rideDistance;
     }
@@ -133,7 +132,7 @@ public class RidePayment implements Payment{
         this.rideDistance = rideDistance;
     }
 
-    @XmlElement
+    @XmlElement(name="amount")
     public float getAmount() {
         return amount;
     }
@@ -142,7 +141,7 @@ public class RidePayment implements Payment{
         this.amount = amount;
     }
     
-    @XmlElement
+    @XmlElement(name="paymentMethod")
     public PaymentOption getPaymentMethod() {
         return paymentMethod;
     }

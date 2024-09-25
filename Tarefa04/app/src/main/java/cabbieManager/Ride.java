@@ -10,7 +10,7 @@ import com.google.common.base.Objects;
 
 import utils.LocalDateTimeAdapter;
 
-@XmlRootElement
+@XmlRootElement(name="ride")
 public class Ride {
     
     private String rideId;
@@ -129,7 +129,7 @@ public class Ride {
         System.out.println("Corrida finalizada");
 
     }
-    @XmlElement
+    @XmlElement(name="pickupLocation")
     public Location getPickLocation(){
         return this.pickupLocation;
     }
@@ -141,7 +141,7 @@ public class Ride {
         this.pickupLocation = pickupLocation;
     }
 
-    @XmlElement
+    @XmlElement(name="dropLocation")
     public Location getDropLocation(){
         return this.dropLocation;
     }
@@ -158,7 +158,7 @@ public class Ride {
      * 
      * @return the ID of this ride (a UUID)
      */
-    @XmlElement
+    @XmlElement(name="rideId")
     public String getRideId() {
         return this.rideId;
     }
@@ -173,7 +173,7 @@ public class Ride {
      * @return the start time of this ride (a LocalDateTime)
      */
     @XmlJavaTypeAdapter(value = LocalDateTimeAdapter.class)
-    @XmlElement
+    @XmlElement(name="startTime")
     public LocalDateTime getStartTime() {
         return this.startTime;
     }
@@ -183,7 +183,7 @@ public class Ride {
      * 
      * @return the distance of this ride (a float)
      */
-    @XmlElement
+    @XmlElement(name="distance")
     public float getRideDistance() {
         // TODO Auto-generated method stub
         return this.distance;
@@ -198,7 +198,7 @@ public class Ride {
         this.passengerId = passengerId;
     }
 
-    @XmlElement
+    @XmlElement(name="cabbieId")
     public String getCabbieId() {
         return cabbieId;
     }
@@ -207,7 +207,7 @@ public class Ride {
         this.cabbieId = cabbieId;
     }
 
-    @XmlElement
+    @XmlElement(name="vehicleId")
     public String getVehicleId() {
         return vehicleId;
     }
@@ -216,7 +216,7 @@ public class Ride {
         this.vehicleId = vehicleId;
     }
 
-    @XmlElement
+    @XmlElement(name="status")
     public String getStatus() {
         return status;
     }
@@ -225,7 +225,7 @@ public class Ride {
         this.status = status;
     }
 
-    @XmlElement
+    @XmlElement(name="distance")
     public float getDistance() {
         return distance;
     }

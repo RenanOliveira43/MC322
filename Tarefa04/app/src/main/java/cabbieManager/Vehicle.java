@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import utils.VehicleInfoGenerator;
 
-@XmlRootElement
+@XmlRootElement(name="vehicle")
 public class Vehicle {
     private String vehicleId;
     private String registrationNumber;
@@ -86,7 +86,7 @@ public class Vehicle {
      * 
      * @return the ID of the vehicle (a UUID)
      */
-    @XmlElement
+    @XmlElement(name="vehicleId")
      public String getVehicleId() {
         return this.vehicleId;
     }
@@ -95,7 +95,7 @@ public class Vehicle {
         this.vehicleId = vehicleId;
     }
     
-    @XmlElement
+    @XmlElement(name="registrationNumber")
     public String getRegistrationNumber() {
         return registrationNumber;
     }
@@ -104,7 +104,7 @@ public class Vehicle {
         this.registrationNumber = registrationNumber;
     }
 
-    @XmlElement
+    @XmlElement(name="model")
     public String getModel() {
         return model;
     }
@@ -113,7 +113,7 @@ public class Vehicle {
         this.model = model;
     }
 
-    @XmlElement
+    @XmlElement(name="year")
     public int getYear() {
         return year;
     }
@@ -122,7 +122,7 @@ public class Vehicle {
         this.year = year;
     }
 
-    @XmlElement
+    @XmlElement(name="cabbieid")
     public String getCabbieId() {
         return cabbieId;
     }
