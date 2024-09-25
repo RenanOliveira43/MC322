@@ -14,7 +14,7 @@ import cabbieManager.Ride;
 import cabbieManager.RidePayment;
 import cabbieManager.Vehicle;
 
-@XmlRootElement
+@XmlRootElement(name="teste")
 public class Database {
     private List<Passenger> passengers = new ArrayList<>();
     private List<Cabbie> cabbies = new ArrayList<>();
@@ -34,27 +34,27 @@ public class Database {
         }
     }
     
-    @XmlElement
+    @XmlElementWrapper()
     public List<Passenger> getPassengers() {
         return this.passengers;
     }
 
-    @XmlElement
+    @XmlElementWrapper()
     public List<Cabbie> getCabbies() {
         return this.cabbies;
     }
     
-    @XmlElement
+    @XmlElementWrapper()
     public List<Vehicle> getVehicles() {
         return this.vehicles;
     }
 
-    @XmlElement
+    @XmlElementWrapper()
     public List<Ride> getRides() {
         return this.rides;
     }
 
-    @XmlElement
+    @XmlElementWrapper()
     public List<RidePayment> getPaymentMethods() {
         return paymentMethods;
     }
