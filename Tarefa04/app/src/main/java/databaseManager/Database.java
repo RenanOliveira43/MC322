@@ -116,7 +116,7 @@ public class Database {
             JAXBContext context = JAXBContext.newInstance(Database.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            marshaller.marshal(this, file); // Marshals the entire `Database` object to XML
+            marshaller.marshal(this, file);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -139,5 +139,4 @@ public class Database {
             e.printStackTrace();
         }
     }
-    
 }

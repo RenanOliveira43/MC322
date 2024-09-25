@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <database>
     <cabbies>
-        <cabbieId>42dafbc4-5b64-4504-9269-dc0c77a8d563</cabbieId>
+        <cabbieId>98d4e60b-f913-436c-a594-5d301817408e</cabbieId>
         <isBusy>false</isBusy>
         <licenseNumber>FgH4IjK5</licenseNumber>
         <name>Martina</name>
         <rate>0.5</rate>
     </cabbies>
     <passengers>
-        <email>carolina.martins@email.com</email>
+        <email>henrique.costa@email.com</email>
         <name>Estevão</name>
-        <passengerId>422d7a33-67ae-4f2b-bdf4-2cb847965c00</passengerId>
-        <phone>+55 98 96789-0123</phone>
+        <passengerId>8c117c16-8680-48d6-ab2e-94fb029cbf0c</passengerId>
+        <phone>+55 95 97890-1234</phone>
     </passengers>
     <paymentMethods>
         <amount>39.68</amount>
-        <paymentId>68164cf2-2fcc-4721-a665-3a25d55bddfb</paymentId>
+        <paymentId>492d4c9e-a95d-4843-9b3c-7e0001094da7</paymentId>
         <paymentMethod>CREDIT_CARD</paymentMethod>
         <rideDistance>11.31</rideDistance>
-        <rideId>94076394-6553-41db-9621-1469fc34ac81</rideId>
-        <rideStartTime>2024-09-24T13:57:47.220429</rideStartTime>
+        <rideId>b0244088-1a32-4a41-a7fb-8b0cc91f152a</rideId>
+        <rideStartTime>2024-09-24T15:35:52.713745600</rideStartTime>
     </paymentMethods>
     <paymentMethods>
         <amount>64.84</amount>
-        <paymentId>7a58b029-e30e-479f-8e3f-9c3124d4461b</paymentId>
+        <paymentId>670d8300-5246-46e1-a851-24587f22cccb</paymentId>
         <paymentMethod>PIX</paymentMethod>
         <rideDistance>15.3</rideDistance>
-        <rideId>a3e974be-8922-4661-a43b-770a87b2408e</rideId>
-        <rideStartTime>2024-09-24T13:57:47.256333100</rideStartTime>
+        <rideId>b97e2ffc-f574-4974-a7d5-8451aba47867</rideId>
+        <rideStartTime>2024-09-24T15:35:52.753156</rideStartTime>
     </paymentMethods>
     <rides>
-        <cabbieId>42dafbc4-5b64-4504-9269-dc0c77a8d563</cabbieId>
+        <cabbieId>98d4e60b-f913-436c-a594-5d301817408e</cabbieId>
         <distance>11.31</distance>
         <dropLocation>ESTACAO_DE_TREM</dropLocation>
-        <passengerId>422d7a33-67ae-4f2b-bdf4-2cb847965c00</passengerId>
+        <passengerId>8c117c16-8680-48d6-ab2e-94fb029cbf0c</passengerId>
         <pickLocation>SHOPPING</pickLocation>
         <rideDistance>11.31</rideDistance>
-        <rideId>94076394-6553-41db-9621-1469fc34ac81</rideId>
-        <startTime>2024-09-24T13:57:47.220429</startTime>
+        <rideId>b0244088-1a32-4a41-a7fb-8b0cc91f152a</rideId>
+        <startTime>2024-09-24T15:35:52.713745600</startTime>
         <status>FINALIZADA</status>
-        <vehicleId>545ed4ad-10fd-413c-9b17-f04d57f35d4d</vehicleId>
+        <vehicleId>bb45a47a-3b0f-435b-8609-6a48b0498b11</vehicleId>
     </rides>
     <rides>
-        <cabbieId>42dafbc4-5b64-4504-9269-dc0c77a8d563</cabbieId>
+        <cabbieId>98d4e60b-f913-436c-a594-5d301817408e</cabbieId>
         <distance>11.31</distance>
         <dropLocation>ESTACAO_DE_TREM</dropLocation>
-        <passengerId>422d7a33-67ae-4f2b-bdf4-2cb847965c00</passengerId>
+        <passengerId>8c117c16-8680-48d6-ab2e-94fb029cbf0c</passengerId>
         <pickLocation>SHOPPING</pickLocation>
         <rideDistance>11.31</rideDistance>
-        <rideId>94076394-6553-41db-9621-1469fc34ac81</rideId>
-        <startTime>2024-09-24T13:57:47.220429</startTime>
+        <rideId>b0244088-1a32-4a41-a7fb-8b0cc91f152a</rideId>
+        <startTime>2024-09-24T15:35:52.713745600</startTime>
         <status>FINALIZADA</status>
-        <vehicleId>545ed4ad-10fd-413c-9b17-f04d57f35d4d</vehicleId>
+        <vehicleId>bb45a47a-3b0f-435b-8609-6a48b0498b11</vehicleId>
     </rides>
     <rides>
-        <cabbieId>42dafbc4-5b64-4504-9269-dc0c77a8d563</cabbieId>
+        <cabbieId>98d4e60b-f913-436c-a594-5d301817408e</cabbieId>
         <distance>15.3</distance>
         <dropLocation>BIBLIOTECA</dropLocation>
-        <passengerId>422d7a33-67ae-4f2b-bdf4-2cb847965c00</passengerId>
+        <passengerId>8c117c16-8680-48d6-ab2e-94fb029cbf0c</passengerId>
         <pickLocation>PARQUE</pickLocation>
         <rideDistance>15.3</rideDistance>
-        <rideId>a3e974be-8922-4661-a43b-770a87b2408e</rideId>
-        <startTime>2024-09-24T13:57:47.256333100</startTime>
-        <status>EM_PROGRESSO</status>
-        <vehicleId>545ed4ad-10fd-413c-9b17-f04d57f35d4d</vehicleId>
+        <rideId>b97e2ffc-f574-4974-a7d5-8451aba47867</rideId>
+        <startTime>2024-09-24T15:35:52.753156</startTime>
+        <status>FINALIZADA</status>
+        <vehicleId>bb45a47a-3b0f-435b-8609-6a48b0498b11</vehicleId>
     </rides>
     <vehicles>
-        <cabbieId>42dafbc4-5b64-4504-9269-dc0c77a8d563</cabbieId>
-        <model>Toyota</model>
+        <cabbieId>98d4e60b-f913-436c-a594-5d301817408e</cabbieId>
+        <model>Ford</model>
         <registrationNumber>ABD123</registrationNumber>
-        <vehicleId>545ed4ad-10fd-413c-9b17-f04d57f35d4d</vehicleId>
-        <year>2022</year>
+        <vehicleId>bb45a47a-3b0f-435b-8609-6a48b0498b11</vehicleId>
+        <year>1990</year>
     </vehicles>
 </database>

@@ -26,7 +26,6 @@ public class Main {
         db.insert(v);
 
         // Update Instances
-
         cab.update("name", "Martina");
         p.update("name", "Estevão");
         v.updateVehicle("registrationNumber", "ABD123");
@@ -85,7 +84,7 @@ public class Main {
         db.insert(payment2);
 
         //Finish Ride
-        ride.completeRide();
+        ride_2.completeRide();
         cab.update("isBusy", "false");
 
         db.update(ride);
@@ -105,6 +104,7 @@ public class Main {
         
         System.out.println("-----------------------------------\n");
         System.out.println("Realizando nova corrida:");
+        
         // Create Ride
         
     }
