@@ -6,7 +6,7 @@ import com.google.common.base.Objects;
 
 import utils.CabbieInfoGenerator;
 
-@XmlRootElement
+@XmlRootElement(name="cabbie")
 public class Cabbie extends Person{
     private String cabbieId;
     private float rate;
@@ -26,7 +26,6 @@ public class Cabbie extends Person{
      */
     @Override
     public void register() {
-
         CabbieInfoGenerator cab = new CabbieInfoGenerator();
         this.name = cab.getName();
         this.email = cab.getEmail();
@@ -36,7 +35,6 @@ public class Cabbie extends Person{
         this.licenseNumber = cab.getLicenseNumber();
         this.isBusy = false;
         System.out.println("Pessoa motorista " + this.cabbieId + " (" + this.name + ") criada com sucesso");
-    
     }
 
     /**
@@ -103,7 +101,7 @@ public class Cabbie extends Person{
      * 
      * @return the ID of the cabbie (a UUID)
      */
-    @XmlElement
+    @XmlElement(name="cabbieId")
      public String getCabbieId() {
         return this.cabbieId;
     }
@@ -112,7 +110,7 @@ public class Cabbie extends Person{
         this.cabbieId = cabbieId;
     }
 
-    @XmlElement
+    @XmlElement(name="name")
     public String getName() {
         return this.name;
     }
@@ -121,7 +119,7 @@ public class Cabbie extends Person{
         this.name = name;
     }
 
-    @XmlElement
+    @XmlElement(name="isBusy")
     public boolean getIsBusy(){
         return this.isBusy;
     }
@@ -130,7 +128,7 @@ public class Cabbie extends Person{
         this.isBusy = value;
     }
 
-    @XmlElement
+    @XmlElement(name="rate")
     public float getRate() {
         return rate;
     }
@@ -139,7 +137,7 @@ public class Cabbie extends Person{
         this.rate = rate;
     }
 
-    @XmlElement
+    @XmlElement(name="licenseNumber")
     public String getLicenseNumber() {
         return licenseNumber;
     }
@@ -147,7 +145,6 @@ public class Cabbie extends Person{
     public void setLicenseNumber(String licenseNumber) {
         this.licenseNumber = licenseNumber;
     }
-
 
     /**
      * Returns a string representation of the object.
@@ -170,5 +167,4 @@ public class Cabbie extends Person{
         Cabbie pas = (Cabbie) o;
         return Objects.equal(this.cabbieId, pas.getCabbieId());
     }
-
 }
