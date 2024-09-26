@@ -22,7 +22,7 @@ public class Database {
     private List<Ride> rides = new ArrayList<>();
     private List<RidePayment> paymentMethods = new ArrayList<>();
 
-    private final File file = new File("Tarefa04/app/data/database.xml");
+    private final File file = new File("Tarefa04\\app\\data\\database.xml");
 
 
     public Database(){
@@ -126,7 +126,7 @@ public class Database {
     private void load() {
         try {
             JAXBContext context = JAXBContext.newInstance(Database.class);
-            File xmlFile = new File("Tarefa04/app/data/database.xml");
+            File xmlFile = new File("Tarefa04\\app\\data\\database.xml");
             if (xmlFile.exists()) {
                 Database loadedDatabase = (Database) context.createUnmarshaller().unmarshal(xmlFile);
                 this.passengers = loadedDatabase.getPassengers();
