@@ -2,6 +2,7 @@ package cabbieManager;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
 import com.google.common.base.Objects;
 
 import utils.CabbieInfoGenerator;
@@ -90,8 +91,6 @@ public class Cabbie extends Person{
         if (validField) {
             System.out.println("Campo " + field + " foi atualizado com sucesso!");
         }
-
-        return;
     }
     
     
