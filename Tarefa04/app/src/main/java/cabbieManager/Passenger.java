@@ -29,7 +29,6 @@ public class Passenger extends Person{
         this.phone = pass.getPhone();
         this.passengerId = pass.getPassengerId();
         System.out.println("Pessoa passageira " + this.passengerId + " (" + this.name + ") criada com sucesso");
-    
     }
 
     /**
@@ -79,66 +78,107 @@ public class Passenger extends Person{
     
     }
     
+    /**
+     * Retrieves the email of this passenger.
+     *
+     * @return the email as a string.
+     */
     @XmlElement(name="email")
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets the email for this passenger.
+     *
+     * @param email The new email for the passenger.
+     */
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
+    /**
+     * Retrieves the name of this passenger.
+     *
+     * @return the name as a string.
+     */
     @XmlElement(name="name")
     public String getName() {
         return name;
     }
 
+    /**
+     * Sets the name for this passenger.
+     *
+     * @param name The new name for the passenger.
+     */
     public void setName(String name) {
         this.name = name;
     }
-    
+
+    /**
+     * Retrieves the phone number of this passenger.
+     *
+     * @return the phone number as a string.
+     */
     @XmlElement(name="phone")
     public String getPhone() {
         return phone;
     }
 
+    /**
+     * Sets the phone number for this passenger.
+     *
+     * @param phone The new phone number for the passenger.
+     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
     /**
-     * Gets the ID of the passenger.
-     * 
-     * @return the ID of the passenger (a UUID)
+     * Retrieves the ID of this passenger.
+     *
+     * @return the ID of the passenger as a UUID string.
      */
     @XmlElement(name="passengerId")
     public String getPassengerId() {
         return this.passengerId;
     }
-    
-    public void setPassengerId(String passengerId){
+
+    /**
+     * Sets the ID for this passenger.
+     *
+     * @param passengerId The new ID for the passenger.
+     */
+    public void setPassengerId(String passengerId) {
         this.passengerId = passengerId;
     }
 
     /**
-     * Returns a string representation of the object.
-     * 
-     * The format is: "email name phone passengerId"
-     * 
-     * @return a string representation of the object
+     * Returns a string representation of the passenger.
+     *
+     * The format is: "Passenger: email name phone passengerId".
+     *
+     * @return a string representation of the object.
      */
     @Override
     public String toString() {
-        return "Passenger: " + this.email + this.name + this.phone + this.passengerId;
+        return "Passenger: " + this.email + " " + this.name + " " + this.phone + " " + this.passengerId;
     }
 
+    /**
+     * Compares this passenger to another object for equality.
+     *
+     * @param o the object to compare with this passenger.
+     * @return true if the specified object is equal to this passenger; false otherwise.
+     */
     @Override
-    public boolean equals(Object o){
-        if(o == this){
+    public boolean equals(Object o) {
+        if (o == this) {
             return true;
         }
-        
         Passenger pas = (Passenger) o;
         return Objects.equal(this.passengerId, pas.getPassengerId());
     }
+
 }

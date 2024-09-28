@@ -23,8 +23,15 @@ public class RidePayment implements Payment{
         
     }
 
-    public RidePayment(String rideId, LocalDateTime rideStartTime, float rideDistance ,String paymentMethod) {
-
+    /**
+     * Constructs a RidePayment object with the specified parameters.
+     *
+     * @param rideId The ID of the ride.
+     * @param rideStartTime The start time of the ride as a LocalDateTime.
+     * @param rideDistance The distance of the ride in float.
+     * @param paymentMethod The payment method selected for the ride.
+     */
+    public RidePayment(String rideId, LocalDateTime rideStartTime, float rideDistance, String paymentMethod) {
         this.paymentId = UUID.randomUUID().toString();
         this.rideId = rideId;
         this.rideStartTime = rideStartTime;
@@ -33,7 +40,6 @@ public class RidePayment implements Payment{
         System.out.println("Forma de pagamento selecionada: " + paymentMethod);
         this.amount = this.calculateValue();
     }
-
 
     /**
      * Selects a PaymentOption from a given string.
@@ -83,69 +89,134 @@ public class RidePayment implements Payment{
         return this.amount;
     }
 
+    /**
+     * Checks if the ride start time is during nighttime hours.
+     *
+     * @return true if the ride starts before 6:00 AM or after 6:00 PM; false otherwise.
+     */
     private boolean isHorarioNoturno() {
-        return this.rideStartTime.toLocalTime().isBefore(LocalTime.of(6, 0)) || this.rideStartTime.toLocalTime().isAfter(LocalTime.of(18, 0));
+        return this.rideStartTime.toLocalTime().isBefore(LocalTime.of(6, 0)) || 
+            this.rideStartTime.toLocalTime().isAfter(LocalTime.of(18, 0));
     }
 
-    
     /**
-     * Processa o pagamento da corrida.
-    */
+     * Processes the payment for the ride, displaying the amount set for the ride.
+     */
     public void processPayment() {
         System.out.println("Valor da corrida definido: " + this.amount);
     }
-    
+
+    /**
+     * Retrieves the payment ID for this ride.
+     *
+     * @return the payment ID as a string.
+     */
     @XmlElement(name="paymentId")
     public String getPaymentId() {
         return paymentId;
     }
 
+    /**
+     * Sets the payment ID for this ride.
+     *
+     * @param paymentId The new payment ID.
+     */
     public void setPaymentId(String paymentId) {
         this.paymentId = paymentId;
     }
 
+    /**
+     * Retrieves the ride ID for this ride.
+     *
+     * @return the ride ID as a string.
+     */
     @XmlElement(name="rideid")
     public String getRideId() {
         return rideId;
     }
 
+    /**
+     * Sets the ride ID for this ride.
+     *
+     * @param rideId The new ride ID.
+     */
     public void setRideId(String rideId) {
         this.rideId = rideId;
     }
 
+    /**
+     * Retrieves the start time of this ride.
+     *
+     * @return the start time as a LocalDateTime object.
+     */
     @XmlJavaTypeAdapter(value = LocalDateTimeAdapter.class)
     @XmlElement(name="startTime")
     public LocalDateTime getRideStartTime() {
         return rideStartTime;
     }
 
+    /**
+     * Sets the start time for this ride.
+     *
+     * @param rideStartTime The new start time for the ride.
+     */
     public void setRideStartTime(LocalDateTime rideStartTime) {
         this.rideStartTime = rideStartTime;
     }
 
+    /**
+     * Retrieves the distance of this ride.
+     *
+     * @return the distance of the ride as a float value.
+     */
     @XmlElement(name="distance")
     public float getRideDistance() {
         return rideDistance;
     }
 
+    /**
+     * Sets the distance for this ride.
+     *
+     * @param rideDistance The new distance for the ride.
+     */
     public void setRideDistance(float rideDistance) {
         this.rideDistance = rideDistance;
     }
 
+    /**
+     * Retrieves the amount charged for this ride.
+     *
+     * @return the amount as a float value.
+     */
     @XmlElement(name="amount")
     public float getAmount() {
         return amount;
     }
 
+    /**
+     * Sets the amount charged for this ride.
+     *
+     * @param amount The new amount for the ride.
+     */
     public void setAmount(float amount) {
         this.amount = amount;
     }
-    
+
+    /**
+     * Retrieves the payment method used for this ride.
+     *
+     * @return the payment method as a PaymentOption object.
+     */
     @XmlElement(name="paymentMethod")
     public PaymentOption getPaymentMethod() {
         return paymentMethod;
     }
 
+    /**
+     * Sets the payment method for this ride.
+     *
+     * @param paymentMethod The new payment method.
+     */
     public void setPaymentMethod(PaymentOption paymentMethod) {
         this.paymentMethod = paymentMethod;
     }

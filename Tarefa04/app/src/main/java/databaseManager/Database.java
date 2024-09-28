@@ -24,93 +24,133 @@ public class Database {
 
     private final File file = new File("Tarefa04\\app\\data\\database.xml");
 
-
     public Database(){
     }
 
-    public Database(boolean load){
-        if(load){
+    /**
+     * Constructs a Database object. If load is true, it loads the database from a file.
+     *
+     * @param load If true, the database will be loaded from a file.
+     */
+    public Database(boolean load) {
+        if (load) {
             this.load();
         }
     }
-    
+
+    /**
+     * Retrieves the list of passengers.
+     *
+     * @return a list of Passenger objects.
+     */
     @XmlElementWrapper(name="passengers")
     public List<Passenger> getPassengers() {
         return this.passengers;
     }
 
+    /**
+     * Retrieves the list of cabbies.
+     *
+     * @return a list of Cabbie objects.
+     */
     @XmlElementWrapper(name="cabbies")
     public List<Cabbie> getCabbies() {
         return this.cabbies;
     }
-    
+
+    /**
+     * Retrieves the list of vehicles.
+     *
+     * @return a list of Vehicle objects.
+     */
     @XmlElementWrapper(name="vehicles")
     public List<Vehicle> getVehicles() {
         return this.vehicles;
     }
 
+    /**
+     * Retrieves the list of rides.
+     *
+     * @return a list of Ride objects.
+     */
     @XmlElementWrapper(name="rides")
     public List<Ride> getRides() {
         return this.rides;
     }
 
+    /**
+     * Retrieves the list of payment methods.
+     *
+     * @return a list of RidePayment objects.
+     */
     @XmlElementWrapper(name="payments")
     public List<RidePayment> getPaymentMethods() {
         return paymentMethods;
     }
-    
-    public void insert(Object object){
+
+    /**
+     * Inserts a new object (Passenger, Cabbie, Vehicle, Ride, or RidePayment) into the database.
+     *
+     * @param object The object to be inserted into the database.
+     */
+    public void insert(Object object) {
         if (object instanceof Passenger) {
             this.passengers.add((Passenger) object);
-        }
-        else if (object instanceof Cabbie) {
+        } else if (object instanceof Cabbie) {
             this.cabbies.add((Cabbie) object);
-        }
-        else if (object instanceof Vehicle) {
+        } else if (object instanceof Vehicle) {
             this.vehicles.add((Vehicle) object);
-        }
-        else if (object instanceof Ride) {
+        } else if (object instanceof Ride) {
             this.rides.add((Ride) object);
-        }
-        else if (object instanceof RidePayment) {
+        } else if (object instanceof RidePayment) {
             this.paymentMethods.add((RidePayment) object);
         }   
-        
+
         this.save();
     }
 
-    private <T> void update(T newItem, List<T> data){
-        for(int i=0;i<data.size();i++){
+    /**
+     * Updates an existing item in the specified data list if it exists.
+     *
+     * @param newItem The new item to replace the existing one.
+     * @param data The list of items where the update will be performed.
+     * @param <T> The type of the items in the list.
+     */
+    private <T> void update(T newItem, List<T> data) {
+        for (int i = 0; i < data.size(); i++) {
             Object item = data.get(i);
 
-            if(item.equals(newItem)){
+            if (item.equals(newItem)) {
                 data.set(i, newItem);
             }
         }
     }
 
-    public void update(Object object){
-        if (object instanceof Passenger){
-            this.update((Passenger)object, this.passengers);
-        }
-        else if (object instanceof Cabbie) {
-            this.update((Cabbie)object, this.cabbies);
-        }
-        else if (object instanceof Vehicle) {
-            this.update((Vehicle)object, this.vehicles);
-        }
-        else if (object instanceof Ride) {
-            this.update((Ride)object, this.rides);
-        }
-        else if (object instanceof RidePayment) {
-            this.update((RidePayment)object, this.paymentMethods);
-        }
-        else{
+    /**
+     * Updates an existing object (Passenger, Cabbie, Vehicle, Ride, or RidePayment) in the database.
+     *
+     * @param object The object to be updated in the database.
+     */
+    public void update(Object object) {
+        if (object instanceof Passenger) {
+            this.update((Passenger) object, this.passengers);
+        } else if (object instanceof Cabbie) {
+            this.update((Cabbie) object, this.cabbies);
+        } else if (object instanceof Vehicle) {
+            this.update((Vehicle) object, this.vehicles);
+        } else if (object instanceof Ride) {
+            this.update((Ride) object, this.rides);
+        } else if (object instanceof RidePayment) {
+            this.update((RidePayment) object, this.paymentMethods);
+        } else {
             return;
         }
         this.save();       
     }
 
+    /**
+     * Saves the current state of the database to an XML file.
+     */
     private void save() {
         try {
             JAXBContext context = JAXBContext.newInstance(Database.class);
@@ -121,8 +161,10 @@ public class Database {
             e.printStackTrace();
         }
     }
-    
 
+    /**
+     * Loads the database from an XML file if it exists.
+     */
     private void load() {
         try {
             JAXBContext context = JAXBContext.newInstance(Database.class);

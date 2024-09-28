@@ -31,8 +31,6 @@ public enum PaymentOption {
         return null;
     }
 
-
-
     /**
      * Calculates the payment fee for a given value.
      *
@@ -43,7 +41,4 @@ public enum PaymentOption {
     float calculatePaymentFee(float value) {
         return value * fee;
     }
-    
-
-
 }

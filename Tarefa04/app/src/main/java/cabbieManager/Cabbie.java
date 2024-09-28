@@ -17,7 +17,6 @@ public class Cabbie extends Person{
     public Cabbie() {
     }
 
-    
     /**
      * Registers a cabbie by generating random information.
      * This method assigns a random name, email, phone number, cabbie ID, rate and
@@ -105,65 +104,115 @@ public class Cabbie extends Person{
      public String getCabbieId() {
         return this.cabbieId;
     }
-    
+        
+    /**
+     * Sets the cabbie ID for this cabbie.
+     *
+     * @param cabbieId The new cabbie ID.
+     */
     public void setCabbieId(String cabbieId) {
         this.cabbieId = cabbieId;
     }
 
+    /**
+     * Retrieves the name of this cabbie.
+     *
+     * @return the name as a string.
+     */
     @XmlElement(name="name")
     public String getName() {
         return this.name;
     }
 
-    public void setName(String name){
+    /**
+     * Sets the name for this cabbie.
+     *
+     * @param name The new name for the cabbie.
+     */
+    public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Retrieves the busy status of this cabbie.
+     *
+     * @return true if the cabbie is busy; false otherwise.
+     */
     @XmlElement(name="isBusy")
-    public boolean getIsBusy(){
+    public boolean getIsBusy() {
         return this.isBusy;
     }
 
-    public void setIsBusy(boolean value){
+    /**
+     * Sets the busy status for this cabbie.
+     *
+     * @param value The new busy status for the cabbie.
+     */
+    public void setIsBusy(boolean value) {
         this.isBusy = value;
     }
 
+    /**
+     * Retrieves the rate of this cabbie.
+     *
+     * @return the rate as a float value.
+     */
     @XmlElement(name="rate")
     public float getRate() {
         return rate;
     }
 
+    /**
+     * Sets the rate for this cabbie.
+     *
+     * @param rate The new rate for the cabbie.
+     */
     public void setRate(float rate) {
         this.rate = rate;
     }
 
+    /**
+     * Retrieves the license number of this cabbie.
+     *
+     * @return the license number as a string.
+     */
     @XmlElement(name="licenseNumber")
     public String getLicenseNumber() {
         return licenseNumber;
     }
 
+    /**
+     * Sets the license number for this cabbie.
+     *
+     * @param licenseNumber The new license number for the cabbie.
+     */
     public void setLicenseNumber(String licenseNumber) {
         this.licenseNumber = licenseNumber;
     }
 
     /**
-     * Returns a string representation of the object.
-     * 
-     * The format is: "email name phone cabbieId rate licenseNumber"
-     * 
-     * @return a string representation of the object
+     * Returns a string representation of the cabbie.
+     *
+     * The format is: "Cabbie: cabbieId name".
+     *
+     * @return a string representation of the object.
      */
     @Override
     public String toString() {
-        return "Cabbie:" + this.cabbieId + this.name;
+        return "Cabbie: " + this.cabbieId + " " + this.name;
     }
 
+    /**
+     * Compares this cabbie to another object for equality.
+     *
+     * @param o the object to compare with this cabbie.
+     * @return true if the specified object is equal to this cabbie; false otherwise.
+     */
     @Override
-    public boolean equals(Object o){
-        if(o == this){
+    public boolean equals(Object o) {
+        if (o == this) {
             return true;
         }
-        
         Cabbie pas = (Cabbie) o;
         return Objects.equal(this.cabbieId, pas.getCabbieId());
     }

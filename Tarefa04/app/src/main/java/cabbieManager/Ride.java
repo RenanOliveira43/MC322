@@ -124,29 +124,47 @@ public class Ride {
 
     }
 
+    /**
+     * Finalizes the ride by updating its status to "FINALIZADA" 
+     * and printing a message indicating the ride has been completed.
+     */
     public void completeRide() {
         this.status = "FINALIZADA";
         System.out.println("Corrida finalizada");
-
     }
+
+    /**
+     * Retrieves the pickup location of this ride.
+     *
+     * @return the pickup location as a Location object.
+     */
     @XmlElement(name="pickupLocation")
-    public Location getPickLocation(){
+    public Location getPickLocation() {
         return this.pickupLocation;
     }
+
     /**
      * Sets the pickup location of this ride.
+     *
      * @param pickupLocation The new pickup location.
      */
     public void setPickupLocation(Location pickupLocation) {
         this.pickupLocation = pickupLocation;
     }
 
+    /**
+     * Retrieves the drop location of this ride.
+     *
+     * @return the drop location as a Location object.
+     */
     @XmlElement(name="dropLocation")
-    public Location getDropLocation(){
+    public Location getDropLocation() {
         return this.dropLocation;
     }
+
     /**
      * Sets the drop location of this ride.
+     *
      * @param dropLocation The new drop location.
      */
     public void setDropLocation(Location dropLocation) {
@@ -154,23 +172,28 @@ public class Ride {
     }
 
     /**
-     * Gets the ID of this ride.
-     * 
-     * @return the ID of this ride (a UUID)
+     * Retrieves the ID of this ride.
+     *
+     * @return the ID of this ride as a UUID string.
      */
     @XmlElement(name="rideId")
     public String getRideId() {
         return this.rideId;
     }
 
-    public void setRideId(String rideId){
+    /**
+     * Sets the ID of this ride.
+     *
+     * @param rideId The new ride ID.
+     */
+    public void setRideId(String rideId) {
         this.rideId = rideId;
     }
 
     /**
-     * Gets the start time of this ride.
-     * 
-     * @return the start time of this ride (a LocalDateTime)
+     * Retrieves the start time of this ride.
+     *
+     * @return the start time of this ride as a LocalDateTime object.
      */
     @XmlJavaTypeAdapter(value = LocalDateTimeAdapter.class)
     @XmlElement(name="startTime")
@@ -179,72 +202,120 @@ public class Ride {
     }
 
     /**
-     * Gets the distance of this ride.
-     * 
-     * @return the distance of this ride (a float)
+     * Retrieves the distance of this ride.
+     *
+     * @return the distance of this ride as a float value.
      */
     @XmlElement(name="distance")
     public float getRideDistance() {
-        // TODO Auto-generated method stub
         return this.distance;
     }
 
+    /**
+     * Retrieves the passenger ID associated with this ride.
+     *
+     * @return the passenger ID as a string.
+     */
     @XmlElement
     public String getPassengerId() {
         return passengerId;
     }
 
+    /**
+     * Sets the passenger ID for this ride.
+     *
+     * @param passengerId The new passenger ID.
+     */
     public void setPassengerId(String passengerId) {
         this.passengerId = passengerId;
     }
 
+    /**
+     * Retrieves the cabbie ID associated with this ride.
+     *
+     * @return the cabbie ID as a string.
+     */
     @XmlElement(name="cabbieId")
     public String getCabbieId() {
         return cabbieId;
     }
 
+    /**
+     * Sets the cabbie ID for this ride.
+     *
+     * @param cabbieId The new cabbie ID.
+     */
     public void setCabbieId(String cabbieId) {
         this.cabbieId = cabbieId;
     }
 
+    /**
+     * Retrieves the vehicle ID associated with this ride.
+     *
+     * @return the vehicle ID as a string.
+     */
     @XmlElement(name="vehicleId")
     public String getVehicleId() {
         return vehicleId;
     }
 
+    /**
+     * Sets the vehicle ID for this ride.
+     *
+     * @param vehicleId The new vehicle ID.
+     */
     public void setVehicleId(String vehicleId) {
         this.vehicleId = vehicleId;
     }
 
+    /**
+     * Retrieves the current status of this ride.
+     *
+     * @return the status of this ride as a string.
+     */
     @XmlElement(name="status")
     public String getStatus() {
         return status;
     }
 
+    /**
+     * Sets the status of this ride.
+     *
+     * @param status The new status for the ride.
+     */
     public void setStatus(String status) {
         this.status = status;
     }
 
-    @XmlElement(name="distance")
-    public float getDistance() {
-        return distance;
-    }
-    
+    /**
+     * Sets the distance of this ride.
+     *
+     * @param distance The new distance for the ride.
+     */
     public void setDistance(float distance) {
         this.distance = distance;
     }
 
-
+    /**
+     * Compares this ride to another object for equality.
+     *
+     * @param o the object to compare with this ride.
+     * @return true if the specified object is equal to this ride; false otherwise.
+     */
     @Override
-    public boolean equals(Object o){
-        if(o == this){
+    public boolean equals(Object o) {
+        if (o == this) {
             return true;
         }
-        
         Ride pas = (Ride) o;
         return Objects.equal(this.rideId, pas.getRideId());
     }
-    
+
+    /**
+     * Returns a string representation of this ride.
+     *
+     * @return a string that represents this ride, including its ID.
+     */
     @Override
     public String toString() {
         return "Ride: " + this.rideId;

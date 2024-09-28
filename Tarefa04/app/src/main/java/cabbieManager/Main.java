@@ -45,8 +45,8 @@ public class Main {
         ride.updateRideStatus("ACEITA", cab.getCabbieId(), v.getVehicleId());
         ride.updateRideStatus("EM_PROGRESSO", null, null);
  
+        db.update(ride);
         db.update(cab);
-        db.insert(ride);
 
         //Payment
         RidePayment payment = new RidePayment(ride.getRideId(), ride.getStartTime(), ride.getRideDistance(), "Cartão de Crédito");
@@ -60,7 +60,6 @@ public class Main {
 
         db.update(ride);
         db.update(cab);
-
 
         // Create Ride
         Ride ride_2 = new Ride(db.getPassengers().get(0).getPassengerId());
@@ -91,7 +90,7 @@ public class Main {
         db.update(cab);
 
         System.out.println("-----------------------------------");
-        System.out.println("Fechando e reabrindo banco de dados\n");
+        System.out.println("Fechando e reabrindo banco de dados");
 
         db = new Database(true);
 
@@ -102,10 +101,31 @@ public class Main {
         System.out.println(db.getRides());
         System.out.println(db.getPaymentMethods());
         
-        System.out.println("-----------------------------------\n");
+        System.out.println("-----------------------------------");
         System.out.println("Realizando nova corrida:");
         
-        // Create Ride
-        
+        Ride ride_3 = new Ride(db.getPassengers().get(0).getPassengerId());
+        ride_3.requestRide("Escola", "Hospital");
+        db.insert(ride_3);
+
+        // Accept the ride
+        cab.update("isBusy", "true");
+        ride_3.updateRideStatus("ACEITA", cab.getCabbieId(), v.getVehicleId());
+        ride_3.updateRideStatus("EM_PROGRESSO", null, null);
+
+        db.update(cab);
+        db.update(ride_3);
+
+        RidePayment payment_3 = new RidePayment(ride_3.getRideId(), ride_3.getStartTime(), ride_3.getRideDistance(), "Cartão de Débito");
+        payment_3.processPayment();
+
+        db.insert(payment_3);
+
+        // Finish the new ride
+        ride_3.completeRide();
+        cab.update("isBusy", "false");
+
+        db.update(ride_3);
+        db.update(cab);
     }
 }

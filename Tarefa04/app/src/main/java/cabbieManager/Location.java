@@ -15,12 +15,25 @@ public enum Location {
     private final int y;
     private final String name;
 
+    /**
+     * Constructs a Location object with the specified coordinates and name.
+     *
+     * @param x The x-coordinate of the location.
+     * @param y The y-coordinate of the location.
+     * @param name The name of the location.
+     */
     Location(int x, int y, String name) {
         this.x = x;
         this.y = y;
         this.name = name;
     }
 
+    /**
+     * Returns the Location instance associated with the specified name.
+     *
+     * @param name The name of the location to find.
+     * @return The Location instance with the specified name, or null if no such location exists.
+     */
     public static Location valueOfName(String name) {
         for (Location location : Location.values()) {
             if (location.name.equals(name)) {
@@ -29,7 +42,6 @@ public enum Location {
         }
         return null;
     }
-
 
     /**
      * Returns the x-coordinate of the location.
@@ -55,6 +67,4 @@ public enum Location {
     public String getName() {
         return this.name;
     }
-
-
 }
