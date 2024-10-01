@@ -5,51 +5,56 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import utils.PassengerInfoGenerator;
 
+/**
+ * Represents a passenger that extends the {@code Person} class.
+ * This class contains information such as passenger ID, email, name, and phone number.
+ * 
+ * The class includes methods to register and update passenger information.
+ * 
+ * Uses JAXB annotations for XML manipulation.
+ */
 @XmlRootElement(name="passenger")
-public class Passenger extends Person{
+public class Passenger extends Person {
     private String passengerId;
     private String email;
     private String name;
     private String phone;
 
+    /**
+     * Default constructor for the {@code Passenger} class.
+     */
     public Passenger() {
     }
 
     /**
      * Registers a passenger by generating random information.
-     * This method assigns a random email, name, phone number, and user ID to the passenger.
-     * 
+     * This method assigns a random email, name, phone number, and passenger ID.
      */
     @Override
     public void register() {
-
         PassengerInfoGenerator pass = new PassengerInfoGenerator();
         this.email = pass.getEmail();
         this.name = pass.getName();
         this.phone = pass.getPhone();
         this.passengerId = pass.getPassengerId();
-        System.out.println("Pessoa passageira " + this.passengerId + " (" + this.name + ") criada com sucesso");
+        System.out.println("Passenger " + this.passengerId + " (" + this.name + ") created successfully");
     }
 
     /**
      * Updates a field of the passenger.
      * 
-     * @param field The field to be updated.
+     * @param field The field to be updated. Valid fields are:
+     *              <ul>
+     *                <li>name</li>
+     *                <li>email</li>
+     *                <li>phone</li>
+     *                <li>passengerId</li>
+     *              </ul>
      * @param newValue The new value for the field.
-     * 
-     * The valid fields are:
-     * <ul>
-     * <li>name</li>
-     * <li>email</li>
-     * <li>phone</li>
-     * <li>passengerId</li>
-     * </ul>
-     * 
-     * If the field is not valid, a message is printed and the field is not updated.
+     * If the field is invalid, a message is printed and the field is not updated.
      */
     @Override
-    public void update(String field, String newValue){
-
+    public void update(String field, String newValue) {
         boolean validField = true;
 
         switch (field) {
@@ -66,18 +71,15 @@ public class Passenger extends Person{
                 this.passengerId = newValue;
                 break;
             default:
-                System.out.println("Campo inválido");
-                validField = false;       
+                System.out.println("Invalid field");
+                validField = false;
         }
 
         if (validField) {
-            System.out.println("Campo " + field + " atualizado com sucesso!");
+            System.out.println("Field " + field + " updated successfully!");
         }
-
-        return;
-    
     }
-    
+
     /**
      * Retrieves the email of this passenger.
      *
@@ -156,7 +158,7 @@ public class Passenger extends Person{
 
     /**
      * Returns a string representation of the passenger.
-     *
+     * 
      * The format is: "Passenger: email name phone passengerId".
      *
      * @return a string representation of the object.
@@ -170,7 +172,7 @@ public class Passenger extends Person{
      * Compares this passenger to another object for equality.
      *
      * @param o the object to compare with this passenger.
-     * @return true if the specified object is equal to this passenger; false otherwise.
+     * @return {@code true} if the specified object is equal to this passenger; {@code false} otherwise.
      */
     @Override
     public boolean equals(Object o) {
@@ -180,5 +182,4 @@ public class Passenger extends Person{
         Passenger pas = (Passenger) o;
         return Objects.equal(this.passengerId, pas.getPassengerId());
     }
-
 }

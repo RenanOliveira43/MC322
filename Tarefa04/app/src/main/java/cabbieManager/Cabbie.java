@@ -7,22 +7,33 @@ import com.google.common.base.Objects;
 
 import utils.CabbieInfoGenerator;
 
+/**
+ * Represents a cab driver (Cabbie) that extends the {@code Person} class.
+ * This class contains information such as the cabbie ID, rating, license number,
+ * busy status, and name.
+ * 
+ * The class includes methods to register, update fields, and manage cabbie information.
+ * 
+ * Uses JAXB annotations for XML manipulation.
+ */
 @XmlRootElement(name="cabbie")
-public class Cabbie extends Person{
+public class Cabbie extends Person {
     private String cabbieId;
     private float rate;
     private String licenseNumber;
     private boolean isBusy;
     private String name;
 
+    /**
+     * Default constructor for the {@code Cabbie} class.
+     */
     public Cabbie() {
     }
 
     /**
      * Registers a cabbie by generating random information.
-     * This method assigns a random name, email, phone number, cabbie ID, rate and
-     * license number to the cabbie.
-     * 
+     * This method assigns a random name, email, phone number, cabbie ID,
+     * rating, and license number to the cabbie.
      */
     @Override
     public void register() {
@@ -34,30 +45,27 @@ public class Cabbie extends Person{
         this.rate = cab.getRate();
         this.licenseNumber = cab.getLicenseNumber();
         this.isBusy = false;
-        System.out.println("Pessoa motorista " + this.cabbieId + " (" + this.name + ") criada com sucesso");
+        System.out.println("Cabbie " + this.cabbieId + " (" + this.name + ") created successfully");
     }
 
     /**
      * Updates a field of the cabbie.
      * 
-     * @param field The field to be updated.
+     * @param field The field to be updated. Valid fields are:
+     *              <ul>
+     *                <li>name</li>
+     *                <li>email</li>
+     *                <li>phone</li>
+     *                <li>cabbieId</li>
+     *                <li>rate</li>
+     *                <li>licenseNumber</li>
+     *                <li>isBusy</li>
+     *              </ul>
      * @param newValue The new value for the field.
-     * 
-     * The valid fields are:
-     * <ul>
-     * <li>name</li>
-     * <li>email</li>
-     * <li>phone</li>
-     * <li>cabbieId</li>
-     * <li>rate</li>
-     * <li>licenseNumber</li>
-     * </ul>
-     * 
-     * If the field is not valid, a message is printed and the field is not updated.
+     * If the field is invalid, a message is printed and the field is not updated.
      */
     @Override
-    public void update(String field, String newValue){
-
+    public void update(String field, String newValue) {
         boolean validField = true;
 
         switch (field) {
@@ -84,29 +92,28 @@ public class Cabbie extends Person{
                 break;
             default:
                 validField = false;
-                System.out.println("Campo inválido");
+                System.out.println("Invalid field");
                 break;
         }
 
         if (validField) {
-            System.out.println("Campo " + field + " foi atualizado com sucesso!");
+            System.out.println("Field " + field + " was successfully updated!");
         }
     }
-    
-    
+
     /**
-     * Gets the ID of the cabbie.
+     * Gets the cabbie ID.
      * 
-     * @return the ID of the cabbie (a UUID)
+     * @return the cabbie ID (UUID).
      */
     @XmlElement(name="cabbieId")
-     public String getCabbieId() {
+    public String getCabbieId() {
         return this.cabbieId;
     }
-        
+
     /**
-     * Sets the cabbie ID for this cabbie.
-     *
+     * Sets the cabbie ID.
+     * 
      * @param cabbieId The new cabbie ID.
      */
     public void setCabbieId(String cabbieId) {
@@ -114,9 +121,9 @@ public class Cabbie extends Person{
     }
 
     /**
-     * Retrieves the name of this cabbie.
-     *
-     * @return the name as a string.
+     * Gets the name of the cabbie.
+     * 
+     * @return the name of the cabbie.
      */
     @XmlElement(name="name")
     public String getName() {
@@ -124,18 +131,18 @@ public class Cabbie extends Person{
     }
 
     /**
-     * Sets the name for this cabbie.
-     *
-     * @param name The new name for the cabbie.
+     * Sets the name of the cabbie.
+     * 
+     * @param name The new name of the cabbie.
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Retrieves the busy status of this cabbie.
-     *
-     * @return true if the cabbie is busy; false otherwise.
+     * Gets the busy status of the cabbie.
+     * 
+     * @return {@code true} if the cabbie is busy; {@code false} otherwise.
      */
     @XmlElement(name="isBusy")
     public boolean getIsBusy() {
@@ -143,18 +150,18 @@ public class Cabbie extends Person{
     }
 
     /**
-     * Sets the busy status for this cabbie.
-     *
-     * @param value The new busy status for the cabbie.
+     * Sets the busy status of the cabbie.
+     * 
+     * @param value The new busy status.
      */
     public void setIsBusy(boolean value) {
         this.isBusy = value;
     }
 
     /**
-     * Retrieves the rate of this cabbie.
-     *
-     * @return the rate as a float value.
+     * Gets the rating of the cabbie.
+     * 
+     * @return the rating as a float value.
      */
     @XmlElement(name="rate")
     public float getRate() {
@@ -162,17 +169,17 @@ public class Cabbie extends Person{
     }
 
     /**
-     * Sets the rate for this cabbie.
-     *
-     * @param rate The new rate for the cabbie.
+     * Sets the rating of the cabbie.
+     * 
+     * @param rate The new rating.
      */
     public void setRate(float rate) {
         this.rate = rate;
     }
 
     /**
-     * Retrieves the license number of this cabbie.
-     *
+     * Gets the cabbie's license number.
+     * 
      * @return the license number as a string.
      */
     @XmlElement(name="licenseNumber")
@@ -181,9 +188,9 @@ public class Cabbie extends Person{
     }
 
     /**
-     * Sets the license number for this cabbie.
-     *
-     * @param licenseNumber The new license number for the cabbie.
+     * Sets the cabbie's license number.
+     * 
+     * @param licenseNumber The new license number.
      */
     public void setLicenseNumber(String licenseNumber) {
         this.licenseNumber = licenseNumber;
@@ -191,9 +198,8 @@ public class Cabbie extends Person{
 
     /**
      * Returns a string representation of the cabbie.
-     *
      * The format is: "Cabbie: cabbieId name".
-     *
+     * 
      * @return a string representation of the object.
      */
     @Override
@@ -203,9 +209,9 @@ public class Cabbie extends Person{
 
     /**
      * Compares this cabbie to another object for equality.
-     *
-     * @param o the object to compare with this cabbie.
-     * @return true if the specified object is equal to this cabbie; false otherwise.
+     * 
+     * @param o The object to compare with this cabbie.
+     * @return {@code true} if the specified object is equal to this cabbie; {@code false} otherwise.
      */
     @Override
     public boolean equals(Object o) {

@@ -14,6 +14,11 @@ import cabbieManager.Ride;
 import cabbieManager.RidePayment;
 import cabbieManager.Vehicle;
 
+/**
+ * Represents the database for the cabbie management system.
+ * This class manages lists of passengers, cabbies, vehicles, rides, and payment methods,
+ * and provides methods for inserting, updating, and saving data to an XML file.
+ */
 @XmlRootElement(name="database")
 public class Database {
     private List<Passenger> passengers = new ArrayList<>();
