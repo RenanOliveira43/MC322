@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <database>
     <cabbies>
-        <cabbies>
-            <cabbieId>c3bf4f0d-daea-4aff-a91e-b495abf4b5ed</cabbieId>
+        <cabbie>
+            <cabbieId>8d1aa575-a5a7-43f7-b35a-bed41e5ff25c</cabbieId>
             <isBusy>false</isBusy>
-            <licenseNumber>NoPqRsTu</licenseNumber>
+            <licenseNumber>L6mNopQr</licenseNumber>
             <name>Martina</name>
-            <rate>3.0</rate>
-        </cabbies>
+            <rate>1.0</rate>
+        </cabbie>
     </cabbies>
     <passengers>
-        <passengers>
-            <email>carolina.martins@email.com</email>
+        <passenger>
+            <email>rodrigo.santos@email.com</email>
             <name>Estevão</name>
-            <passengerId>4b8aef82-349b-429e-86d5-f714388446b7</passengerId>
-            <phone>+55 98 96789-0123</phone>
-        </passengers>
+            <passengerId>ba5d683b-736c-4884-9e08-be55b94f5c0b</passengerId>
+            <phone>+55 62 95678-9012</phone>
+        </passenger>
     </passengers>
     <payments>
-        <paymentMethods>
+        <payment>
             <amount>46.73</amount>
-            <paymentId>805533b7-400b-4422-afec-13f73bbd877e</paymentId>
+            <paymentId>e867ccc8-d89a-4e78-8929-6d4c56de17c1</paymentId>
             <paymentMethod>CREDIT_CARD</paymentMethod>
             <distance>11.31</distance>
-            <rideid>384ade33-8e0a-4a05-ab85-53bb0f0821b6</rideid>
-            <startTime>2024-09-30T21:48:12.095605799</startTime>
-        </paymentMethods>
-        <paymentMethods>
+            <rideid>6ab6128b-b790-4014-951c-fa91f562a948</rideid>
+            <startTime>2024-10-04T18:12:01.879489145</startTime>
+        </payment>
+        <payment>
             <amount>73.58</amount>
-            <paymentId>d7799c88-ae2d-4777-a568-da03d4f8b584</paymentId>
+            <paymentId>e7f2f0e9-ecd4-4f71-ac13-94fc5cb9fd8d</paymentId>
             <paymentMethod>PIX</paymentMethod>
             <distance>15.3</distance>
-            <rideid>7e8669b1-0087-437e-942f-6815f2df7db1</rideid>
-            <startTime>2024-09-30T21:48:12.127332117</startTime>
-        </paymentMethods>
-        <paymentMethods>
+            <rideid>892cbf6e-1b37-4fc7-a520-df61266c97c0</rideid>
+            <startTime>2024-10-04T18:12:01.987089172</startTime>
+        </payment>
+        <payment>
             <amount>56.4</amount>
-            <paymentId>a06cd7fd-99c8-45d9-91d7-02f7d065d22b</paymentId>
+            <paymentId>a1d144a3-27d7-48e3-820d-7a538faa48fd</paymentId>
             <paymentMethod>DEBIT_CARD</paymentMethod>
             <distance>14.21</distance>
-            <rideid>ae65ea08-7db0-4ad8-acd5-b762d2a64e4e</rideid>
-            <startTime>2024-09-30T21:48:12.193625572</startTime>
-        </paymentMethods>
+            <rideid>ee7177ae-775a-4d24-96ad-29660741ac60</rideid>
+            <startTime>2024-10-04T18:12:02.202580434</startTime>
+        </payment>
     </payments>
     <rides>
-        <rides>
-            <cabbieId>c3bf4f0d-daea-4aff-a91e-b495abf4b5ed</cabbieId>
+        <ride>
+            <cabbieId>8d1aa575-a5a7-43f7-b35a-bed41e5ff25c</cabbieId>
             <dropLocation>ESTACAO_DE_TREM</dropLocation>
-            <passengerId>4b8aef82-349b-429e-86d5-f714388446b7</passengerId>
+            <passengerId>ba5d683b-736c-4884-9e08-be55b94f5c0b</passengerId>
             <distance>0.0</distance>
-            <rideId>384ade33-8e0a-4a05-ab85-53bb0f0821b6</rideId>
+            <rideId>6ab6128b-b790-4014-951c-fa91f562a948</rideId>
             <status>FINALIZADA</status>
-            <vehicleId>5277278e-796c-4d5f-bd28-f324811c78ef</vehicleId>
-        </rides>
-        <rides>
-            <cabbieId>c3bf4f0d-daea-4aff-a91e-b495abf4b5ed</cabbieId>
+            <vehicleId>6170e483-3274-4f84-837e-d0663c415897</vehicleId>
+        </ride>
+        <ride>
+            <cabbieId>8d1aa575-a5a7-43f7-b35a-bed41e5ff25c</cabbieId>
             <dropLocation>BIBLIOTECA</dropLocation>
-            <passengerId>4b8aef82-349b-429e-86d5-f714388446b7</passengerId>
+            <passengerId>ba5d683b-736c-4884-9e08-be55b94f5c0b</passengerId>
             <distance>0.0</distance>
-            <rideId>7e8669b1-0087-437e-942f-6815f2df7db1</rideId>
+            <rideId>892cbf6e-1b37-4fc7-a520-df61266c97c0</rideId>
             <status>FINALIZADA</status>
-            <vehicleId>5277278e-796c-4d5f-bd28-f324811c78ef</vehicleId>
-        </rides>
-        <rides>
-            <cabbieId>c3bf4f0d-daea-4aff-a91e-b495abf4b5ed</cabbieId>
+            <vehicleId>6170e483-3274-4f84-837e-d0663c415897</vehicleId>
+        </ride>
+        <ride>
+            <cabbieId>8d1aa575-a5a7-43f7-b35a-bed41e5ff25c</cabbieId>
             <dropLocation>HOSPITAL</dropLocation>
-            <passengerId>4b8aef82-349b-429e-86d5-f714388446b7</passengerId>
+            <passengerId>ba5d683b-736c-4884-9e08-be55b94f5c0b</passengerId>
             <pickupLocation>ESCOLA</pickupLocation>
             <distance>14.21</distance>
-            <rideId>ae65ea08-7db0-4ad8-acd5-b762d2a64e4e</rideId>
-            <startTime>2024-09-30T21:48:12.193625572</startTime>
+            <rideId>ee7177ae-775a-4d24-96ad-29660741ac60</rideId>
+            <startTime>2024-10-04T18:12:02.202580434</startTime>
             <status>FINALIZADA</status>
-            <vehicleId>5277278e-796c-4d5f-bd28-f324811c78ef</vehicleId>
-        </rides>
+            <vehicleId>6170e483-3274-4f84-837e-d0663c415897</vehicleId>
+        </ride>
     </rides>
     <vehicles>
-        <vehicles>
-            <cabbieid>c3bf4f0d-daea-4aff-a91e-b495abf4b5ed</cabbieid>
-            <model>Chevrolet</model>
+        <vehicle>
+            <cabbieid>8d1aa575-a5a7-43f7-b35a-bed41e5ff25c</cabbieid>
+            <model>Mazda</model>
             <registrationNumber>ABD123</registrationNumber>
-            <vehicleId>5277278e-796c-4d5f-bd28-f324811c78ef</vehicleId>
-            <year>1998</year>
-        </vehicles>
+            <vehicleId>6170e483-3274-4f84-837e-d0663c415897</vehicleId>
+            <year>2005</year>
+        </vehicle>
     </vehicles>
 </database>

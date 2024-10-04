@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -27,7 +28,7 @@ public class Database {
     private List<Ride> rides = new ArrayList<>();
     private List<RidePayment> paymentMethods = new ArrayList<>();
 
-    private final File file = new File("Tarefa04\\app\\data\\database.xml");
+    private final File file = new File("Tarefa04/app/data/database.xml");
 
     public Database(){
     }
@@ -49,6 +50,7 @@ public class Database {
      * @return a list of Passenger objects.
      */
     @XmlElementWrapper(name="passengers")
+    @XmlElement(name="passenger")
     public List<Passenger> getPassengers() {
         return this.passengers;
     }
@@ -59,6 +61,7 @@ public class Database {
      * @return a list of Cabbie objects.
      */
     @XmlElementWrapper(name="cabbies")
+    @XmlElement(name="cabbie")
     public List<Cabbie> getCabbies() {
         return this.cabbies;
     }
@@ -69,6 +72,7 @@ public class Database {
      * @return a list of Vehicle objects.
      */
     @XmlElementWrapper(name="vehicles")
+    @XmlElement(name="vehicle")
     public List<Vehicle> getVehicles() {
         return this.vehicles;
     }
@@ -79,6 +83,7 @@ public class Database {
      * @return a list of Ride objects.
      */
     @XmlElementWrapper(name="rides")
+    @XmlElement(name="ride")
     public List<Ride> getRides() {
         return this.rides;
     }
@@ -89,6 +94,7 @@ public class Database {
      * @return a list of RidePayment objects.
      */
     @XmlElementWrapper(name="payments")
+    @XmlElement(name="payment")
     public List<RidePayment> getPaymentMethods() {
         return paymentMethods;
     }
@@ -173,7 +179,7 @@ public class Database {
     private void load() {
         try {
             JAXBContext context = JAXBContext.newInstance(Database.class);
-            File xmlFile = new File("Tarefa04\\app\\data\\database.xml");
+            File xmlFile = new File("Tarefa04/app/data/database.xml");
             if (xmlFile.exists()) {
                 Database loadedDatabase = (Database) context.createUnmarshaller().unmarshal(xmlFile);
                 this.passengers = loadedDatabase.getPassengers();
