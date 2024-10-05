@@ -69,7 +69,6 @@ public class Main {
 
         db.insert(ride_2);
     
-
         // Accept Ride
         cab.update("isBusy", "true");
         ride_2.updateRideStatus("ACEITA", cab.getCabbieId(), v.getVehicleId());
