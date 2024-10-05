@@ -1,7 +1,11 @@
 package cabbieManager;
 
+/**
+ * Enum representing different locations with coordinates and names.
+ * Each location has an x and y coordinate, as well as a name.
+ */
 public enum Location {
-    
+
     AEROPORTO(5, 18, "Aeroporto"),
     ESTACAO_DE_TREM(12, 15, "Estação de Trem"),
     SHOPPING(20, 7, "Shopping"),
@@ -9,7 +13,7 @@ public enum Location {
     PARQUE(0, 4, "Parque"),
     HOSPITAL(15, 12, "Hospital"),
     BIBLIOTECA(3, 19, "Biblioteca"),
-    ESTADIO(22, 25, "Estadio");
+    ESTADIO(22, 25, "Estádio");
 
     private final int x;
     private final int y;
@@ -45,16 +49,17 @@ public enum Location {
 
     /**
      * Returns the x-coordinate of the location.
-     * @return the x-coordinate of the location
+     * 
+     * @return the x-coordinate of the location.
      */
     public int getX() {
         return this.x;
     }
 
-
     /**
      * Returns the y-coordinate of the location.
-     * @return the y-coordinate of the location
+     * 
+     * @return the y-coordinate of the location.
      */
     public int getY() {
         return this.y;
@@ -62,7 +67,8 @@ public enum Location {
 
     /**
      * Returns the name of the location.
-     * @return the name of the location
+     * 
+     * @return the name of the location.
      */
     public String getName() {
         return this.name;

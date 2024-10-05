@@ -9,6 +9,11 @@ import utils.LocalDateTimeAdapter;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+/**
+ * Represents a payment for a ride in the cabbie management system.
+ * This class holds information related to the payment for a ride, including
+ * the payment ID, ride ID, ride details, payment amount, and the selected payment method.
+ */
 @XmlRootElement(name="ridePayment")
 public class RidePayment implements Payment{
     

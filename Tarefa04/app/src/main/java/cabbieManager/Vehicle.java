@@ -4,6 +4,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import utils.VehicleInfoGenerator;
 
+/**
+ * Represents a vehicle in the cabbie management system.
+ * This class holds information related to the vehicle, including its
+ * unique ID, registration number, model, year, and the associated cabbie ID.
+ */
 @XmlRootElement(name="vehicle")
 public class Vehicle {
     private String vehicleId;
@@ -76,9 +81,6 @@ public class Vehicle {
         if (validField) {
             System.out.println("Campo " + field + " alterado com sucesso");
         }
-
-
-        return;
     }
 
     /**

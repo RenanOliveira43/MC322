@@ -10,6 +10,11 @@ import com.google.common.base.Objects;
 
 import utils.LocalDateTimeAdapter;
 
+/**
+ * Represents a ride in the cabbie management system.
+ * A ride contains information such as the ride's ID, passenger ID, cabbie ID, vehicle ID, 
+ * and details about the pickup and drop locations, along with the distance and status of the ride.
+ */
 @XmlRootElement(name="ride")
 public class Ride {
     
