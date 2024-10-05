@@ -1,9 +1,14 @@
 package cabbieManager;
 
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
+
 /**
  * Enum representing different locations with coordinates and names.
  * Each location has an x and y coordinate, as well as a name.
  */
+@XmlType(name="location")
+@XmlEnum
 public enum Location {
 
     AEROPORTO(5, 18, "Aeroporto"),
