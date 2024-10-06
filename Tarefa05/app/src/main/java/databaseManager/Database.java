@@ -34,7 +34,6 @@ public class Database{
     
     private final File file = new File("Tarefa05\\app\\data\\database.xml");
 
-
     public Database(){
     }
 
@@ -74,21 +73,24 @@ public class Database{
         return this.payments;
     }
 
-    public void insert(Object object){
-        if(object instanceof Cabbie){
-            this.cabbies.add((Cabbie)object);
-        }else if(object instanceof Passenger){
+    public void insert(Object object) throws UnsupportedObjectTypeException {
+        if (object instanceof Cabbie) {
+            this.cabbies.add((Cabbie) object);
+        } else if (object instanceof Passenger) {
             this.passengers.add((Passenger) object);
-        }else if(object instanceof Vehicle){
+        } else if (object instanceof Vehicle) {
             this.vehicles.add((Vehicle) object);
-        }else if(object instanceof Ride){
+        } else if (object instanceof Ride) {
             this.rides.add((Ride) object);
-        }else if(object instanceof RidePayment){
+        } else if (object instanceof RidePayment) {
             this.payments.add((RidePayment) object);
+        } else {
+            throw new UnsupportedObjectTypeException("Trying to insert unsupported object type for database insertion");
         }
-
+    
         this.save();
     }
+    
 
     private <T> void update(T newItem, List<T> data){
         for(int i=0;i<data.size();i++){
@@ -100,7 +102,7 @@ public class Database{
         }
     }
 
-    public void update(Object object){
+    public void update(Object object) throws UnsupportedObjectTypeException {
         if(object instanceof Cabbie){
             this.update((Cabbie)object, this.cabbies);
         }else if(object instanceof Passenger){
@@ -112,7 +114,7 @@ public class Database{
         }else if(object instanceof RidePayment){
             this.update((RidePayment)object, this.payments);
         }else{
-            return;
+            throw new UnsupportedObjectTypeException("Trying to update unsupported object type for database update");
         }
         this.save();       
     }

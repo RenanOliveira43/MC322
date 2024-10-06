@@ -1,8 +1,7 @@
 package cabbieManager;
 
-import java.io.File;
-
 import databaseManager.Database;
+import exceptions.UnsupportedObjectTypeException;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -24,10 +23,13 @@ public class Main {
         System.out.println("AQRUI:" + v);
 
         // Save Instances into the XML database
-        
-        db.insert(cab);
-        db.insert(p);
-        db.insert(v);
+        try {
+            db.insert(cab);
+            db.insert(p);
+            db.insert(v);
+        } catch(UnsupportedObjectTypeException e) {
+            System.out.println(e.getMessage());
+        }
 
         // Update Instances
 
@@ -36,9 +38,14 @@ public class Main {
         v.updateVehicle("registrationNumber", "ABD123");
 
         // Save Instancesinto the XML database
-        db.update(cab);
-        db.update(p);
-        db.update(v);
+        try {
+            db.update(cab);
+            db.update(p);
+            db.update(v);
+        } catch(UnsupportedObjectTypeException e) {
+            System.out.println(e.getMessage());
+        }
+        
 
         // Create Ride
         Ride ride = new Ride(db.getPassengers().get(0).getPassengerId());

@@ -1,4 +1,3 @@
-
 package cabbieManager;
 
 import com.google.common.base.Objects;
@@ -9,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import utils.CabbieInfoGenerator;
 
 @XmlRootElement(name="cabbie")
-public class Cabbie extends Person{
+public class Cabbie extends Person {
     private String cabbieId;
     private float rate;
     private String licenseNumber;
@@ -63,7 +62,7 @@ public class Cabbie extends Person{
     public void update(String field, String newValue){
 
         boolean validField = true;
-
+    
         switch (field) {
             case "name":
                 this.name = newValue;
@@ -72,6 +71,9 @@ public class Cabbie extends Person{
                 this.email = newValue;
                 break;
             case "phone":
+                if (!newValue.matches("\\d+")) {
+                    throw new IllegalArgumentException("Input contains non-numeric characters: " + newValue);
+                }
                 this.setPhone(newValue);
                 break;
             case "cabbieId":
@@ -91,14 +93,11 @@ public class Cabbie extends Person{
                 System.out.println("Campo inválido");
                 break;
         }
-
+        
         if (validField) {
             System.out.println("Campo " + field + " foi atualizado com sucesso!");
         }
-
-        return;
     }
-    
     
     /**
      * Gets the ID of the cabbie.

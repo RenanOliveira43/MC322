@@ -63,7 +63,6 @@ public class Ride {
 
     }
 
-
     /**
      * Returns a Location given a location name.
      * 
@@ -77,7 +76,6 @@ public class Ride {
         return Location.valueOfName(locationName);
 
     }
-
 
     /**
      * Calculates the distance between the pickup and drop locations.
@@ -94,10 +92,9 @@ public class Ride {
         int x_drop = dropLocation.getX();
         int y_drop = dropLocation.getY();
 
-        
-
         float distance = (float) Math.sqrt(Math.pow(x_drop - x_pickup, 2) + Math.pow(y_drop - y_pickup, 2));
         distance = Math.round(distance * 100) / 100.0f;
+                
         System.out.println(("Distância calculada: " + distance));
         return distance;
     }

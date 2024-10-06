@@ -11,7 +11,7 @@ import java.time.LocalTime;
 import exceptions.*;
 
 @XmlRootElement(name="PaymentMethod")
-public class RidePayment implements Payment{
+public class RidePayment implements Payment {
     
     private String paymentId;
     private String rideId;
@@ -37,7 +37,7 @@ public class RidePayment implements Payment{
      * @param paymentMethod  The payment method selected by the user (e.g., "credit", "cash").
      * 
      */
-    public RidePayment(String rideId, LocalDateTime rideStartTime, float rideDistance ,String paymentMethod) {
+    public RidePayment(String rideId, LocalDateTime rideStartTime, float rideDistance, String paymentMethod){
 
         this.paymentId = UUID.randomUUID().toString();
         this.rideId = rideId;
@@ -50,13 +50,12 @@ public class RidePayment implements Payment{
             throw new NullPointerException("Start time of the ride to be paid cannot be null");
         }
 
+        if (this.rideDistance <= 0.0f) {
+            throw new InvalidRideDistanceException("Ride distance must be greater than zero");
+        }
 
         this.amount = this.calculateValue();
-
-
-
     }
-
 
     /**
      * Selects a PaymentOption from a given string.
@@ -66,10 +65,6 @@ public class RidePayment implements Payment{
     private PaymentOption selectPaymentMethod(String paymentMethod) {
         return PaymentOption.valueOfName(paymentMethod);
     }
-
-
-
-
 
     /**
      * Calculates the total amount of the ride payment.
@@ -94,13 +89,8 @@ public class RidePayment implements Payment{
         final float[] PRECO_POR_KM_NOTURNO = {2.50f, 3.00f, 3.50f, 4.50f, 4.0f};
         final float DISTANCIAS_LIMITE[] = {5, 10, 15, 20, 25};
 
-
-        
-
-
         // identifies the distance range
         int faixa = -1;
-
 
         for (int i = 0; i < DISTANCIAS_LIMITE.length; i++) {
             if (this.rideDistance <= DISTANCIAS_LIMITE[i]) {
@@ -108,7 +98,6 @@ public class RidePayment implements Payment{
                 break;
             }
         }
-
 
         // stabilish the initial and per km price
         float precoInicial = isHorarioNoturno() ? PRECO_INICIAL_NOTURNO[faixa] : PRECO_INICIAL_DIURNO[faixa];

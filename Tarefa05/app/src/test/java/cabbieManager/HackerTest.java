@@ -67,8 +67,6 @@ public class HackerTest {
 
     }
 
-    
-
     /**
      * Tests if the constructor RidePayment throws a NullPointerException when the start time of the ride to be paid is null.
      * 
