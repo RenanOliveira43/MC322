@@ -141,7 +141,7 @@ public class HackerTest {
         assertEquals("Trying to update unsupported object type in the database", exception.getMessage());
     }
 
-    // payment option expecption is on RidePayment
+    // PaymentOption exception is on RidePayment
 
 
 
