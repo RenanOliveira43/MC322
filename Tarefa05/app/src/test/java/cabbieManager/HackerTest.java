@@ -122,8 +122,26 @@ public class HackerTest {
     
     }
 
+    ///////////////////////////////// meus tratamentos ///////////////////////////////// 
+    /**
+     * Tests if the method update from the class Database throws an UnsupportedObjectTypeException when trying to update an object of an unsupported type.
+     * 
+     * The method update should throw an UnsupportedObjectTypeException when trying to updarte an object of an unsupported type.
+     * This test case tests this by calling the method update with an object of an unsupported type and asserting that an UnsupportedObjectTypeException is thrown.
+     * The expected error message is "Trying to update unsupported object type in the database".
+     */
+    @Test
+    public void testeDatabase_UpdateIllegalTypeObject() {
+        Location loc = Location.PARQUE;
+        Database db = new Database();
+        Exception exception = assertThrows(UnsupportedObjectTypeException.class, () -> {
+            db.update(loc);
+        });
 
+        assertEquals("Trying to update unsupported object type in the database", exception.getMessage());
+    }
 
+    // payment option expecption is on RidePayment
 
 
 

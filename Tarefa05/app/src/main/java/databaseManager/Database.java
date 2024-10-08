@@ -114,7 +114,7 @@ public class Database{
         }else if(object instanceof RidePayment){
             this.update((RidePayment)object, this.payments);
         }else{
-            throw new UnsupportedObjectTypeException("Trying to update unsupported object type for database update");
+            throw new UnsupportedObjectTypeException("Trying to update unsupported object type in the database");
         }
         this.save();       
     }

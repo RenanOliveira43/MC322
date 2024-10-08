@@ -54,6 +54,11 @@ public class RidePayment implements Payment {
             throw new InvalidRideDistanceException("Ride distance must be greater than zero");
         }
 
+        if (this.paymentMethod == null) {
+            throw new NullPointerException("Payment option is not valid");
+        }
+
+
         this.amount = this.calculateValue();
     }
 
