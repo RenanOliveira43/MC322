@@ -63,6 +63,10 @@ public class Passenger extends Person{
                 this.email = newValue;
                 break;
             case "phone":
+                if (!newValue.matches("\\d+")) {
+                    throw new IllegalArgumentException("Input contains non-numeric characters: " + newValue);
+                }
+                
                 this.phone = newValue;
                 break;
             case "passengerId":
