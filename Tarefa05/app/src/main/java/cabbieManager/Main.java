@@ -46,7 +46,6 @@ public class Main {
             System.out.println(e.getMessage());
         }
         
-
         // Create Ride
         Ride ride = new Ride(db.getPassengers().get(0).getPassengerId());
         ride.requestRide("Shopping", "Estação de Trem");

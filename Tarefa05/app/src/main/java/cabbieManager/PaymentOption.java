@@ -43,7 +43,4 @@ public enum PaymentOption {
     float calculatePaymentFee(float value) {
         return value * fee;
     }
-    
-
-
 }
