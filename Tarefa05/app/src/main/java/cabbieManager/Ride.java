@@ -56,11 +56,18 @@ public class Ride {
         this.dropLocation= this.returnLocation(dropLocation);
         this.startTime = LocalDateTime.now();
 
+        if (this.pickupLocation == null) {
+            throw new IllegalArgumentException("Invalid location name: " + pickupLocation);
+        }
+
+        if (this.dropLocation == null) {
+            throw new IllegalArgumentException("Invalid location name: " + dropLocation);
+        }
+
         System.out.println("Corrida chamada por pessoa passageira " + this.passengerId + " de " + pickupLocation + " para " + dropLocation);
         this.updateRideStatus("CHAMADA", null, null);
 
         this.distance = this.calculateDistance();
-
     }
 
     /**

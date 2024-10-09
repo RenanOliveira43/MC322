@@ -38,7 +38,7 @@ public enum Location {
                 return location;
             }
         }
-        throw new IllegalArgumentException("Invalid location name: " + name);
+        return null;
     }
 
 

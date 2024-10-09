@@ -99,8 +99,6 @@ public class HackerTest {
         });
 
         assertEquals("Trying to insert unsupported object type for database insertion", exception.getMessage());
-
-
     }
 
     /**
@@ -111,15 +109,13 @@ public class HackerTest {
      * The expected error message is "Ride distance must be greater than zero".
      */
     @Test
-    public void testRidePayment_throwsInalidRideDistanceEqualsZero() {
+    public void testRidePayment_throwsInvalidRideDistanceEqualsZero() {
     
         Exception exception = assertThrows(InvalidRideDistanceException.class, () -> {
             RidePayment rp = new RidePayment("rideId", LocalDateTime.of(2022, 1, 1, 10, 0), 0.0f, "Dinheiro");
         });
 
         assertEquals("Ride distance must be greater than zero", exception.getMessage());
-    
-    
     }
 
     ///////////////////////////////// meus tratamentos ///////////////////////////////// 
@@ -141,7 +137,21 @@ public class HackerTest {
         assertEquals("Trying to update unsupported object type in the database", exception.getMessage());
     }
 
-    // PaymentOption exception is on RidePayment
+    /**
+     * Tests if the constructor RidePayment throws a NullPointerException when the payment option is null.
+     * 
+     * The constructor RidePayment should throw a NullPointerException when the payment option is null.
+     * This test case tests this by calling the constructor with a null payment option and asserting that a NullPointerException is thrown.
+     * The expected error message is "Payment option is not valid".
+     */
+    @Test
+    public void testRidePayment_InvalidPaymentoption() {
+        Exception exception = assertThrows(NullPointerException.class, () -> {
+            RidePayment rp = new RidePayment("rideId", LocalDateTime.of(2022, 1, 1, 10, 0), 10.0f, null);
+        });
+
+        assertEquals("Payment option is not valid", exception.getMessage());
+    }
 
 
 
