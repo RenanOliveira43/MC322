@@ -44,21 +44,20 @@ public class RidePayment implements Payment {
         this.rideStartTime = rideStartTime;
         this.rideDistance = rideDistance;
         this.paymentMethod = this.selectPaymentMethod(paymentMethod);
-        System.out.println("Forma de pagamento selecionada: " + paymentMethod);
-
+        
         if (this.rideStartTime == null) {
             throw new NullPointerException("Start time of the ride to be paid cannot be null");
         }
-
+        
         if (this.rideDistance <= 0.0f) {
             throw new InvalidRideDistanceException("Ride distance must be greater than zero");
         }
-
+        
         if (this.paymentMethod == null) {
             throw new NullPointerException("Payment option is not valid");
         }
-
-
+        
+        System.out.println("Forma de pagamento selecionada: " + paymentMethod);
         this.amount = this.calculateValue();
     }
 

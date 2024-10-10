@@ -50,7 +50,7 @@ public class Main {
             ride.updateRideStatus("EM_PROGRESSO", null, null);
      
             db.update(cab);
-            db.insert(ride);
+            db.update(ride);
     
             //Payment
             RidePayment payment = new RidePayment(ride.getRideId(), ride.getStartTime(), ride.getRideDistance(), "Cartão de Crédito");
@@ -65,14 +65,12 @@ public class Main {
             db.update(ride);
             db.update(cab);
     
-    
             // Create Ride
             Ride ride_2 = new Ride(db.getPassengers().get(0).getPassengerId());
             ride_2.requestRide("Parque", "Biblioteca");
     
             db.insert(ride_2);
         
-    
             // Accept Ride
             cab.update("isBusy", "true");
             ride_2.updateRideStatus("ACEITA", cab.getCabbieId(), v.getVehicleId());
@@ -114,7 +112,6 @@ public class Main {
     
             db.insert(ride_3);
         
-    
             // Accept Ride
             cab.update("isBusy", "true");
             ride_3.updateRideStatus("ACEITA", cab.getCabbieId(), v.getVehicleId());
@@ -136,7 +133,7 @@ public class Main {
             db.update(ride);
             db.update(cab);
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
