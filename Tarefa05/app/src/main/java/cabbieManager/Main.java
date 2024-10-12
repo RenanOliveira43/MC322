@@ -2,16 +2,37 @@ package cabbieManager;
 
 import databaseManager.Database;
 
+/**
+ * Main class for simulating the operation of the cab management system.
+ * <p>
+ * This class contains the main method, which serves as the entry point for the application. 
+ * It demonstrates the creation, updating, and processing of various entities in the cab management 
+ * system, such as cabbies, passengers, vehicles, rides, and payments. 
+ * </p>
+ */
 public class Main {
+    
+    /**
+     * The main method for the cab management system simulation.
+     * <p>
+     * This method performs the following operations:
+     * <ul>
+     *   <li>Creates instances of cabbies, passengers, and vehicles.</li>
+     *   <li>Requests and accepts rides.</li>
+     *   <li>Processes payments for completed rides.</li>
+     *   <li>Saves all instances to an XML database.</li>
+     *   <li>Demonstrates loading data from the XML database.</li>
+     * </ul>
+     * </p>
+     * 
+     * @param args Command line arguments (not used).
+     * @throws Exception If an error occurs during the execution of the simulation.
+     */
     public static void main(String[] args) throws Exception {
-        //Aqui você deve realizar a simulação do funcionamento do sistema.
-        //----------------------------------------------------------------
-        // File file = new File("Tarefa05 - Feita\\Tarefa05\\app\\data\\database.xml");
         try {
             Database db = new Database();
             
             // Create Instances
-    
             Cabbie cab = new Cabbie();
             cab.register();
             
@@ -28,17 +49,15 @@ public class Main {
             db.insert(v);
     
             // Update Instances
-    
             cab.update("name", "Martina");
             p.update("name", "Estevão");
             v.updateVehicle("registrationNumber", "ABD123");
     
-            // Save Instancesinto the XML database
+            // Save Instances into the XML database
             db.update(cab);
             db.update(p);
             db.update(v);
     
-            
             // Create Ride
             Ride ride = new Ride(db.getPassengers().get(0).getPassengerId());
             ride.requestRide("Shopping", "Estação de Trem");
@@ -52,13 +71,13 @@ public class Main {
             db.update(cab);
             db.update(ride);
     
-            //Payment
+            // Payment
             RidePayment payment = new RidePayment(ride.getRideId(), ride.getStartTime(), ride.getRideDistance(), "Cartão de Crédito");
             payment.processPayment();
             
             db.insert(payment);
     
-            //Finish Ride
+            // Finish Ride
             ride.completeRide();
             cab.update("isBusy", "false");
     
@@ -79,17 +98,17 @@ public class Main {
             db.update(cab);
             db.update(ride_2);
     
-            //Payment
+            // Payment
             RidePayment payment2 = new RidePayment(ride_2.getRideId(), ride_2.getStartTime(), ride_2.getRideDistance(), "Pix");
             payment2.processPayment();
     
             db.insert(payment2);
     
-            //Finish Ride
-            ride.completeRide();
+            // Finish Ride
+            ride_2.completeRide();
             cab.update("isBusy", "false");
     
-            db.update(ride);
+            db.update(ride_2);
             db.update(cab);
     
             System.out.println("-----------------------------------");
@@ -120,17 +139,17 @@ public class Main {
             db.update(cab);
             db.update(ride_3);
     
-            //Payment
-            RidePayment payment3 = new RidePayment(ride_2.getRideId(), ride_2.getStartTime(), ride_2.getRideDistance(), "Pix");
-            payment2.processPayment();
+            // Payment
+            RidePayment payment3 = new RidePayment(ride_3.getRideId(), ride_3.getStartTime(), ride_3.getRideDistance(), "Voucher");
+            payment3.processPayment();
     
             db.insert(payment3);
     
-            //Finish Ride
-            ride.completeRide();
+            // Finish Ride
+            ride_3.completeRide();
             cab.update("isBusy", "false");
     
-            db.update(ride);
+            db.update(ride_3);
             db.update(cab);
 
         } catch (Exception e) {

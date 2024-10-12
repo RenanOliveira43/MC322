@@ -41,7 +41,6 @@ public enum Location {
         return null;
     }
 
-
     /**
      * Returns the x-coordinate of the location.
      * @return the x-coordinate of the location
@@ -49,7 +48,6 @@ public enum Location {
     public int getX() {
         return this.x;
     }
-
 
     /**
      * Returns the y-coordinate of the location.
@@ -66,6 +64,4 @@ public enum Location {
     public String getName() {
         return this.name;
     }
-
-
 }

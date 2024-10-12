@@ -24,6 +24,11 @@ import cabbieManager.RidePayment;
 import cabbieManager.Vehicle;
 import exceptions.*;
 
+/**
+ * Represents the database for the cabbie management system.
+ * This class manages lists of passengers, cabbies, vehicles, rides, and payment methods,
+ * and provides methods for inserting, updating, and saving data to an XML file.
+ */
 @XmlRootElement(name="database")
 public class Database{
     private List<Cabbie> cabbies = new ArrayList<>();
@@ -37,42 +42,91 @@ public class Database{
     public Database(){
     }
 
+    /**
+     * Constructs a Database object. If load is true, it loads the database from a file.
+     *
+     * @param load If true, the database will be loaded from a file.
+     */
     public Database(boolean load){
         if(load){
             this.load();
         }
     }
     
+    /**
+     * Retrieves the list of passengers.
+     *
+     * @return a list of Passenger objects.
+     */
     @XmlElementWrapper(name="passengers")
     @XmlElement(name="passenger")
-    public List<Passenger> getPassengers(){
+    public List<Passenger> getPassengers() {
         return this.passengers;
     }
 
+    /**
+     * Retrieves the list of cabbies.
+     *
+     * @return a list of Cabbie objects.
+     */
     @XmlElementWrapper(name="cabbies")
     @XmlElement(name="cabbie")
-    public List<Cabbie> getCabbies(){
+    public List<Cabbie> getCabbies() {
         return this.cabbies;
     }
 
-    @XmlElementWrapper(name="rides")
-    @XmlElement(name="ride")
-    public List<Ride> getRides(){
-        return this.rides;
-    }
-
+    /**
+     * Retrieves the list of vehicles.
+     *
+     * @return a list of Vehicle objects.
+     */
     @XmlElementWrapper(name="vehicles")
     @XmlElement(name="vehicle")
-    public List<Vehicle> getVehicles(){
+    public List<Vehicle> getVehicles() {
         return this.vehicles;
     }
 
+    /**
+     * Retrieves the list of rides.
+     *
+     * @return a list of Ride objects.
+     */
+    @XmlElementWrapper(name="rides")
+    @XmlElement(name="ride")
+    public List<Ride> getRides() {
+        return this.rides;
+    }
+
+    /**
+     * Retrieves the list of payment methods.
+     *
+     * @return a list of RidePayment objects.
+     */
     @XmlElementWrapper(name="payments")
     @XmlElement(name="payment")
-    public List<RidePayment> getPayments(){
+    public List<RidePayment> getPayments() {
         return this.payments;
     }
 
+    /**
+     * Inserts an object into the appropriate list based on its type.
+     * <p>
+     * This method supports insertion of the following object types:
+     * <ul>
+     *   <li>{@code Cabbie}</li>
+     *   <li>{@code Passenger}</li>
+     *   <li>{@code Vehicle}</li>
+     *   <li>{@code Ride}</li>
+     *   <li>{@code RidePayment}</li>
+     * </ul>
+     * If the object type is not supported, an {@code UnsupportedObjectTypeException} is thrown.
+     * After insertion, the method triggers a save operation.
+     * </p>
+     * 
+     * @param object The object to be inserted. It must be an instance of one of the supported types.
+     * 
+     * @throws UnsupportedObjectTypeException If the object is not one of the supported types for insertion.
+     */
     public void insert(Object object) throws UnsupportedObjectTypeException {
         if (object instanceof Cabbie) {
             this.cabbies.add((Cabbie) object);
@@ -91,7 +145,13 @@ public class Database{
         this.save();
     }
     
-
+    /**
+     * Updates an existing item in the specified data list if it exists.
+     *
+     * @param newItem The new item to replace the existing one.
+     * @param data The list of items where the update will be performed.
+     * @param <T> The type of the items in the list.
+     */
     private <T> void update(T newItem, List<T> data){
         for(int i=0;i<data.size();i++){
             Object item = data.get(i);
@@ -102,6 +162,25 @@ public class Database{
         }
     }
 
+    /**
+     * Updates an existing object in the appropriate list based on its type.
+     * <p>
+     * This method supports updating objects of the following types:
+     * <ul>
+     *   <li>{@code Cabbie}</li>
+     *   <li>{@code Passenger}</li>
+     *   <li>{@code Vehicle}</li>
+     *   <li>{@code Ride}</li>
+     *   <li>{@code RidePayment}</li>
+     * </ul>
+     * If the object type is not supported, an {@code UnsupportedObjectTypeException} is thrown.
+     * After updating the object, the method triggers a save operation.
+     * </p>
+     * 
+     * @param object The object to be updated. It must be an instance of one of the supported types.
+     * 
+     * @throws UnsupportedObjectTypeException If the object is not one of the supported types for updating.
+     */
     public void update(Object object) throws UnsupportedObjectTypeException {
         if(object instanceof Cabbie){
             this.update((Cabbie)object, this.cabbies);
@@ -119,6 +198,17 @@ public class Database{
         this.save();       
     }
 
+    /**
+     * Saves the current state of the database to an XML file.
+     * <p>
+     * This method uses JAXB to marshal the current instance of the {@code Database} class into XML format 
+     * and writes it to a specified file. The output is formatted for readability. If an error occurs during 
+     * the marshalling or file I/O process, the exception stack trace is printed.
+     * </p>
+     * 
+     * @throws JAXBException If an error occurs while marshalling the database object to XML.
+     * @throws IOException   If an I/O error occurs during file operations.
+     */
     private void save(){
         try{
             JAXBContext context = JAXBContext.newInstance(Database.class);
@@ -132,6 +222,18 @@ public class Database{
         }
     }
 
+    /**
+     * Loads the state of the database from an XML file.
+     * <p>
+     * This method checks if the specified file exists and, if so, uses JAXB to unmarshal the XML content
+     * into a {@code Database} object. The loaded data, including cabbies, passengers, rides, vehicles, 
+     * and payments, is then assigned to the current instance. If an error occurs during unmarshalling or 
+     * file I/O operations, the exception stack trace is printed.
+     * </p>
+     * 
+     * @throws JAXBException If an error occurs while unmarshalling the XML content.
+     * @throws IOException   If an I/O error occurs during file operations.
+     */
     private void load(){
         if(file.exists()){
             try{

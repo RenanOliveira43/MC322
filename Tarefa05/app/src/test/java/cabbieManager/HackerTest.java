@@ -1,21 +1,12 @@
 package cabbieManager;
 
-
-
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDateTime;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.function.Executable;
-
-import cabbieManager.Cabbie;
-import cabbieManager.Ride;
 import databaseManager.*;
 import exceptions.*;
-
-import org.junit.jupiter.api.Test;
 
 public class HackerTest {
 
@@ -118,7 +109,8 @@ public class HackerTest {
         assertEquals("Ride distance must be greater than zero", exception.getMessage());
     }
 
-    ///////////////////////////////// meus tratamentos ///////////////////////////////// 
+    //------------------------------------ meus testes ------------------------------------// 
+    
     /**
      * Tests if the method update from the class Database throws an UnsupportedObjectTypeException when trying to update an object of an unsupported type.
      * 
@@ -145,7 +137,7 @@ public class HackerTest {
      * The expected error message is "Payment option is not valid".
      */
     @Test
-    public void testRidePayment_InvalidPaymentoption() {
+    public void testRidePayment_InvalidPaymentOption() {
         Exception exception = assertThrows(NullPointerException.class, () -> {
             RidePayment rp = new RidePayment("rideId", LocalDateTime.of(2022, 1, 1, 10, 0), 10.0f, null);
         });
