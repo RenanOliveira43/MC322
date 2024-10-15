@@ -145,6 +145,26 @@ public class HackerTest {
         assertEquals("Payment option is not valid", exception.getMessage());
     }
 
+    /**
+     * Tests if the method update throws an IllegalArgumentException when the phone number is not valid.
+     * 
+     * The method update should throw an IllegalArgumentException when the phone number is not valid.
+     * 
+     * This test case tests this by calling the method update with an invalid phone number and asserting that an IllegalArgumentException is thrown.
+     * The expected error message is "Input contains non-numeric characters: aaabbb9999"
+     */
+    @Test
+    public void testUpdatePassenger_throwsIllegalArgumentException_InvalidPhoneArgument() {
+        Passenger passengerTest = new Passenger();
+        passengerTest.register();
+        
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            passengerTest.update("phone", "aaabbb9999"); 
+        });
+
+        assertEquals("Input contains non-numeric characters: aaabbb9999", exception.getMessage());
+    }
 
 
 }
