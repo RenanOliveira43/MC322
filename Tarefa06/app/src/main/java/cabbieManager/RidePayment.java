@@ -118,6 +118,7 @@ public class RidePayment implements Payment {
 
         // calculates the total amount considering the payment method fee
         double _amount = this.paymentMethod.calculatePaymentFee(precoInicial + (this.rideDistance * precoPorKm));
+        discount = _amount * discount;
         _amount = _amount - discount;
         this.amount = Math.round(_amount * 100) / 100.0f;
 
