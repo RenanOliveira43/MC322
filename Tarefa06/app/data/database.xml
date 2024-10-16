@@ -2,260 +2,260 @@
 <database>
     <cabbies>
         <cabbie>
-            <cabbieId>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieId>
+            <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
             <isBusy>false</isBusy>
-            <licenseNumber>A7bC8dEf</licenseNumber>
+            <licenseNumber>1A2bC3dE</licenseNumber>
             <name>Martina</name>
-            <rate>2.0</rate>
+            <rate>0.0</rate>
         </cabbie>
     </cabbies>
     <passengers>
         <passenger>
-            <email>henrique.costa@email.com</email>
+            <email>isabela.ferreira@email.com</email>
             <name>Estevão</name>
-            <passengerId>7e310c07-60cb-4aa0-b5c5-23d73857a0da</passengerId>
-            <phone>+55 95 97890-1234</phone>
+            <passengerId>292e590d-6d13-4d7e-8da9-6596510ad864</passengerId>
+            <phone>+55 47 94567-8901</phone>
         </passenger>
         <passenger xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="businessPassenger">
-            <email>robert.brown@marketlead.biz</email>
-            <name>Rodrigo</name>
-            <passengerId>d83a1ac7-115c-49e5-b64f-8273d5f41bee</passengerId>
-            <phone>+55 62 95678-9012</phone>
-            <businessEmail>robert.brown@marketlead.biz</businessEmail>
+            <email>lisa.white@globalventures.com</email>
+            <name>Fernanda</name>
+            <passengerId>5a7b2a00-643b-4da2-9dea-e8ff1d1105c1</passengerId>
+            <phone>+55 67 98901-2345</phone>
+            <businessEmail>lisa.white@globalventures.com</businessEmail>
         </passenger>
         <passenger xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="vipPassenger">
             <email>gabriela.souza@email.com</email>
             <name>Gabriela</name>
-            <passengerId>0c15b21c-b111-4d54-8e23-3faac1235e78</passengerId>
+            <passengerId>f180ebe9-78e7-4e56-bef4-1a94fffb5109</passengerId>
             <phone>+55 12 90123-4567</phone>
             <vipExpiration>2024-07-04T07:45</vipExpiration>
         </passenger>
     </passengers>
     <payments>
         <payment>
-            <amount>37.38</amount>
-            <paymentId>ad52aa7b-1b9f-4bec-9821-d4255036bdbd</paymentId>
+            <amount>30.37</amount>
+            <paymentId>3ed7a17c-2490-4e0f-aa23-dd0b25d8741e</paymentId>
             <paymentMethod>CREDIT_CARD</paymentMethod>
             <distance>11.31</distance>
             <ride>
                 <cabbie>
-                    <cabbieId>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieId>
+                    <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
                     <isBusy>false</isBusy>
-                    <licenseNumber>A7bC8dEf</licenseNumber>
+                    <licenseNumber>1A2bC3dE</licenseNumber>
                     <name>Martina</name>
-                    <rate>2.0</rate>
+                    <rate>0.0</rate>
                 </cabbie>
                 <dropLocation>ESTACAO_DE_TREM</dropLocation>
                 <passenger xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="businessPassenger">
-                    <email>robert.brown@marketlead.biz</email>
-                    <name>Rodrigo</name>
-                    <passengerId>d83a1ac7-115c-49e5-b64f-8273d5f41bee</passengerId>
-                    <phone>+55 62 95678-9012</phone>
-                    <businessEmail>robert.brown@marketlead.biz</businessEmail>
+                    <email>lisa.white@globalventures.com</email>
+                    <name>Fernanda</name>
+                    <passengerId>5a7b2a00-643b-4da2-9dea-e8ff1d1105c1</passengerId>
+                    <phone>+55 67 98901-2345</phone>
+                    <businessEmail>lisa.white@globalventures.com</businessEmail>
                 </passenger>
                 <distance>0.0</distance>
-                <rideId>b83cbd30-abb1-40fc-a9a9-c2dcf88734e1</rideId>
+                <rideId>6a4e1793-6f69-4ba2-b9dc-41929bd490f6</rideId>
                 <status>FINALIZADA</status>
                 <vehicle>
-                    <cabbieid>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieid>
-                    <model>Nissan</model>
+                    <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
+                    <model>Mazda</model>
                     <registrationNumber>ABD123</registrationNumber>
-                    <vehicleId>a36f9d14-4dca-44b2-9672-fd2e3af456d2</vehicleId>
-                    <year>1999</year>
+                    <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
+                    <year>2017</year>
                 </vehicle>
             </ride>
-            <startTime>2024-10-15T20:46:56.386700400</startTime>
+            <startTime>2024-10-15T21:09:40.079758700</startTime>
         </payment>
         <payment>
             <amount>73.58</amount>
-            <paymentId>680c8523-37cb-409a-81e8-a34587e42407</paymentId>
+            <paymentId>1a38db9f-287c-4007-b89c-2bda5d8ed7b7</paymentId>
             <paymentMethod>PIX</paymentMethod>
             <distance>15.3</distance>
             <ride>
                 <cabbie>
-                    <cabbieId>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieId>
+                    <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
                     <isBusy>false</isBusy>
-                    <licenseNumber>A7bC8dEf</licenseNumber>
+                    <licenseNumber>1A2bC3dE</licenseNumber>
                     <name>Martina</name>
-                    <rate>2.0</rate>
+                    <rate>0.0</rate>
                 </cabbie>
                 <dropLocation>BIBLIOTECA</dropLocation>
                 <passenger>
-                    <email>henrique.costa@email.com</email>
+                    <email>isabela.ferreira@email.com</email>
                     <name>Estevão</name>
-                    <passengerId>7e310c07-60cb-4aa0-b5c5-23d73857a0da</passengerId>
-                    <phone>+55 95 97890-1234</phone>
+                    <passengerId>292e590d-6d13-4d7e-8da9-6596510ad864</passengerId>
+                    <phone>+55 47 94567-8901</phone>
                 </passenger>
                 <distance>0.0</distance>
-                <rideId>e7e484ff-bef5-4fe5-8c0a-2528f913d9b6</rideId>
+                <rideId>18d253e8-ac62-4f97-887f-e922fe0a29b4</rideId>
                 <status>EM_PROGRESSO</status>
                 <vehicle>
-                    <cabbieid>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieid>
-                    <model>Nissan</model>
+                    <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
+                    <model>Mazda</model>
                     <registrationNumber>ABD123</registrationNumber>
-                    <vehicleId>a36f9d14-4dca-44b2-9672-fd2e3af456d2</vehicleId>
-                    <year>1999</year>
+                    <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
+                    <year>2017</year>
                 </vehicle>
             </ride>
-            <startTime>2024-10-15T20:46:56.442050500</startTime>
+            <startTime>2024-10-15T21:09:40.135809800</startTime>
         </payment>
         <payment>
             <amount>73.58</amount>
-            <paymentId>d8959e9a-9d0c-4192-9250-e353baa26676</paymentId>
+            <paymentId>42ebdf6d-a2b9-4112-bbfa-158a6f75d747</paymentId>
             <paymentMethod>PIX</paymentMethod>
             <distance>15.3</distance>
             <ride>
                 <cabbie>
-                    <cabbieId>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieId>
+                    <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
                     <isBusy>false</isBusy>
-                    <licenseNumber>A7bC8dEf</licenseNumber>
+                    <licenseNumber>1A2bC3dE</licenseNumber>
                     <name>Martina</name>
-                    <rate>2.0</rate>
+                    <rate>0.0</rate>
                 </cabbie>
                 <dropLocation>BIBLIOTECA</dropLocation>
                 <passenger>
-                    <email>henrique.costa@email.com</email>
+                    <email>isabela.ferreira@email.com</email>
                     <name>Estevão</name>
-                    <passengerId>7e310c07-60cb-4aa0-b5c5-23d73857a0da</passengerId>
-                    <phone>+55 95 97890-1234</phone>
+                    <passengerId>292e590d-6d13-4d7e-8da9-6596510ad864</passengerId>
+                    <phone>+55 47 94567-8901</phone>
                 </passenger>
                 <pickupLocation>PARQUE</pickupLocation>
                 <distance>15.3</distance>
-                <rideId>e7e484ff-bef5-4fe5-8c0a-2528f913d9b6</rideId>
-                <startTime>2024-10-15T20:46:56.442050500</startTime>
+                <rideId>18d253e8-ac62-4f97-887f-e922fe0a29b4</rideId>
+                <startTime>2024-10-15T21:09:40.135809800</startTime>
                 <status>EM_PROGRESSO</status>
                 <vehicle>
-                    <cabbieid>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieid>
-                    <model>Nissan</model>
+                    <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
+                    <model>Mazda</model>
                     <registrationNumber>ABD123</registrationNumber>
-                    <vehicleId>a36f9d14-4dca-44b2-9672-fd2e3af456d2</vehicleId>
-                    <year>1999</year>
+                    <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
+                    <year>2017</year>
                 </vehicle>
             </ride>
-            <startTime>2024-10-15T20:46:56.442050500</startTime>
+            <startTime>2024-10-15T21:09:40.135809800</startTime>
         </payment>
     </payments>
     <rides>
         <ride>
             <cabbie>
-                <cabbieId>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieId>
+                <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
                 <isBusy>false</isBusy>
-                <licenseNumber>A7bC8dEf</licenseNumber>
+                <licenseNumber>1A2bC3dE</licenseNumber>
                 <name>Martina</name>
-                <rate>2.0</rate>
+                <rate>0.0</rate>
             </cabbie>
             <dropLocation>ESTACAO_DE_TREM</dropLocation>
             <passenger xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="businessPassenger">
-                <email>robert.brown@marketlead.biz</email>
-                <name>Rodrigo</name>
-                <passengerId>d83a1ac7-115c-49e5-b64f-8273d5f41bee</passengerId>
-                <phone>+55 62 95678-9012</phone>
-                <businessEmail>robert.brown@marketlead.biz</businessEmail>
+                <email>lisa.white@globalventures.com</email>
+                <name>Fernanda</name>
+                <passengerId>5a7b2a00-643b-4da2-9dea-e8ff1d1105c1</passengerId>
+                <phone>+55 67 98901-2345</phone>
+                <businessEmail>lisa.white@globalventures.com</businessEmail>
             </passenger>
             <pickupLocation>SHOPPING</pickupLocation>
             <distance>11.31</distance>
-            <rideId>b83cbd30-abb1-40fc-a9a9-c2dcf88734e1</rideId>
-            <startTime>2024-10-15T20:46:56.386700400</startTime>
+            <rideId>6a4e1793-6f69-4ba2-b9dc-41929bd490f6</rideId>
+            <startTime>2024-10-15T21:09:40.079758700</startTime>
             <status>FINALIZADA</status>
             <vehicle>
-                <cabbieid>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieid>
-                <model>Nissan</model>
+                <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
+                <model>Mazda</model>
                 <registrationNumber>ABD123</registrationNumber>
-                <vehicleId>a36f9d14-4dca-44b2-9672-fd2e3af456d2</vehicleId>
-                <year>1999</year>
+                <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
+                <year>2017</year>
             </vehicle>
         </ride>
         <ride>
             <cabbie>
-                <cabbieId>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieId>
+                <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
                 <isBusy>false</isBusy>
-                <licenseNumber>A7bC8dEf</licenseNumber>
+                <licenseNumber>1A2bC3dE</licenseNumber>
                 <name>Martina</name>
-                <rate>2.0</rate>
+                <rate>0.0</rate>
             </cabbie>
             <dropLocation>ESTACAO_DE_TREM</dropLocation>
             <passenger xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="businessPassenger">
-                <email>robert.brown@marketlead.biz</email>
-                <name>Rodrigo</name>
-                <passengerId>d83a1ac7-115c-49e5-b64f-8273d5f41bee</passengerId>
-                <phone>+55 62 95678-9012</phone>
-                <businessEmail>robert.brown@marketlead.biz</businessEmail>
+                <email>lisa.white@globalventures.com</email>
+                <name>Fernanda</name>
+                <passengerId>5a7b2a00-643b-4da2-9dea-e8ff1d1105c1</passengerId>
+                <phone>+55 67 98901-2345</phone>
+                <businessEmail>lisa.white@globalventures.com</businessEmail>
             </passenger>
             <pickupLocation>SHOPPING</pickupLocation>
             <distance>11.31</distance>
-            <rideId>b83cbd30-abb1-40fc-a9a9-c2dcf88734e1</rideId>
-            <startTime>2024-10-15T20:46:56.386700400</startTime>
+            <rideId>6a4e1793-6f69-4ba2-b9dc-41929bd490f6</rideId>
+            <startTime>2024-10-15T21:09:40.079758700</startTime>
             <status>FINALIZADA</status>
             <vehicle>
-                <cabbieid>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieid>
-                <model>Nissan</model>
+                <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
+                <model>Mazda</model>
                 <registrationNumber>ABD123</registrationNumber>
-                <vehicleId>a36f9d14-4dca-44b2-9672-fd2e3af456d2</vehicleId>
-                <year>1999</year>
+                <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
+                <year>2017</year>
             </vehicle>
         </ride>
         <ride>
             <cabbie>
-                <cabbieId>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieId>
+                <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
                 <isBusy>false</isBusy>
-                <licenseNumber>A7bC8dEf</licenseNumber>
+                <licenseNumber>1A2bC3dE</licenseNumber>
                 <name>Martina</name>
-                <rate>2.0</rate>
+                <rate>0.0</rate>
             </cabbie>
             <dropLocation>BIBLIOTECA</dropLocation>
             <passenger>
-                <email>henrique.costa@email.com</email>
+                <email>isabela.ferreira@email.com</email>
                 <name>Estevão</name>
-                <passengerId>7e310c07-60cb-4aa0-b5c5-23d73857a0da</passengerId>
-                <phone>+55 95 97890-1234</phone>
+                <passengerId>292e590d-6d13-4d7e-8da9-6596510ad864</passengerId>
+                <phone>+55 47 94567-8901</phone>
             </passenger>
             <distance>0.0</distance>
-            <rideId>e7e484ff-bef5-4fe5-8c0a-2528f913d9b6</rideId>
+            <rideId>18d253e8-ac62-4f97-887f-e922fe0a29b4</rideId>
             <status>EM_PROGRESSO</status>
             <vehicle>
-                <cabbieid>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieid>
-                <model>Nissan</model>
+                <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
+                <model>Mazda</model>
                 <registrationNumber>ABD123</registrationNumber>
-                <vehicleId>a36f9d14-4dca-44b2-9672-fd2e3af456d2</vehicleId>
-                <year>1999</year>
+                <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
+                <year>2017</year>
             </vehicle>
         </ride>
         <ride>
             <cabbie>
-                <cabbieId>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieId>
+                <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
                 <isBusy>false</isBusy>
-                <licenseNumber>A7bC8dEf</licenseNumber>
+                <licenseNumber>1A2bC3dE</licenseNumber>
                 <name>Martina</name>
-                <rate>2.0</rate>
+                <rate>0.0</rate>
             </cabbie>
             <dropLocation>BIBLIOTECA</dropLocation>
             <passenger>
-                <email>henrique.costa@email.com</email>
+                <email>isabela.ferreira@email.com</email>
                 <name>Estevão</name>
-                <passengerId>7e310c07-60cb-4aa0-b5c5-23d73857a0da</passengerId>
-                <phone>+55 95 97890-1234</phone>
+                <passengerId>292e590d-6d13-4d7e-8da9-6596510ad864</passengerId>
+                <phone>+55 47 94567-8901</phone>
             </passenger>
             <pickupLocation>PARQUE</pickupLocation>
             <distance>15.3</distance>
-            <rideId>296d5554-baf5-4a32-80b6-bffe59a96fc4</rideId>
-            <startTime>2024-10-15T20:46:56.548028</startTime>
+            <rideId>b7b26fc7-5827-480f-9362-89d218bc5710</rideId>
+            <startTime>2024-10-15T21:09:40.247707900</startTime>
             <status>EM_PROGRESSO</status>
             <vehicle>
-                <cabbieid>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieid>
-                <model>Nissan</model>
+                <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
+                <model>Mazda</model>
                 <registrationNumber>ABD123</registrationNumber>
-                <vehicleId>a36f9d14-4dca-44b2-9672-fd2e3af456d2</vehicleId>
-                <year>1999</year>
+                <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
+                <year>2017</year>
             </vehicle>
         </ride>
     </rides>
     <vehicles>
         <vehicle>
-            <cabbieid>cc18ac09-88a3-4e96-85a2-1037a6cedf3a</cabbieid>
-            <model>Nissan</model>
+            <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
+            <model>Mazda</model>
             <registrationNumber>ABD123</registrationNumber>
-            <vehicleId>a36f9d14-4dca-44b2-9672-fd2e3af456d2</vehicleId>
-            <year>1999</year>
+            <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
+            <year>2017</year>
         </vehicle>
     </vehicles>
 </database>
