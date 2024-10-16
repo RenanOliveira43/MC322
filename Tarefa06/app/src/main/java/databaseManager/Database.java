@@ -17,12 +17,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import cabbieManager.BusinessPassenger;
 import cabbieManager.Cabbie;
 import cabbieManager.Passenger;
 import cabbieManager.Ride;
 import cabbieManager.RidePayment;
-import cabbieManager.VIPPassenger;
 import cabbieManager.Vehicle;
 import exceptions.*;
 
@@ -186,19 +184,15 @@ public class Database{
     public void update(Object object) throws UnsupportedObjectTypeException {
         if(object instanceof Cabbie){
             this.update((Cabbie)object, this.cabbies);
-        }else if(object instanceof Passenger){
+        } else if(object instanceof Passenger){
             this.update((Passenger)object, this.passengers);
-        }else if (object instanceof BusinessPassenger) {
-            this.update((BusinessPassenger)object, this.passengers);
-        }else if (object instanceof VIPPassenger) {
-            this.update((VIPPassenger)object, this.passengers);
-        }else if(object instanceof Vehicle){
+        } else if(object instanceof Vehicle){
             this.update((Vehicle)object, this.vehicles);
-        }else if(object instanceof Ride){
+        } else if(object instanceof Ride){
             this.update((Ride)object, this.rides);
-        }else if(object instanceof RidePayment){
+        } else if(object instanceof RidePayment){
             this.update((RidePayment)object, this.payments);
-        }else{
+        } else{
             throw new UnsupportedObjectTypeException("Trying to update unsupported object type in the database");
         }
         this.save();       

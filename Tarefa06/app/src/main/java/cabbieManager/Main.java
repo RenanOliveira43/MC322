@@ -12,7 +12,6 @@ import databaseManager.Database;
  * </p>
  */
 public class Main {
-    
     /**
      * The main method for the cab management system simulation.
      * <p>

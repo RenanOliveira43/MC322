@@ -4,7 +4,9 @@ import java.time.LocalDateTime;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import utils.LocalDateTimeAdapter;
 import utils.PassengerInfoGenerator;
 
 /**
@@ -44,6 +46,7 @@ public class VIPPassenger extends Passenger implements BenefitsControll {
      *
      * @return the VIP expiration date
      */
+    @XmlJavaTypeAdapter(value = LocalDateTimeAdapter.class)
     @XmlElement(name="vipExpiration")
     public LocalDateTime getVipExpiration() {
         return vipExpiration;

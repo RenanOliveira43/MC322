@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlSeeAlso;
  * @see Passenger
  * @see Cabbie
  */
-@XmlSeeAlso({Passenger.class, Cabbie.class})
+@XmlSeeAlso({Passenger.class, Cabbie.class, BusinessPassenger.class, VIPPassenger.class})
 public abstract class Person {
     protected String name;
     protected String email;

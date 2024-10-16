@@ -46,7 +46,7 @@ public class Ride {
      * @param dropLocation    The location where the passenger wants to be dropped off.
      * 
      * <p>
-     * The ride status is set to "REQUESTED", and the start time is set to the current time. 
+     * The ride status is set to "CHAMADA", and the start time is set to the current time. 
      * A message is printed to the console with the information of the ride.
      * </p>
      * 
@@ -78,13 +78,12 @@ public class Ride {
      * 
      * @param locationName  the name of the location
      * 
-     * If the location is not found, a default value of AEROPORTO is returned.
+     * If the location is not found, null is returned.
      * 
      * @return a Location object
      */
     private Location returnLocation(String locationName) {
         return Location.valueOfName(locationName);
-
     }
 
     /**
@@ -116,11 +115,10 @@ public class Ride {
         if (status.equals("ACEITA")) {
             this.cabbie = cabbie;
             this.vehicle = vehicle;
-            System.out.println(("Corrida aceita por pessoa motorista " + cabbie.getCabbieId()));
+            System.out.println(("Corrida aceita por pessoa motorista " + this.cabbie.getCabbieId()));
         } else {
             System.out.println("Status da corrida: " + this.status);
         }
-
     }
 
    /**
