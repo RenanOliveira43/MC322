@@ -1,6 +1,7 @@
 package cabbieManager;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeParseException;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -33,6 +34,34 @@ public class VIPPassenger extends Passenger implements BenefitsControll {
     }
 
     /**
+     * Updates the value of a specific field for the current object. If the field is 
+     * "vipExpiration", it parses the new value as a {@link LocalDateTime}. If the parsing 
+     * fails, it logs an error message indicating an invalid format.
+     * For other fields, it delegates the update operation to the superclass.
+     *
+     * @param field The name of the field to be updated. If it is "vipExpiration", 
+     * he value is parsed as a {@link LocalDateTime}.
+     * @param newValue The new value to set for the specified field. For the "vipExpiration" 
+     * field, this should be a valid {@link LocalDateTime} string.
+     * 
+     * @throws DateTimeParseException if the newValue for "vipExpiration" cannot be parsed 
+     * into a valid {@link LocalDateTime}.
+     */
+    @Override
+    public void update(String field, String newValue) {
+        if (field.equals("vipExpiration")) {
+            try {
+                this.vipExpiration = LocalDateTime.parse(newValue);
+                System.out.println("Campo " + field + " atualizado com sucesso!");
+            } catch (DateTimeParseException e) {
+                System.out.println("Invalid format for vip expiration.");
+            }
+        } else {
+            super.update(field, newValue);
+        }
+    }
+
+    /**
      * Sets the expiration date for the VIP status.
      *
      * @param vipExpiration the expiration date to set
@@ -60,5 +89,10 @@ public class VIPPassenger extends Passenger implements BenefitsControll {
     @Override
     public double getDiscount() {
         return pass.getDiscount();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " " + this.vipExpiration;
     }
 }

@@ -13,7 +13,6 @@ public class Cabbie extends Person {
     private float rate;
     private String licenseNumber;
     private boolean isBusy;
-    private String name;
 
     public Cabbie() {
     }

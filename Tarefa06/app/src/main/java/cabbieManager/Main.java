@@ -17,7 +17,7 @@ public class Main {
      * <p>
      * This method performs the following operations:
      * <ul>
-     *   <li>Creates instances of cabbies, passengers, and vehicles.</li>
+     *   <li>Creates instances of cabbies, passengers, business passengers, vip passengers and vehicles.</li>
      *   <li>Requests and accepts rides.</li>
      *   <li>Processes payments for completed rides.</li>
      *   <li>Saves all instances to an XML database.</li>
@@ -62,11 +62,15 @@ public class Main {
             // Update Instances
     
             cab.update("name", "Martina");
+            bp.update("businessEmail", "teste@teste.io");
+            vp.update("vipExpiration", "2025-03-15T11:27");
             p.update("name", "Estevão");
             v.updateVehicle("registrationNumber", "ABD123");
     
-            // Save Instancesinto the XML database
+            // Save Instances into the XML database
             db.update(cab);
+            db.update(bp);
+            db.update(vp);
             db.update(p);
             db.update(v);
     
@@ -145,7 +149,7 @@ public class Main {
     
             db.insert(ride_3);
         
-    
+
             // Accept Ride
             cab.update("isBusy", "true");
             ride_3.updateRideStatus("ACEITA", cab, v);

@@ -28,6 +28,26 @@ public class BusinessPassenger extends Passenger implements BenefitsControll {
     }
 
     /**
+     * Updates the value of a specific field for the current object. If the field is 
+     * "businessEmail", it sets the new email value and logs a success message. 
+     * For other fields, it delegates the update operation to the superclass.
+     *
+     * @param field The name of the field to be updated. If it is "businessEmail", 
+     * the new email value is set directly.
+     * @param newValue The new value to set for the specified field. For the "businessEmail" 
+     * field, this should be a valid email string.
+     */
+    @Override
+    public void update(String field, String newValue) {
+        if (field.equals("businessEmail")) {
+            this.businessEmail = newValue;
+            System.out.println("Campo " + field + " atualizado com sucesso!");
+        } else {
+            super.update(field, newValue);
+        }
+    }
+
+    /**
      * Sets the email for the business passenger.
      *
      * @param email the business email to set
@@ -56,5 +76,10 @@ public class BusinessPassenger extends Passenger implements BenefitsControll {
     @Override
     public double getDiscount() {
         return pass.getDiscount();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " " + this.businessEmail;
     }
 }

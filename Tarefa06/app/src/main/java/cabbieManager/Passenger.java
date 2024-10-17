@@ -10,9 +10,6 @@ import utils.PassengerInfoGenerator;
 @XmlRootElement(name="passenger")
 public class Passenger extends Person{
     protected String passengerId;
-    protected String email;
-    protected String name;
-    protected String phone;
 
     public Passenger() {
     }
