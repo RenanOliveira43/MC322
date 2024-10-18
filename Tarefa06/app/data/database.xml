@@ -2,260 +2,260 @@
 <database>
     <cabbies>
         <cabbie>
-            <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
+            <cabbieId>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieId>
             <isBusy>false</isBusy>
-            <licenseNumber>1A2bC3dE</licenseNumber>
+            <licenseNumber>FgH4IjK5</licenseNumber>
             <name>Martina</name>
-            <rate>0.0</rate>
+            <rate>0.5</rate>
         </cabbie>
     </cabbies>
     <passengers>
         <passenger>
-            <email>isabela.ferreira@email.com</email>
+            <email>gabriela.souza@email.com</email>
             <name>Estevão</name>
-            <passengerId>292e590d-6d13-4d7e-8da9-6596510ad864</passengerId>
-            <phone>+55 47 94567-8901</phone>
+            <passengerId>edeba75b-a04a-4a4e-be94-e9ed29bf7ac6</passengerId>
+            <phone>+55 12 90123-4567</phone>
         </passenger>
         <passenger xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="businessPassenger">
-            <email>lisa.white@globalventures.com</email>
-            <name>Fernanda</name>
-            <passengerId>5a7b2a00-643b-4da2-9dea-e8ff1d1105c1</passengerId>
-            <phone>+55 67 98901-2345</phone>
-            <businessEmail>lisa.white@globalventures.com</businessEmail>
+            <email>laura.clark@digitalstrategy.biz</email>
+            <name>Gabriela</name>
+            <passengerId>c7bc0fe5-a476-4262-9002-8869d5451530</passengerId>
+            <phone>+55 12 90123-4567</phone>
+            <businessEmail>laura.clark@digitalstrategy.biz</businessEmail>
         </passenger>
         <passenger xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="vipPassenger">
-            <email>gabriela.souza@email.com</email>
-            <name>Gabriela</name>
-            <passengerId>f180ebe9-78e7-4e56-bef4-1a94fffb5109</passengerId>
-            <phone>+55 12 90123-4567</phone>
-            <vipExpiration>2024-07-04T07:45</vipExpiration>
+            <email>carolina.martins@email.com</email>
+            <name>Carolina</name>
+            <passengerId>675bd99e-6d56-4b47-a5c1-5d75dc741a2b</passengerId>
+            <phone>+55 98 96789-0123</phone>
+            <vipExpiration>2024-04-08T13:45</vipExpiration>
         </passenger>
     </passengers>
     <payments>
         <payment>
-            <amount>30.37</amount>
-            <paymentId>3ed7a17c-2490-4e0f-aa23-dd0b25d8741e</paymentId>
+            <amount>25.7</amount>
+            <paymentId>5054f3ee-46a7-4577-a4d8-25e83fe6dfa9</paymentId>
             <paymentMethod>CREDIT_CARD</paymentMethod>
             <distance>11.31</distance>
             <ride>
                 <cabbie>
-                    <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
+                    <cabbieId>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieId>
                     <isBusy>false</isBusy>
-                    <licenseNumber>1A2bC3dE</licenseNumber>
+                    <licenseNumber>FgH4IjK5</licenseNumber>
                     <name>Martina</name>
-                    <rate>0.0</rate>
+                    <rate>0.5</rate>
                 </cabbie>
                 <dropLocation>ESTACAO_DE_TREM</dropLocation>
                 <passenger xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="businessPassenger">
-                    <email>lisa.white@globalventures.com</email>
-                    <name>Fernanda</name>
-                    <passengerId>5a7b2a00-643b-4da2-9dea-e8ff1d1105c1</passengerId>
-                    <phone>+55 67 98901-2345</phone>
-                    <businessEmail>lisa.white@globalventures.com</businessEmail>
+                    <email>laura.clark@digitalstrategy.biz</email>
+                    <name>Gabriela</name>
+                    <passengerId>c7bc0fe5-a476-4262-9002-8869d5451530</passengerId>
+                    <phone>+55 12 90123-4567</phone>
+                    <businessEmail>laura.clark@digitalstrategy.biz</businessEmail>
                 </passenger>
                 <distance>0.0</distance>
-                <rideId>6a4e1793-6f69-4ba2-b9dc-41929bd490f6</rideId>
+                <rideId>ef1ddb20-d4a8-4b95-bfec-d709881208ee</rideId>
                 <status>FINALIZADA</status>
                 <vehicle>
-                    <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
-                    <model>Mazda</model>
+                    <cabbieid>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieid>
+                    <model>Kia</model>
                     <registrationNumber>ABD123</registrationNumber>
-                    <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
-                    <year>2017</year>
+                    <vehicleId>9913f28e-5fd6-4e0d-a813-51a409fb32d1</vehicleId>
+                    <year>2001</year>
                 </vehicle>
             </ride>
-            <startTime>2024-10-15T21:09:40.079758700</startTime>
+            <startTime>2024-10-15T21:14:39.427511400</startTime>
         </payment>
         <payment>
             <amount>73.58</amount>
-            <paymentId>1a38db9f-287c-4007-b89c-2bda5d8ed7b7</paymentId>
+            <paymentId>3d5f3dd8-6fb6-456f-ad81-cb8719e28d89</paymentId>
             <paymentMethod>PIX</paymentMethod>
             <distance>15.3</distance>
             <ride>
                 <cabbie>
-                    <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
+                    <cabbieId>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieId>
                     <isBusy>false</isBusy>
-                    <licenseNumber>1A2bC3dE</licenseNumber>
+                    <licenseNumber>FgH4IjK5</licenseNumber>
                     <name>Martina</name>
-                    <rate>0.0</rate>
+                    <rate>0.5</rate>
                 </cabbie>
                 <dropLocation>BIBLIOTECA</dropLocation>
                 <passenger>
-                    <email>isabela.ferreira@email.com</email>
+                    <email>gabriela.souza@email.com</email>
                     <name>Estevão</name>
-                    <passengerId>292e590d-6d13-4d7e-8da9-6596510ad864</passengerId>
-                    <phone>+55 47 94567-8901</phone>
+                    <passengerId>edeba75b-a04a-4a4e-be94-e9ed29bf7ac6</passengerId>
+                    <phone>+55 12 90123-4567</phone>
                 </passenger>
                 <distance>0.0</distance>
-                <rideId>18d253e8-ac62-4f97-887f-e922fe0a29b4</rideId>
+                <rideId>a106ae4b-8dba-4029-af73-97a2035599ad</rideId>
                 <status>EM_PROGRESSO</status>
                 <vehicle>
-                    <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
-                    <model>Mazda</model>
+                    <cabbieid>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieid>
+                    <model>Kia</model>
                     <registrationNumber>ABD123</registrationNumber>
-                    <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
-                    <year>2017</year>
+                    <vehicleId>9913f28e-5fd6-4e0d-a813-51a409fb32d1</vehicleId>
+                    <year>2001</year>
                 </vehicle>
             </ride>
-            <startTime>2024-10-15T21:09:40.135809800</startTime>
+            <startTime>2024-10-15T21:14:39.485477600</startTime>
         </payment>
         <payment>
             <amount>73.58</amount>
-            <paymentId>42ebdf6d-a2b9-4112-bbfa-158a6f75d747</paymentId>
+            <paymentId>2b668bcf-a58e-4195-84c8-8f1d35b91eac</paymentId>
             <paymentMethod>PIX</paymentMethod>
             <distance>15.3</distance>
             <ride>
                 <cabbie>
-                    <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
+                    <cabbieId>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieId>
                     <isBusy>false</isBusy>
-                    <licenseNumber>1A2bC3dE</licenseNumber>
+                    <licenseNumber>FgH4IjK5</licenseNumber>
                     <name>Martina</name>
-                    <rate>0.0</rate>
+                    <rate>0.5</rate>
                 </cabbie>
                 <dropLocation>BIBLIOTECA</dropLocation>
                 <passenger>
-                    <email>isabela.ferreira@email.com</email>
+                    <email>gabriela.souza@email.com</email>
                     <name>Estevão</name>
-                    <passengerId>292e590d-6d13-4d7e-8da9-6596510ad864</passengerId>
-                    <phone>+55 47 94567-8901</phone>
+                    <passengerId>edeba75b-a04a-4a4e-be94-e9ed29bf7ac6</passengerId>
+                    <phone>+55 12 90123-4567</phone>
                 </passenger>
                 <pickupLocation>PARQUE</pickupLocation>
                 <distance>15.3</distance>
-                <rideId>18d253e8-ac62-4f97-887f-e922fe0a29b4</rideId>
-                <startTime>2024-10-15T21:09:40.135809800</startTime>
+                <rideId>a106ae4b-8dba-4029-af73-97a2035599ad</rideId>
+                <startTime>2024-10-15T21:14:39.485477600</startTime>
                 <status>EM_PROGRESSO</status>
                 <vehicle>
-                    <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
-                    <model>Mazda</model>
+                    <cabbieid>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieid>
+                    <model>Kia</model>
                     <registrationNumber>ABD123</registrationNumber>
-                    <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
-                    <year>2017</year>
+                    <vehicleId>9913f28e-5fd6-4e0d-a813-51a409fb32d1</vehicleId>
+                    <year>2001</year>
                 </vehicle>
             </ride>
-            <startTime>2024-10-15T21:09:40.135809800</startTime>
+            <startTime>2024-10-15T21:14:39.485477600</startTime>
         </payment>
     </payments>
     <rides>
         <ride>
             <cabbie>
-                <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
+                <cabbieId>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieId>
                 <isBusy>false</isBusy>
-                <licenseNumber>1A2bC3dE</licenseNumber>
+                <licenseNumber>FgH4IjK5</licenseNumber>
                 <name>Martina</name>
-                <rate>0.0</rate>
+                <rate>0.5</rate>
             </cabbie>
             <dropLocation>ESTACAO_DE_TREM</dropLocation>
             <passenger xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="businessPassenger">
-                <email>lisa.white@globalventures.com</email>
-                <name>Fernanda</name>
-                <passengerId>5a7b2a00-643b-4da2-9dea-e8ff1d1105c1</passengerId>
-                <phone>+55 67 98901-2345</phone>
-                <businessEmail>lisa.white@globalventures.com</businessEmail>
+                <email>laura.clark@digitalstrategy.biz</email>
+                <name>Gabriela</name>
+                <passengerId>c7bc0fe5-a476-4262-9002-8869d5451530</passengerId>
+                <phone>+55 12 90123-4567</phone>
+                <businessEmail>laura.clark@digitalstrategy.biz</businessEmail>
             </passenger>
             <pickupLocation>SHOPPING</pickupLocation>
             <distance>11.31</distance>
-            <rideId>6a4e1793-6f69-4ba2-b9dc-41929bd490f6</rideId>
-            <startTime>2024-10-15T21:09:40.079758700</startTime>
+            <rideId>ef1ddb20-d4a8-4b95-bfec-d709881208ee</rideId>
+            <startTime>2024-10-15T21:14:39.427511400</startTime>
             <status>FINALIZADA</status>
             <vehicle>
-                <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
-                <model>Mazda</model>
+                <cabbieid>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieid>
+                <model>Kia</model>
                 <registrationNumber>ABD123</registrationNumber>
-                <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
-                <year>2017</year>
+                <vehicleId>9913f28e-5fd6-4e0d-a813-51a409fb32d1</vehicleId>
+                <year>2001</year>
             </vehicle>
         </ride>
         <ride>
             <cabbie>
-                <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
+                <cabbieId>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieId>
                 <isBusy>false</isBusy>
-                <licenseNumber>1A2bC3dE</licenseNumber>
+                <licenseNumber>FgH4IjK5</licenseNumber>
                 <name>Martina</name>
-                <rate>0.0</rate>
+                <rate>0.5</rate>
             </cabbie>
             <dropLocation>ESTACAO_DE_TREM</dropLocation>
             <passenger xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="businessPassenger">
-                <email>lisa.white@globalventures.com</email>
-                <name>Fernanda</name>
-                <passengerId>5a7b2a00-643b-4da2-9dea-e8ff1d1105c1</passengerId>
-                <phone>+55 67 98901-2345</phone>
-                <businessEmail>lisa.white@globalventures.com</businessEmail>
+                <email>laura.clark@digitalstrategy.biz</email>
+                <name>Gabriela</name>
+                <passengerId>c7bc0fe5-a476-4262-9002-8869d5451530</passengerId>
+                <phone>+55 12 90123-4567</phone>
+                <businessEmail>laura.clark@digitalstrategy.biz</businessEmail>
             </passenger>
             <pickupLocation>SHOPPING</pickupLocation>
             <distance>11.31</distance>
-            <rideId>6a4e1793-6f69-4ba2-b9dc-41929bd490f6</rideId>
-            <startTime>2024-10-15T21:09:40.079758700</startTime>
+            <rideId>ef1ddb20-d4a8-4b95-bfec-d709881208ee</rideId>
+            <startTime>2024-10-15T21:14:39.427511400</startTime>
             <status>FINALIZADA</status>
             <vehicle>
-                <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
-                <model>Mazda</model>
+                <cabbieid>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieid>
+                <model>Kia</model>
                 <registrationNumber>ABD123</registrationNumber>
-                <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
-                <year>2017</year>
+                <vehicleId>9913f28e-5fd6-4e0d-a813-51a409fb32d1</vehicleId>
+                <year>2001</year>
             </vehicle>
         </ride>
         <ride>
             <cabbie>
-                <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
+                <cabbieId>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieId>
                 <isBusy>false</isBusy>
-                <licenseNumber>1A2bC3dE</licenseNumber>
+                <licenseNumber>FgH4IjK5</licenseNumber>
                 <name>Martina</name>
-                <rate>0.0</rate>
+                <rate>0.5</rate>
             </cabbie>
             <dropLocation>BIBLIOTECA</dropLocation>
             <passenger>
-                <email>isabela.ferreira@email.com</email>
+                <email>gabriela.souza@email.com</email>
                 <name>Estevão</name>
-                <passengerId>292e590d-6d13-4d7e-8da9-6596510ad864</passengerId>
-                <phone>+55 47 94567-8901</phone>
+                <passengerId>edeba75b-a04a-4a4e-be94-e9ed29bf7ac6</passengerId>
+                <phone>+55 12 90123-4567</phone>
             </passenger>
             <distance>0.0</distance>
-            <rideId>18d253e8-ac62-4f97-887f-e922fe0a29b4</rideId>
+            <rideId>a106ae4b-8dba-4029-af73-97a2035599ad</rideId>
             <status>EM_PROGRESSO</status>
             <vehicle>
-                <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
-                <model>Mazda</model>
+                <cabbieid>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieid>
+                <model>Kia</model>
                 <registrationNumber>ABD123</registrationNumber>
-                <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
-                <year>2017</year>
+                <vehicleId>9913f28e-5fd6-4e0d-a813-51a409fb32d1</vehicleId>
+                <year>2001</year>
             </vehicle>
         </ride>
         <ride>
             <cabbie>
-                <cabbieId>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieId>
+                <cabbieId>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieId>
                 <isBusy>false</isBusy>
-                <licenseNumber>1A2bC3dE</licenseNumber>
+                <licenseNumber>FgH4IjK5</licenseNumber>
                 <name>Martina</name>
-                <rate>0.0</rate>
+                <rate>0.5</rate>
             </cabbie>
             <dropLocation>BIBLIOTECA</dropLocation>
             <passenger>
-                <email>isabela.ferreira@email.com</email>
+                <email>gabriela.souza@email.com</email>
                 <name>Estevão</name>
-                <passengerId>292e590d-6d13-4d7e-8da9-6596510ad864</passengerId>
-                <phone>+55 47 94567-8901</phone>
+                <passengerId>edeba75b-a04a-4a4e-be94-e9ed29bf7ac6</passengerId>
+                <phone>+55 12 90123-4567</phone>
             </passenger>
             <pickupLocation>PARQUE</pickupLocation>
             <distance>15.3</distance>
-            <rideId>b7b26fc7-5827-480f-9362-89d218bc5710</rideId>
-            <startTime>2024-10-15T21:09:40.247707900</startTime>
+            <rideId>e20064be-be43-4cb1-a4d0-d918323dbb57</rideId>
+            <startTime>2024-10-15T21:14:39.594475400</startTime>
             <status>EM_PROGRESSO</status>
             <vehicle>
-                <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
-                <model>Mazda</model>
+                <cabbieid>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieid>
+                <model>Kia</model>
                 <registrationNumber>ABD123</registrationNumber>
-                <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
-                <year>2017</year>
+                <vehicleId>9913f28e-5fd6-4e0d-a813-51a409fb32d1</vehicleId>
+                <year>2001</year>
             </vehicle>
         </ride>
     </rides>
     <vehicles>
         <vehicle>
-            <cabbieid>616a4b6b-5226-4f80-8293-8216c3a2f56e</cabbieid>
-            <model>Mazda</model>
+            <cabbieid>2871a2fb-14c8-41b7-9828-853a96dab939</cabbieid>
+            <model>Kia</model>
             <registrationNumber>ABD123</registrationNumber>
-            <vehicleId>a892673e-b11d-4d86-a58c-c0c04a797a33</vehicleId>
-            <year>2017</year>
+            <vehicleId>9913f28e-5fd6-4e0d-a813-51a409fb32d1</vehicleId>
+            <year>2001</year>
         </vehicle>
     </vehicles>
 </database>
